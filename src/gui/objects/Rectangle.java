@@ -30,7 +30,7 @@ public class Rectangle {
 		this.position = position;
 	}
 	public boolean getInside(Vector2 insideCheck) {
-		return insideCheck.x > position.x && insideCheck.x < position.x + length 
-				&& insideCheck.y > position.y && insideCheck.y < position.y + width;
+		return insideCheck.x >= position.x && insideCheck.x <= position.x + length 
+				&& insideCheck.y >= position.y && insideCheck.y <= position.y + width;
 	}
 }

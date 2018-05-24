@@ -2,10 +2,10 @@ package gui;
 
 public class Vector2 {
 
-	public int x;
-	public int y;
-	public Vector2(int x, int y) {
-		this.x = x;
-		this.y = y;
+	public double x;
+	public double y;
+	public Vector2(double d, double e) {
+		this.x = d;
+		this.y = e;
 	}
 }
