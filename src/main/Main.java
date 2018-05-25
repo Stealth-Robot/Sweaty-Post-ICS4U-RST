@@ -2,13 +2,15 @@ package main;
 
 import java.util.ArrayList;
 
+import gui.Display;
+import gui.DrawImageOnCanvas;
 import gui.objects.colliders.Collider;
 
 public class Main {
 	public static ArrayList<Collider> sceneColliders = new ArrayList<Collider>();
-	public static final int SCREEN_WIDTH = 1920;
-	public static final int SCREEN_HEIGHT = 1080;
+	private static Display display;
 	public static void main(String[] args) {
-		System.out.println("Hello Sweaty Post!");
+		  DrawImageOnCanvas game = new DrawImageOnCanvas();
+		   game.start();
 	}
 }
