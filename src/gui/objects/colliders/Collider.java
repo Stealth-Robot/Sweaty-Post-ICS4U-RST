@@ -1,7 +1,8 @@
-package gui.objects;
+package gui.objects.colliders;
 
 import backend.player.Player;
 import gui.Vector2;
+import gui.objects.Rectangle;
 
 public class Collider extends Rectangle {
 

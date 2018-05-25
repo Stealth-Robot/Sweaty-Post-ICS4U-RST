@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-import gui.objects.Collider;
+import gui.objects.colliders.Collider;
 
 public class Main {
 	public static ArrayList<Collider> sceneColliders = new ArrayList<Collider>();

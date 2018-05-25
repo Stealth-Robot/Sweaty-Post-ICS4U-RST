@@ -1,7 +1,7 @@
 package backend.player;
 
 import gui.Vector2;
-import gui.objects.Collider;
+import gui.objects.colliders.Collider;
 import main.Main;
 
 public class Player extends Collider {
