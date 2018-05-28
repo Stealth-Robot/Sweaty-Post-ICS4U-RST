@@ -6,8 +6,9 @@ import javax.swing.JFrame;
 
 public class Display {
     private static Canvas canvas;
-	public static final int SCREEN_WIDTH = 896;
-	public static final int SCREEN_HEIGHT = 608;
+	public static final int SCREEN_WIDTH = 864;
+	public static final int SCREEN_HEIGHT = 576;
+	public static final int PIXEL_IMAGE_SIZE = 96;
 	public static JFrame mainFrame;
     public Display() {
         initCanvas();

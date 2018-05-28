@@ -4,8 +4,11 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+
+import images.ImageData;
 
 public class DrawImageOnCanvas implements Runnable {
     private Display Display;
@@ -14,14 +17,14 @@ public class DrawImageOnCanvas implements Runnable {
     private BufferStrategy bs;
     private Graphics g;
     private BufferedImage testImage;
-
+    public ArrayList<ImageData> environment = new ArrayList<ImageData>();
     public DrawImageOnCanvas() {
+  
     }
 
     @Override
     public void run() {
         init();
-        System.err.println("run..." + running);
         while (running) {
             //System.err.println("run..." + running);
             tick();
@@ -34,17 +37,15 @@ public class DrawImageOnCanvas implements Runnable {
         bs = Display.getCanvas().getBufferStrategy();
 
         if (bs == null) {
-            System.out.println("bs is null....");
             Display.getCanvas().createBufferStrategy(3);
             return;
         }
 
 
         g = Display.getCanvas().getGraphics();
-        g.drawImage(testImage, 0, 0, null);
-        g.drawImage(testImage, 16, 16, null);
-        g.drawImage(testImage, 0, 16, null);
-        g.drawImage(testImage, 16, 0, null);
+        for(ImageData image : environment) {
+        	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
+        }
     }
 
     private void tick() {
@@ -75,6 +76,15 @@ public class DrawImageOnCanvas implements Runnable {
     private void init() {
         Display = new Display();
         testImage = ImageLoader.loadImage("src/images/test/box_green.png");
+      	environment.add(new ImageData(testImage,0,0));
+    	environment.add(new ImageData(testImage,1,1));
+    	environment.add(new ImageData(testImage,2,2));
+    	environment.add(new ImageData(testImage,3,3));
+    	environment.add(new ImageData(testImage,4,4));
+    	environment.add(new ImageData(testImage,5,5));
+    	environment.add(new ImageData(testImage,6,4));
+    	environment.add(new ImageData(testImage,7,3));
+    	environment.add(new ImageData(testImage,8,2));
     }
 
     public synchronized void start() {
