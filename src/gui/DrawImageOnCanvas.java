@@ -18,6 +18,7 @@ public class DrawImageOnCanvas implements Runnable {
     private Graphics g;
     private BufferedImage testImage;
     public ArrayList<ImageData> environment = new ArrayList<ImageData>();
+    ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
     public DrawImageOnCanvas() {
   
     }
@@ -46,6 +47,8 @@ public class DrawImageOnCanvas implements Runnable {
         for(ImageData image : environment) {
         	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
         }
+        
+        g.drawImage(playerImage.getImage(), 2, 2, null);
     }
 
     private void tick() {
@@ -76,15 +79,11 @@ public class DrawImageOnCanvas implements Runnable {
     private void init() {
         Display = new Display();
         testImage = ImageLoader.loadImage("src/images/test/box_green.png");
-      	environment.add(new ImageData(testImage,0,0));
-    	environment.add(new ImageData(testImage,1,1));
-    	environment.add(new ImageData(testImage,2,2));
-    	environment.add(new ImageData(testImage,3,3));
-    	environment.add(new ImageData(testImage,4,4));
-    	environment.add(new ImageData(testImage,5,5));
-    	environment.add(new ImageData(testImage,6,4));
-    	environment.add(new ImageData(testImage,7,3));
-    	environment.add(new ImageData(testImage,8,2));
+        for(int x = 0; x < 9; x++) {
+        	for(int y = 0; y < 6; y++) {
+        		environment.add(new ImageData(testImage,x,y));
+        	}
+        }
     }
 
     public synchronized void start() {
