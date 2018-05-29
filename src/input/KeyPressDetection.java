@@ -18,7 +18,6 @@ public class KeyPressDetection extends KeyAdapter {
 	 */
 	public void keyPressed(KeyEvent e) {
 		int keys = e.getKeyCode();
-
 		if (keys == KeyEvent.VK_D || keys == KeyEvent.VK_RIGHT) {
 			RIGHT_KEY_DOWN = true;
 		} if (keys == KeyEvent.VK_A || keys == KeyEvent.VK_LEFT) {
@@ -57,7 +56,7 @@ public class KeyPressDetection extends KeyAdapter {
 	}
 
 	/**
-	 * Calculates the x & y value in terms of movement direction
+	 * Calculates the x & y value in terms of movaement direction
 	 * 
 	 * @param isX (true if x value is wanted. false if y value is wanted)
 	 * @return
@@ -68,10 +67,9 @@ public class KeyPressDetection extends KeyAdapter {
 		if (DOWN_KEY_DOWN) y--;
 		if (LEFT_KEY_DOWN) x--;
 		if (RIGHT_KEY_DOWN) x++;
-
-
+		
 		//		System.out.println(x + " | " + y);
-
+		
 		return new Vector2(x, y);
 	}
 }
