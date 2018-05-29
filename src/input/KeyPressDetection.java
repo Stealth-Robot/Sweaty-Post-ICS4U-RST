@@ -2,6 +2,8 @@ package input;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import gui.Vector2;
+
 public class KeyPressDetection extends KeyAdapter {
 
 	// checks if WASD key is pressed down
@@ -17,13 +19,13 @@ public class KeyPressDetection extends KeyAdapter {
 	public void keyPressed(KeyEvent e) {
 		int keys = e.getKeyCode();
 
-		if (keys == KeyEvent.VK_D) {
+		if (keys == KeyEvent.VK_D || keys == KeyEvent.VK_RIGHT) {
 			RIGHT_KEY_DOWN = true;
-		} if (keys == KeyEvent.VK_A) {
+		} if (keys == KeyEvent.VK_A || keys == KeyEvent.VK_LEFT) {
 			LEFT_KEY_DOWN = true;
-		} if (keys == KeyEvent.VK_W) {
+		} if (keys == KeyEvent.VK_W || keys == KeyEvent.VK_UP) {
 			UP_KEY_DOWN = true;
-		} if (keys == KeyEvent.VK_S) {
+		} if (keys == KeyEvent.VK_S || keys == KeyEvent.VK_DOWN) {
 			DOWN_KEY_DOWN = true;
 		}
 	}
@@ -35,13 +37,13 @@ public class KeyPressDetection extends KeyAdapter {
 	public void keyReleased(KeyEvent e) {
 		int keys = e.getKeyCode();
 
-		if (keys == KeyEvent.VK_D) {
+		if (keys == KeyEvent.VK_D || keys == KeyEvent.VK_RIGHT) {
 			RIGHT_KEY_DOWN = false;
-		} if (keys == KeyEvent.VK_A) {
+		} if (keys == KeyEvent.VK_A || keys == KeyEvent.VK_LEFT) {
 			LEFT_KEY_DOWN = false;
-		} if (keys == KeyEvent.VK_W) {
+		} if (keys == KeyEvent.VK_W || keys == KeyEvent.VK_UP) {
 			UP_KEY_DOWN = false;
-		} if (keys == KeyEvent.VK_S) {
+		} if (keys == KeyEvent.VK_S || keys == KeyEvent.VK_DOWN) {
 			DOWN_KEY_DOWN = false;
 		}
 	}
@@ -60,7 +62,7 @@ public class KeyPressDetection extends KeyAdapter {
 	 * @param isX (true if x value is wanted. false if y value is wanted)
 	 * @return
 	 */
-	public int processKeyEvent(boolean isX) {
+	public Vector2 processKeyEvent() {
 		int x = 0, y = 0;
 		if (UP_KEY_DOWN) y++;
 		if (DOWN_KEY_DOWN) y--;
@@ -70,7 +72,6 @@ public class KeyPressDetection extends KeyAdapter {
 
 		//		System.out.println(x + " | " + y);
 
-		if (isX) return x;
-		else return y;
+		return new Vector2(x, y);
 	}
 }
