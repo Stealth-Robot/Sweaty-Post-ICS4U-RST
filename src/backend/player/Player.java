@@ -21,7 +21,7 @@ public class Player extends Collider {
 	 * @param xAxis -1 for left, 1 for right
 	 * @param yAxis -1 for down, 1 for up
 	 */
-	private Movement move(int xAxis, int yAxis) {
+	private Movement move(double xAxis, double yAxis) {
 		if(xAxis == 0) {
 			if(yAxis > 0)
 				return Movement.NORTH;
@@ -49,7 +49,7 @@ public class Player extends Collider {
 		
 		return Movement.NONE;
 	}
-	public void updateCharacter(int xAxis, int yAxis) {
+	public void updateCharacter(double xAxis, double yAxis) {
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		position.x += xAxis / magnitude;
 		position.y += yAxis / magnitude;

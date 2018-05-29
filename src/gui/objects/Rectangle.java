@@ -10,6 +10,7 @@ public class Rectangle {
 	public Rectangle(int length, int width, Vector2 position) {
 		this.length = length;
 		this.width = width;
+		this.position = position;
 	}
 	public int getLength() {
 		return length;

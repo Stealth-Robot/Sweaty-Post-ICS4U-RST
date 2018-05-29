@@ -2,6 +2,8 @@ package input;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import gui.Vector2;
+
 public class KeyPressDetection extends KeyAdapter {
 
 	// checks if WASD key is pressed down
@@ -16,7 +18,6 @@ public class KeyPressDetection extends KeyAdapter {
 	 */
 	public void keyPressed(KeyEvent e) {
 		int keys = e.getKeyCode();
-
 		if (keys == KeyEvent.VK_D) {
 			RIGHT_KEY_DOWN = true;
 		} if (keys == KeyEvent.VK_A) {
@@ -55,22 +56,19 @@ public class KeyPressDetection extends KeyAdapter {
 	}
 
 	/**
-	 * Calculates the x & y value in terms of movement direction
+	 * Calculates the x & y value in terms of movaement direction
 	 * 
 	 * @param isX (true if x value is wanted. false if y value is wanted)
 	 * @return
 	 */
-	public int processKeyEvent(boolean isX) {
+	public Vector2 processKeyEvent() {
 		int x = 0, y = 0;
 		if (UP_KEY_DOWN) y++;
 		if (DOWN_KEY_DOWN) y--;
 		if (LEFT_KEY_DOWN) x--;
 		if (RIGHT_KEY_DOWN) x++;
-
-
 		//		System.out.println(x + " | " + y);
 
-		if (isX) return x;
-		else return y;
+		return new Vector2(x,y);
 	}
 }

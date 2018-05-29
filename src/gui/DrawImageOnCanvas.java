@@ -8,16 +8,18 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import backend.player.Player;
 import images.ImageData;
 
 public class DrawImageOnCanvas implements Runnable {
-    private Display Display;
+    private Display display;
     private Thread t;
     private boolean running;
     private BufferStrategy bs;
     private Graphics g;
     private BufferedImage testImage;
     public ArrayList<ImageData> environment = new ArrayList<ImageData>();
+    public Player player;
     ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
     public DrawImageOnCanvas() {
   
@@ -28,31 +30,33 @@ public class DrawImageOnCanvas implements Runnable {
         init();
         while (running) {
             //System.err.println("run..." + running);
-            tick();
+        	tick();
             render();
+            
         }
         //stop();
     }
 
     private void render() {
-        bs = Display.getCanvas().getBufferStrategy();
+        bs = display.getCanvas().getBufferStrategy();
 
         if (bs == null) {
-            Display.getCanvas().createBufferStrategy(3);
+            display.getCanvas().createBufferStrategy(3);
             return;
         }
 
 
-        g = Display.getCanvas().getGraphics();
+        g = display.getCanvas().getGraphics();
         for(ImageData image : environment) {
         	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
         }
-        
-        g.drawImage(playerImage.getImage(), 2, 2, null);
+        g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+       
     }
 
     private void tick() {
-
+    	Vector2 movement = Display.keyPress.processKeyEvent();
+    	player.updateCharacter(movement.x, movement.y);
     }
 
     private static final class ImageLoader
@@ -77,7 +81,8 @@ public class DrawImageOnCanvas implements Runnable {
     }
 
     private void init() {
-        Display = new Display();
+    	player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
+        display = new Display();
         testImage = ImageLoader.loadImage("src/images/test/box_green.png");
         for(int x = 0; x < 9; x++) {
         	for(int y = 0; y < 6; y++) {
