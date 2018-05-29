@@ -1,5 +1,8 @@
 package PresentationClasses;
-
+/*
+ * This is something we have to implement :(
+ * - grayden
+ */
 public class Human {
 	private String name, sex, horseName, whiskeyPreference;
 	

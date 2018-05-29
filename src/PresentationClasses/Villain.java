@@ -1,5 +1,8 @@
 package PresentationClasses;
-
+/*
+ * This is something we have to implement :(
+ * - grayden
+ */
 import java.util.ArrayList;
 
 public class Villain extends Human {

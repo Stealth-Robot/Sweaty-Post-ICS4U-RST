@@ -57,7 +57,7 @@ public class KeyPressDetection extends KeyAdapter {
 	/**
 	 * Calculates the x & y value in terms of movement direction
 	 * 
-	 * @param isX true if x value is wanted. false if y value is wanted.
+	 * @param isX (true if x value is wanted. false if y value is wanted)
 	 * @return
 	 */
 	public int processKeyEvent(boolean isX) {
@@ -68,25 +68,9 @@ public class KeyPressDetection extends KeyAdapter {
 		if (RIGHT_KEY_DOWN) x++;
 
 
-//		System.out.println(x + " | " + y);
+		//		System.out.println(x + " | " + y);
 
-		if (isX) {
-			return x;
-		}
+		if (isX) return x;
 		else return y;
-		//Call Movement stuffs
-//		if (y == 1) {
-//			if (x == 1) return NORTH_EAST;
-//			else if (x == -1) return NORTH_WEST;
-//			else return NORTH;
-//		} else if (y == -1) {
-//			if (x == 1) return SOUTH_EAST;
-//			else if (x == -1) return SOUTH_WEST;
-//			else return SOUTH;
-//		} else {
-//			if (x == 1) return EAST;
-//			else if (x == -1) return WEST;
-//			else return NONE;
-//		} 
 	}
 }

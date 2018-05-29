@@ -1,5 +1,8 @@
 package PresentationClasses;
-
+/*
+ * This is something we have to implement :(
+ * - grayden
+ */
 public class WesternTown {
 	private int stables, saloon, sherrifs, troublemakers, time;
 	private String location;
