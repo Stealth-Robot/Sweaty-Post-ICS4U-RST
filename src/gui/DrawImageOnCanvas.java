@@ -1,4 +1,5 @@
 package gui;
+import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -83,7 +84,7 @@ public class DrawImageOnCanvas implements Runnable {
     private void init() {
     	player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
         display = new Display();
-        testImage = ImageLoader.loadImage("src/images/test/box_green.png");
+        testImage = ImageLoader.loadImage("src/images/sprites/Desrt.png");
         for(int x = 0; x < 9; x++) {
         	for(int y = 0; y < 6; y++) {
         		environment.add(new ImageData(testImage,x,y));
