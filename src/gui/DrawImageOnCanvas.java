@@ -1,5 +1,6 @@
 package gui;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -11,47 +12,33 @@ import javax.imageio.ImageIO;
 import backend.player.Player;
 import images.ImageData;
 
-public class DrawImageOnCanvas implements Runnable {
+public class DrawImageOnCanvas {
     private Display display;
     private Thread t;
     private boolean running;
     private BufferStrategy bs;
-    private Graphics g;
+    private Graphics2D g;
     private BufferedImage testImage;
     public ArrayList<ImageData> environment = new ArrayList<ImageData>();
     public Player player;
     ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
     public DrawImageOnCanvas() {
-  
+    	System.out.println("init");
+    	init();
     }
 
-    @Override
-    public void run() {
-        init();
-        while (running) {
+    public void run(Graphics g) {
             //System.err.println("run..." + running);
         	tick();
-            render();
-            
-        }
+            render(g);
         //stop();
     }
 
-    private void render() {
-        bs = display.getCanvas().getBufferStrategy();
-
-        if (bs == null) {
-            display.getCanvas().createBufferStrategy(3);
-            return;
-        }
-
-
-        g = display.getCanvas().getGraphics();
-        for(ImageData image : environment) {
+    public void render(Graphics g) {
+        ImageData image = environment.get(2);
         	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
-        }
         g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
-       
+
     }
 
     private void tick() {
@@ -59,7 +46,7 @@ public class DrawImageOnCanvas implements Runnable {
     	player.updateCharacter(movement.x, movement.y);
     }
 
-    private static final class ImageLoader
+    public static final class ImageLoader
     {
 
         static BufferedImage loadImage(String fileName)
@@ -80,7 +67,8 @@ public class DrawImageOnCanvas implements Runnable {
         }
     }
 
-    private void init() {
+    public void init() {
+    	System.out.println("INITIALIZE");
     	player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
         display = new Display();
         testImage = ImageLoader.loadImage("src/images/test/box_green.png");
@@ -94,8 +82,6 @@ public class DrawImageOnCanvas implements Runnable {
     public synchronized void start() {
         if (running) return;
         running = true;
-        t = new Thread(this);
-        t.start();
 
     }
 

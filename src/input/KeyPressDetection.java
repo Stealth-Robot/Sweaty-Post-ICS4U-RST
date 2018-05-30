@@ -16,6 +16,7 @@ public class KeyPressDetection extends KeyAdapter {
 	 * Sets the WASD boolean value to true if the key is pressed down
 	 * @param e key event.
 	 */
+	@Override
 	public void keyPressed(KeyEvent e) {
 		int keys = e.getKeyCode();
 		if (keys == KeyEvent.VK_D) {
@@ -33,6 +34,7 @@ public class KeyPressDetection extends KeyAdapter {
 	 * Sets the WASD boolean value to false if the key is released
 	 * @param e key event.
 	 */
+	@Override
 	public void keyReleased(KeyEvent e) {
 		int keys = e.getKeyCode();
 
@@ -51,6 +53,7 @@ public class KeyPressDetection extends KeyAdapter {
 	 * Creates a KeyEvent to be used every tick
 	 * @param e key event.
 	 */
+	@Override
 	public void keyTyped(KeyEvent e) {
 
 	}
@@ -62,13 +65,13 @@ public class KeyPressDetection extends KeyAdapter {
 	 * @return
 	 */
 	public Vector2 processKeyEvent() {
+		
 		int x = 0, y = 0;
 		if (UP_KEY_DOWN) y++;
 		if (DOWN_KEY_DOWN) y--;
 		if (LEFT_KEY_DOWN) x--;
 		if (RIGHT_KEY_DOWN) x++;
 		//		System.out.println(x + " | " + y);
-
 		return new Vector2(x,y);
 	}
 }
