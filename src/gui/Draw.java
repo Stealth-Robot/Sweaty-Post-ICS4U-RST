@@ -46,8 +46,7 @@ addKeyListener(new TAdapter());
 					}
 				};
 
-				thread.start();
-			
+				thread.start();			
 		}
 	}
 	
