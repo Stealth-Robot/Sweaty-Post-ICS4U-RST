@@ -36,6 +36,18 @@ addKeyListener(new TAdapter());
 		}
 		} catch(Exception e) {
 			System.out.println("succ");
+				first = false;
+				Thread thread = new Thread() {
+					public void run() {
+						while (true) {
+							paintComponent(g);
+						}
+
+					}
+				};
+
+				thread.start();
+			
 		}
 	}
 	
