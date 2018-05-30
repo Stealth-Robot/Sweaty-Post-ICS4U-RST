@@ -47,6 +47,10 @@ public class DrawImageOnCanvas implements Runnable {
         }
 
 
+        g = display.getCanvas().getGraphics();
+        for(ImageData image : environment) {
+        	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
+        }
         
         g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
        
@@ -86,10 +90,6 @@ public class DrawImageOnCanvas implements Runnable {
         	for(int y = 0; y < 6; y++) {
         		environment.add(new ImageData(testImage,x,y));
         	}
-        	g = display.getCanvas().getGraphics();
-            for(ImageData image : environment) {
-            	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
-            }
         }
     }
 
