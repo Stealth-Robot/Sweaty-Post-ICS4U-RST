@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import gui.DrawImageOnCanvas;
 import gui.objects.colliders.Collider;
-
+//update
 public class Main {
 	public static ArrayList<Collider> sceneColliders = new ArrayList<Collider>();
 	public static DrawImageOnCanvas game;

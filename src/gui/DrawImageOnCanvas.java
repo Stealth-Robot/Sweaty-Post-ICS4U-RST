@@ -1,4 +1,5 @@
 package gui;
+import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
@@ -34,15 +35,20 @@ public class DrawImageOnCanvas {
         //stop();
     }
 
+
     public void render(Graphics g) {
-        ImageData image = environment.get(2);
+
+        for(ImageData image : environment) {
         	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
+        }
+        
         g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
 
     }
 
     private void tick() {
-    	Vector2 movement = Display.keyPress.processKeyEvent();
+    	Vector2 movement = Display.keyMovement.processKeyEvent();
+    	Display.keyInteract.processKeyEvent();
     	player.updateCharacter(movement.x, movement.y);
     }
 
@@ -71,7 +77,7 @@ public class DrawImageOnCanvas {
     	System.out.println("INITIALIZE");
     	player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
         display = new Display();
-        testImage = ImageLoader.loadImage("src/images/test/box_green.png");
+        testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
         for(int x = 0; x < 9; x++) {
         	for(int y = 0; y < 6; y++) {
         		environment.add(new ImageData(testImage,x,y));
