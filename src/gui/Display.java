@@ -4,6 +4,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import input.KeyPressDetectionInteract;
 import input.KeyPressDetectionMovement;
 
 public class Display {
@@ -12,7 +13,8 @@ public class Display {
 	public static final int SCREEN_HEIGHT = 576;
 	public static final int PIXEL_IMAGE_SIZE = 96;
 	public static JFrame mainFrame;
-	public static KeyPressDetectionMovement keyPress;
+	public static KeyPressDetectionMovement keyMovement;
+	public static KeyPressDetectionInteract keyInteract;
     public Display() {
         initCanvas();
     }
@@ -25,11 +27,14 @@ public class Display {
 		  mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		  canvas = new Canvas();
+	        keyMovement = new KeyPressDetectionMovement();
+	        keyInteract = new KeyPressDetectionInteract();
 	        canvas.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 	        canvas.setMaximumSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 	        canvas.setMinimumSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-	        keyPress = new KeyPressDetectionMovement();
-	        mainFrame.addKeyListener(keyPress);
+	        canvas.addKeyListener(keyMovement);
+	        canvas.addKeyListener(keyInteract);
+	        
 	        mainFrame.add(canvas);
 	        mainFrame.pack();
 

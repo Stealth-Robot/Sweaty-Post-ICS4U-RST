@@ -1,6 +1,7 @@
 package gui;
 import java.awt.Canvas;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -17,7 +18,7 @@ public class DrawImageOnCanvas implements Runnable {
     private Thread t;
     private boolean running;
     private BufferStrategy bs;
-    private Graphics g;
+    private Graphics2D g;
     private BufferedImage testImage;
     public ArrayList<ImageData> environment = new ArrayList<ImageData>();
     public Player player;
@@ -47,7 +48,7 @@ public class DrawImageOnCanvas implements Runnable {
         }
 
 
-        g = display.getCanvas().getGraphics();
+        g = (Graphics2D)display.getCanvas().getGraphics();
         for(ImageData image : environment) {
         	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
         }
@@ -57,7 +58,8 @@ public class DrawImageOnCanvas implements Runnable {
     }
 
     private void tick() {
-    	Vector2 movement = Display.keyPress.processKeyEvent();
+    	Vector2 movement = Display.keyMovement.processKeyEvent();
+    	Display.keyInteract.processKeyEvent();
     	player.updateCharacter(movement.x, movement.y);
     }
 
