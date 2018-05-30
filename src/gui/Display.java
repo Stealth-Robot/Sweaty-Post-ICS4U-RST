@@ -4,7 +4,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import input.KeyPressDetection;
+import input.KeyPressDetectionMovement;
 
 public class Display {
     private static Canvas canvas;
@@ -12,7 +12,7 @@ public class Display {
 	public static final int SCREEN_HEIGHT = 576;
 	public static final int PIXEL_IMAGE_SIZE = 96;
 	public static JFrame mainFrame;
-	public static KeyPressDetection keyPress;
+	public static KeyPressDetectionMovement keyPress;
     public Display() {
         initCanvas();
     }
@@ -28,7 +28,7 @@ public class Display {
 	        canvas.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 	        canvas.setMaximumSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 	        canvas.setMinimumSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-	        keyPress = new KeyPressDetection();
+	        keyPress = new KeyPressDetectionMovement();
 	        mainFrame.addKeyListener(keyPress);
 	        mainFrame.add(canvas);
 	        mainFrame.pack();

@@ -4,9 +4,9 @@ import java.awt.event.KeyEvent;
 
 import gui.Vector2;
 
-public class KeyPressDetection extends KeyAdapter {
+public class KeyPressDetectionMovement extends KeyAdapter {
 
-	// checks if WASD key is pressed down
+	// checks if WASD keys or arrow keys are pressed down
 	public boolean LEFT_KEY_DOWN = false;
 	public boolean RIGHT_KEY_DOWN = false;
 	public boolean UP_KEY_DOWN = false;
@@ -17,6 +17,8 @@ public class KeyPressDetection extends KeyAdapter {
 	 * @param e key event.
 	 */
 	public void keyPressed(KeyEvent e) {
+		//checks WASD or arrow keys and sets the value to true when the key is originally pressed
+		//called once per press
 		int keys = e.getKeyCode();
 		if (keys == KeyEvent.VK_D || keys == KeyEvent.VK_RIGHT) {
 			RIGHT_KEY_DOWN = true;
@@ -34,6 +36,8 @@ public class KeyPressDetection extends KeyAdapter {
 	 * @param e key event.
 	 */
 	public void keyReleased(KeyEvent e) {
+		//checks WASD or arrow keys and sets the value to false when the key is released after being pressed
+		//Called once per release
 		int keys = e.getKeyCode();
 
 		if (keys == KeyEvent.VK_D || keys == KeyEvent.VK_RIGHT) {
@@ -52,7 +56,7 @@ public class KeyPressDetection extends KeyAdapter {
 	 * @param e key event.
 	 */
 	public void keyTyped(KeyEvent e) {
-
+		//Nothing goes here
 	}
 
 	/**
@@ -62,14 +66,15 @@ public class KeyPressDetection extends KeyAdapter {
 	 * @return
 	 */
 	public Vector2 processKeyEvent() {
+		//Increases and decreases X and Y values when buttons are pressed
 		int x = 0, y = 0;
-		if (UP_KEY_DOWN) y++;
-		if (DOWN_KEY_DOWN) y--;
+		if (UP_KEY_DOWN) y--;
+		if (DOWN_KEY_DOWN) y++;
 		if (LEFT_KEY_DOWN) x--;
 		if (RIGHT_KEY_DOWN) x++;
-		
+
 		//		System.out.println(x + " | " + y);
-		
+
 		return new Vector2(x, y);
 	}
 }
