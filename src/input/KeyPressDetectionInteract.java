@@ -48,11 +48,9 @@ public class KeyPressDetectionInteract extends KeyAdapter {
 	public boolean processKeyEvent() {
 		//Increases and decreases X and Y values when buttons are pressed
 		if (interacted && interactedfirst) {
-			System.out.println(true);
 			interactedfirst = false;
 			return true;
 		} else {
-			System.out.println(false);
 			return false;
 		}
 
