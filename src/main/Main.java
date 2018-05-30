@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import gui.Display;
 import gui.DrawImageOnCanvas;
 import gui.objects.colliders.Collider;
+import java.lang.Math;
 //update
 public class Main {
 	public static ArrayList<Collider> sceneColliders = new ArrayList<Collider>();

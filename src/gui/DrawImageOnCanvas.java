@@ -88,7 +88,30 @@ public class DrawImageOnCanvas implements Runnable {
         testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
         for(int x = 0; x < 9; x++) {
         	for(int y = 0; y < 6; y++) {
-        		environment.add(new ImageData(testImage,x,y));
+        		int worldGen = (int) (12 * Math.random() + 1);
+		        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
+		        {
+		            case 1:  
+		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+	        		break;
+		            case 2:  
+		                testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertRock.png");
+	        		break;
+		            case 3:  
+		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+	        		break;
+		            case 4:  
+		                testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertFlower.png");
+	        		break;
+		            case 5:  
+		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+	        		break;
+		            default:  
+		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+	        		break;
+		        }	        		
+		        environment.add(new ImageData(testImage,x,y));
+	            	
         	}
         }
     }
