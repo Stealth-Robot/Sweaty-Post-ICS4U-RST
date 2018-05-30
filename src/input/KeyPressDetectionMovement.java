@@ -7,10 +7,10 @@ import gui.Vector2;
 public class KeyPressDetectionMovement extends KeyAdapter {
 
 	// checks if WASD keys or arrow keys are pressed down
-	public boolean LEFT_KEY_DOWN = false;
-	public boolean RIGHT_KEY_DOWN = false;
-	public boolean UP_KEY_DOWN = false;
-	public boolean DOWN_KEY_DOWN = false;
+	private boolean LEFT_KEY_DOWN = false;
+	private boolean RIGHT_KEY_DOWN = false;
+	private boolean UP_KEY_DOWN = false;
+	private boolean DOWN_KEY_DOWN = false;
 
 	/**
 	 * Sets the WASD boolean value to true if the key is pressed down
