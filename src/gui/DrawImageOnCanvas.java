@@ -47,10 +47,8 @@ public class DrawImageOnCanvas {
     }
 
     private void tick() {
-    	System.out.print(MovementFromInputs.getPositionRelativeToInputs().toString());
-//    	//uncomment when drawings get fixed 
-//    	Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
-//    	player.updateCharacter(move.x, move.y);
+    	Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
+    	player.updateCharacter(move.x, move.y);
     	
     }
 
