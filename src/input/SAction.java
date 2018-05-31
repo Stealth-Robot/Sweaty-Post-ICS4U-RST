@@ -4,13 +4,13 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-import backend.player.Movement;
+import backend.player.MovementFromInputs;
 
 public class SAction extends AbstractAction
 {
 	@Override
 	public void actionPerformed( ActionEvent tf )
 	{
-		Movement.DownPressed = true;
+		MovementFromInputs.DownPressed = true;
 	}
 } 

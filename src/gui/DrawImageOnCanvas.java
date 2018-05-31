@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import backend.player.Movement;
+import backend.player.MovementFromInputs;
 import backend.player.Player;
 import images.ImageData;
 
@@ -47,7 +47,11 @@ public class DrawImageOnCanvas {
     }
 
     private void tick() {
-    	System.out.print(Movement.getPositionRelativeToInputs().toString());
+    	System.out.print(MovementFromInputs.getPositionRelativeToInputs().toString());
+//    	//uncomment when drawings get fixed 
+//    	Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
+//    	player.updateCharacter(move.x, move.y);
+    	
     }
 
     public static final class ImageLoader

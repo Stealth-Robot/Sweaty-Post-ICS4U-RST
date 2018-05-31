@@ -2,7 +2,7 @@ package backend.player;
 
 import gui.Vector2;
 
-public class Movement {
+public class MovementFromInputs {
 	//Movement coordinates
 	static public boolean RightPressed;
 	static public boolean LeftPressed;

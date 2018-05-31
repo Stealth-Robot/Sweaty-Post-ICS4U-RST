@@ -51,7 +51,6 @@ public class Player extends Collider {
 		return Movement.NONE;
 	}
 	public void updateCharacter(double xAxis, double yAxis) {
-		yAxis = -yAxis;
 		//System.out.println(xAxis);
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		if(xAxis == 0 && yAxis == 0) {
