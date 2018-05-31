@@ -11,7 +11,7 @@ import javax.swing.KeyStroke;
 import input.*;;
 
 public class Display {
-    private static Draw canvas;
+private static Draw canvas;
 	public static final int SCREEN_WIDTH = 864;
 	public static final int SCREEN_HEIGHT = 576;
 	public static final int PIXEL_IMAGE_SIZE = 96;

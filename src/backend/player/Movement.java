@@ -9,8 +9,8 @@ public class Movement {
 	static public boolean UpPressed;
 	static public boolean DownPressed;	
 	
-	private double x;
-	private double y;
+	private static double x;
+	private static double y;
 	
 	static public Vector2 getPositionRelativeToInputs() {
 		x = 0;
