@@ -10,9 +10,6 @@ import main.Main;
 
 @SuppressWarnings("serial")
 public class Draw extends JPanel {
-	public Draw() {
-addKeyListener(new TAdapter());
-	}
 
 	boolean first = true;
 
@@ -50,17 +47,4 @@ addKeyListener(new TAdapter());
 				thread.start();			
 		}
 	}
-	
-    private class TAdapter extends KeyAdapter {
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            System.out.println("ayy");
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-        	System.out.println("ayy");
-        }
-    }
 }

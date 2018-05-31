@@ -8,7 +8,7 @@ public class WAction extends AbstractAction
 {
 	@Override
 	public void actionPerformed( ActionEvent tf ) {
-		// TODO Auto-generated method stub
+		System.out.println("The W key has been pressed.");
 		
 	}
 }
