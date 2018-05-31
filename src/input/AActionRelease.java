@@ -4,10 +4,12 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import backend.player.Movement;
+
 public class AActionRelease extends AbstractAction
 {
 	public void actionPerformed( ActionEvent tf )
 	{
-		System.out.println( "The A key has been released." );
+		Movement.LeftPressed = false;
 	} 
 }

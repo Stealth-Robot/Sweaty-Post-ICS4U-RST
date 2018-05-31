@@ -4,12 +4,13 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import backend.player.Movement;
+
 public class SAction extends AbstractAction
 {
 	@Override
 	public void actionPerformed( ActionEvent tf )
 	{
-		System.out.println( "The S key has been pressed." );
-
+		Movement.DownPressed = true;
 	}
 } 

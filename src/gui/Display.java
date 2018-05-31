@@ -44,10 +44,10 @@ public class Display {
 	        wActionRelease = new WActionRelease();
 
 	       
-	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "A" ), "doaAction" );
-	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "D" ), "dodAction" );
-	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "W" ), "dowAction" );
-	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "S" ), "dosAction" );
+	        canvas.getInputMap().put(KeyStroke.getKeyStroke("A"), "doaAction");
+	        canvas.getInputMap().put(KeyStroke.getKeyStroke("D"), "dodAction");
+	        canvas.getInputMap().put(KeyStroke.getKeyStroke("W"), "dowAction");
+	        canvas.getInputMap().put(KeyStroke.getKeyStroke("S"), "dosAction");
 	        canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_A, 0,true)), "doaActionRelease");
 	        canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_D, 0,true)), "dodActionRelease");
 	        canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_W, 0,true)), "dowActionRelease");
