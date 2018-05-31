@@ -46,9 +46,9 @@ public class DrawImageOnCanvas {
     }
 
     private void tick() {
-    	Vector2 movement = Display.keyMovement.processKeyEvent();
-    	Display.keyInteract.processKeyEvent();
-    	player.updateCharacter(movement.x, movement.y);
+    	//Vector2 movement = Display.keyMovement.processKeyEvent();
+    	//Display.keyInteract.processKeyEvent();
+    	//player.updateCharacter(movement.x, movement.y);
     }
 
     public static final class ImageLoader
