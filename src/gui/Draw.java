@@ -12,39 +12,35 @@ import main.Main;
 public class Draw extends JPanel {
 
 	boolean first = true;
-
+	public void rpaint() {
+		this.repaint();
+	}
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		
 		try {
-		Main.game.run(g);
-		if (first) {
-			first = false;
-			Thread thread = new Thread() {
-				public void run() {
-					while (true) {
-						paintComponent(g);
-					}
+			
+			if (Main.game != null) {
+				g.drawRect(0, 0, 100, 100);
+				Main.game.run(g);
+			}
 
-				}
-			};
-
-			thread.start();
-		}
-		} catch(Exception e) {
-//			System.out.println("PaintComponent ERROR catch");
+			if (first) {
 				first = false;
 				Thread thread = new Thread() {
 					public void run() {
 						while (true) {
-//							paintComponent(g);
-//							System.out.println("PaintComponent ERROR2 catch");
+							rpaint();
 						}
 
 					}
 				};
 
-				thread.start();			
+				thread.start();
+			}
+		} catch (Exception e) {
+			// System.out.println("PaintComponent ERROR catch");
 		}
 	}
 }
