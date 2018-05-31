@@ -22,7 +22,6 @@ public class Draw extends JPanel {
 		try {
 			
 			if (Main.game != null) {
-				g.drawRect(0, 0, 100, 100);
 				Main.game.run(g);
 			}
 
