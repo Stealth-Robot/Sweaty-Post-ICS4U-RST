@@ -1,7 +1,7 @@
 package gui.objects.colliders;
 
-import gui.Scene;
 import gui.Vector2;
+import gui.scenes.Scene;
 
 public class SceneChangeCollider extends InteractiveCollider {
 	private Scene scene;
@@ -12,7 +12,7 @@ public class SceneChangeCollider extends InteractiveCollider {
 
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
-		scene.instantiate();
+		//scene.instantiate();
 	}
 
 }

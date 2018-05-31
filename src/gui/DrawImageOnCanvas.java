@@ -5,144 +5,113 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
 import backend.player.MovementFromInputs;
 import backend.player.Player;
 import backend.player.Player.Direction;
+import gui.scenes.DesertScene;
+import gui.scenes.Scene;
 import images.ImageData;
 
 public class DrawImageOnCanvas {
-    private Display display;
-    private Thread t;
-    private boolean running;
-    private BufferStrategy bs;
-    private Graphics2D g;
-    private BufferedImage testImage;
-    public ArrayList<ImageData> environment = new ArrayList<ImageData>();
-    public Player player;
-    ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
-    public DrawImageOnCanvas() {
-    	System.out.println("init");
-    	init();
-    }
+	private Display display;
+	private Thread t;
+	private boolean running;
+	private BufferStrategy bs;
+	private Graphics2D g;
+	public Scene currentScene;
+	private BufferedImage testImage;
 
-    public void run(Graphics g) {
-            //System.err.println("run..." + running);
-        	tick();
-            render(g);
-        //stop();
-    }
+	public Player player;
+	ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
+	public DrawImageOnCanvas() {
+		System.out.println("init");
+		init();
+	}
+
+	public void run(Graphics g) {
+		//System.err.println("run..." + running);
+		tick();
+		render(g);
+		//stop();
+	}
 
 
-    public void render(Graphics g) {
+	public void render(Graphics g) {
 
-        for(ImageData image : environment) {
-        	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
-        }
-        drawPlayer(g);
+		currentScene.render(g);
+		drawPlayer(g);
+	}
 
-    }
-    
-    public void drawPlayer(Graphics g) {
-    	Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
-    	player.updateCharacter(move.x, move.y);
-    	if (player.rotatePlayer(move.x , move.y).equals(Direction.UP)) {
-            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
-    	}
-    	if (player.rotatePlayer(move.x , move.y).equals(Direction.DOWN)) {
-            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
-    	}
-    	if (player.rotatePlayer(move.x , move.y).equals(Direction.LEFT)) {
-            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
-    	}
-    	if (player.rotatePlayer(move.x , move.y).equals(Direction.RIGHT)) {
-            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
-    	}
-    }
+	public void drawPlayer(Graphics g) {
+		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
+		player.updateCharacter(move.x, move.y);
+		if (player.rotatePlayer(move.x , move.y).equals(Direction.UP)) {
+			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		}
+		if (player.rotatePlayer(move.x , move.y).equals(Direction.DOWN)) {
+			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		}
+		if (player.rotatePlayer(move.x , move.y).equals(Direction.LEFT)) {
+			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		}
+		if (player.rotatePlayer(move.x , move.y).equals(Direction.RIGHT)) {
+			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		}
+	}
 
-    private void tick() {
-    	Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
-    	player.updateCharacter(move.x, move.y);
-    }
+	private void tick() {
+		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
+		player.updateCharacter(move.x, move.y);
+	}
 
-    public static final class ImageLoader
-    {
+	public static final class ImageLoader
+	{
 
-        static BufferedImage loadImage(String fileName)
-        {
-            BufferedImage bi = null;
-            //System.err.println("....setimg...." + fileName);
+		public static BufferedImage loadImage(String fileName)
+		{
+			BufferedImage bi = null;
+			//System.err.println("....setimg...." + fileName);
 
-            try {
-                bi = ImageIO.read(new File(fileName)); 
+			try {
+				bi = ImageIO.read(new File(fileName)); 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("Image could not be read");
-                System.exit(1);
-            }
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println("Image could not be read");
+				System.exit(1);
+			}
 
-            return bi;
-        }
-    }
+			return bi;
+		}
+	}
 
-    public void init() {
-    	System.out.println("INITIALIZE");
-    	player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
-        display = new Display();
-        testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
-        for(int x = 0; x < 9; x++) {
-        	for(int y = 0; y < 6; y++) {
-        		int worldGen = (int) (12 * Math.random() + 1);
-		        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
-		        {
-		            case 1:  
-		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
-	        		break;
-		            case 2:  
-		                testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertRock.png");
-	        		break;
-		            case 3:  
-		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
-	        		break;
-		            case 4:  
-		                testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertFlower.png");
-	        		break;
-		            case 5:  
-		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
-	        		break;
-		            default:  
-		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
-	        		break;
-		        }	        		  
-                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
-        		
-		        environment.add(new ImageData(testImage,x,y));
-	            	
-        	}
-        }
-    }
+	public void init() {
+		System.out.println("INITIALIZE");
+		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
+		display = new Display();
+		currentScene = new DesertScene();
+	}
 
-    public synchronized void start() {
-        if (running) return;
-        running = true;
+	public synchronized void start() {
+		if (running) return;
+		running = true;
 
-    }
+	}
 
-    public synchronized void stop() {
-        if (!running)
-            return;
-        running = false;
-        try {
-            t.join();
-        } catch (InterruptedException e) {
+	public synchronized void stop() {
+		if (!running)
+			return;
+		running = false;
+		try {
+			t.join();
+		} catch (InterruptedException e) {
 
-            e.printStackTrace();
-        }
+			e.printStackTrace();
+		}
 
-    }
+	}
 
 }

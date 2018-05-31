@@ -39,7 +39,7 @@ public class Draw extends JPanel {
 				  public void run() {
 					  rpaint();
 				  }
-				}, 0, 1, TimeUnit.MILLISECONDS);
+				}, 0, 5, TimeUnit.MILLISECONDS);
 				first = false;
 			}
 		} catch (Exception e) {
