@@ -35,12 +35,13 @@ addKeyListener(new TAdapter());
 			thread.start();
 		}
 		} catch(Exception e) {
-			//System.out.println("succ");
+//			System.out.println("PaintComponent ERROR catch");
 				first = false;
 				Thread thread = new Thread() {
 					public void run() {
 						while (true) {
-							//paintComponent(g);
+//							paintComponent(g);
+//							System.out.println("PaintComponent ERROR2 catch");
 						}
 
 					}

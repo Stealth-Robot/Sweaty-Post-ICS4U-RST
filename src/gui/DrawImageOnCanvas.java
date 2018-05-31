@@ -97,7 +97,9 @@ public class DrawImageOnCanvas {
 		            default:  
 		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
 	        		break;
-		        }	        		
+		        }	        		  
+                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+        		
 		        environment.add(new ImageData(testImage,x,y));
 	            	
         	}
