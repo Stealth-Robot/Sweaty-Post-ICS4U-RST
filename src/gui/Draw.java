@@ -35,12 +35,12 @@ addKeyListener(new TAdapter());
 			thread.start();
 		}
 		} catch(Exception e) {
-			System.out.println("succ");
+			//System.out.println("succ");
 				first = false;
 				Thread thread = new Thread() {
 					public void run() {
 						while (true) {
-							paintComponent(g);
+							//paintComponent(g);
 						}
 
 					}

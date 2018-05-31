@@ -2,11 +2,12 @@ package gui;
 import java.awt.Canvas;
 import java.awt.Dimension;
 
+import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 
-import input.KeyPressDetectionInteract;
-import input.KeyPressDetectionMovement;
+import input.*;;
 
 public class Display {
     private static Draw canvas;
@@ -14,8 +15,7 @@ public class Display {
 	public static final int SCREEN_HEIGHT = 576;
 	public static final int PIXEL_IMAGE_SIZE = 96;
 	public static JFrame mainFrame;
-	public static KeyPressDetectionMovement keyMovement;
-	public static KeyPressDetectionInteract keyInteract;
+    private static Action aAction, sAction, dAction, wAction;
     public Display() {
         initCanvas();
     }
@@ -32,10 +32,21 @@ public class Display {
 	        canvas.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 	        canvas.setMaximumSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 	        canvas.setMinimumSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-	        keyMovement = new KeyPressDetectionMovement();
-	        keyInteract = new KeyPressDetectionInteract();
-	        canvas.addKeyListener(keyMovement);
-	        canvas.addKeyListener(keyInteract);
+	        aAction = new AAction();
+	        sAction = new SAction();
+	        dAction = new DAction();
+	        wAction = new WAction();
+
+	       
+	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "A" ), "doaAction" );
+	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "D" ), "dodAction" );
+	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "W" ), "dowAction" );
+	        canvas.getInputMap().put( KeyStroke.getKeyStroke( "S" ), "dosAction" );
+
+	        canvas.getActionMap().put( "doaAction", aAction );
+	        canvas.getActionMap().put( "dosAction", sAction );
+	        canvas.getActionMap().put( "dodAction", dAction );
+	        canvas.getActionMap().put( "dowAction", wAction );
 	        mainFrame.add(canvas);
 	        
 	      
