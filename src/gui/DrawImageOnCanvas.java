@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 
 import backend.player.MovementFromInputs;
 import backend.player.Player;
+import backend.player.Player.Direction;
 import images.ImageData;
 
 public class DrawImageOnCanvas {
@@ -41,15 +42,30 @@ public class DrawImageOnCanvas {
         for(ImageData image : environment) {
         	g.drawImage(image.getImage(), image.getxPos(), image.getyPos(), null);
         }
-        
-        g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+        drawPlayer(g);
 
+    }
+    
+    public void drawPlayer(Graphics g) {
+    	Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
+    	player.updateCharacter(move.x, move.y);
+    	if (player.rotatePlayer(move.x , move.y).equals(Direction.UP)) {
+            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+    	}
+    	if (player.rotatePlayer(move.x , move.y).equals(Direction.DOWN)) {
+            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+    	}
+    	if (player.rotatePlayer(move.x , move.y).equals(Direction.LEFT)) {
+            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+    	}
+    	if (player.rotatePlayer(move.x , move.y).equals(Direction.RIGHT)) {
+            g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+    	}
     }
 
     private void tick() {
     	Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
     	player.updateCharacter(move.x, move.y);
-    	
     }
 
     public static final class ImageLoader
