@@ -8,15 +8,10 @@ import main.Main;
 public class Player extends Collider {
 	
 	public Vector2 position;
-	public enum Direction {
-		UP, DOWN, LEFT, RIGHT;
-	}
-	public static final double SPEED = 2;
+	public static final double SPEED = 1;
 	public enum Movement {
 		NONE, NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST;
 	}
-	
-	public Direction facing;
 	
 	public Player(int length, int width, Vector2 position) {
 		super(length,width,position);
@@ -55,7 +50,7 @@ public class Player extends Collider {
 		
 		return Movement.NONE;
 	}
-	public void updateCharacter(double xAxis, double yAxis) {
+	public Movement updateCharacter(double xAxis, double yAxis) {
 		//System.out.println(xAxis);
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		if(xAxis == 0 && yAxis == 0) {
@@ -104,16 +99,6 @@ public class Player extends Collider {
 				}
 			}
 		}
-	}
-	public Direction rotatePlayer(double xAxis, double yAxis) {
-		if (move(yAxis, xAxis).equals(Movement.NORTH)
-				|| move(yAxis, xAxis).equals(Movement.NORTH_EAST)
-				|| move(yAxis, xAxis).equals(Movement.NORTH_WEST)) facing = Direction.UP;
-		if (move(yAxis, xAxis).equals(Movement.SOUTH)
-				|| move(yAxis, xAxis).equals(Movement.SOUTH_EAST)
-				|| move(yAxis, xAxis).equals(Movement.SOUTH_WEST)) facing = Direction.DOWN;
-		if (move(yAxis, xAxis).equals(Movement.EAST)) facing = Direction.RIGHT;
-		if (move(yAxis, xAxis).equals(Movement.EAST)) facing = Direction.LEFT;
-		return facing;
+		return m;
 	}
 }

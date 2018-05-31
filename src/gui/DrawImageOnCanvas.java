@@ -10,7 +10,6 @@ import javax.imageio.ImageIO;
 
 import backend.player.MovementFromInputs;
 import backend.player.Player;
-import backend.player.Player.Direction;
 import gui.scenes.DesertScene;
 import gui.scenes.Scene;
 import images.ImageData;
@@ -38,7 +37,7 @@ public class DrawImageOnCanvas {
 		//stop();
 	}
 
-
+	public Player.Movement currentOrientation = Player.Movement.NONE;
 	public void render(Graphics g) {
 
 		currentScene.render(g);
@@ -48,23 +47,28 @@ public class DrawImageOnCanvas {
 	public void drawPlayer(Graphics g) {
 		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
 		player.updateCharacter(move.x, move.y);
-		if (player.rotatePlayer(move.x , move.y).equals(Direction.UP)) {
-			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		if(currentOrientation == Player.Movement.NORTH
+				||currentOrientation == Player.Movement.NORTH_EAST
+				||currentOrientation == Player.Movement.NORTH_WEST) {
+			g.drawImage(playerImage.getDownImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
 		}
-		if (player.rotatePlayer(move.x , move.y).equals(Direction.DOWN)) {
-			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		else if (currentOrientation == Player.Movement.WEST) {
+			g.drawImage(playerImage.getLeftImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
 		}
-		if (player.rotatePlayer(move.x , move.y).equals(Direction.LEFT)) {
-			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		else if (currentOrientation == Player.Movement.EAST) {
+			g.drawImage(playerImage.getRightImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
 		}
-		if (player.rotatePlayer(move.x , move.y).equals(Direction.RIGHT)) {
+		else {
 			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
 		}
 	}
 
 	private void tick() {
 		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
-		player.updateCharacter(move.x, move.y);
+		Player.Movement m = player.updateCharacter(move.x, move.y);
+		if(m != Player.Movement.NONE) {
+			currentOrientation = m;
+		}
 	}
 
 	public static final class ImageLoader
