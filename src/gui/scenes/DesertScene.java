@@ -13,7 +13,7 @@ public class DesertScene extends Scene {
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
 	        		if(y>0) {
-		        		int worldGen = (int) (12 * Math.random() + 1);
+		        		int worldGen = (int) (18 * Math.random() + 1);
 				        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
 				        {
 				            case 1:  
