@@ -1,14 +1,15 @@
 package input;
 
 import java.awt.event.ActionEvent;
-import backend.player.MovementFromInputs;
 
 import javax.swing.AbstractAction;
 
-public class WActionRelease extends AbstractAction
+import backend.Movement.MovementFromInputs;
+
+public class DownMovementReleased extends AbstractAction
 {
 	public void actionPerformed( ActionEvent tf )
 	{
-		MovementFromInputs.UpPressed = false;
+		MovementFromInputs.DownPressed = false;
 	} 
 }
