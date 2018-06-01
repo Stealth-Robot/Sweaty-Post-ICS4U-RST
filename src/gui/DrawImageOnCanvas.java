@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 
 import backend.player.MovementFromInputs;
 import backend.player.Player;
+import gui.scenes.BarScene;
 import gui.scenes.DesertScene;
 import gui.scenes.Scene;
 import images.ImageData;
@@ -97,6 +98,7 @@ public class DrawImageOnCanvas {
 		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
 		display = new Display();
 		currentScene = new DesertScene();
+		currentScene = new BarScene();
 	}
 
 	public synchronized void start() {
