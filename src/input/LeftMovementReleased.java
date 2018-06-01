@@ -4,12 +4,12 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-import backend.player.MovementFromInputs;
+import backend.Movement.MovementFromInputs;
 
-public class AAction extends AbstractAction
+public class LeftMovementReleased extends AbstractAction
 {
 	public void actionPerformed( ActionEvent tf )
 	{
-		MovementFromInputs.LeftPressed = true;
+		MovementFromInputs.LeftPressed = false;
 	} 
 }

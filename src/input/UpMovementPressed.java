@@ -4,9 +4,9 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-import backend.player.MovementFromInputs;
+import backend.Movement.MovementFromInputs;
 
-public class WAction extends AbstractAction
+public class UpMovementPressed extends AbstractAction
 {
 	@Override
 	public void actionPerformed( ActionEvent tf ) {
