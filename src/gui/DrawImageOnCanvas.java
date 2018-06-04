@@ -101,7 +101,7 @@ public class DrawImageOnCanvas {
 		playerImage.createRotationImages();
 		display = new Display();
 		SceneMaster.createScenes();
-		currentScene = SceneMaster.desertScene;
+		currentScene = SceneMaster.trainScene;
 	}
 
 	public synchronized void start() {

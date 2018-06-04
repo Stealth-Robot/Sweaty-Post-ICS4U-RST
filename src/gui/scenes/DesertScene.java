@@ -12,7 +12,7 @@ public class DesertScene extends Scene {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
-		       		int worldGen = (int) (18 * Math.random() + 1);
+		       		int worldGen = (int) (18 * Math.random());
 			        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
 			        {
 			            case 1:  
@@ -37,6 +37,12 @@ public class DesertScene extends Scene {
 			  		        }
 			      		break;
 			        }
+			        if(x==8&&y==3)
+			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeRight.png");
+			        if(x==4&&y==0)
+			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeDown.png");
+			        if(x==4&&y==5)
+			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeUp.png");
 			       environment.add(new ImageData(testImage,x,y));
 	        	}
 	        }

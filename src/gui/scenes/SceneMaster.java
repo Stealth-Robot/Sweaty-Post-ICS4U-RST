@@ -15,7 +15,7 @@ public class SceneMaster {
 		desertScene5 = new DesertScene();
 		desertScene6 = new DesertScene();
 		casinoScene = new DesertScene();
-		trainScene = new DesertScene();
+		trainScene = new TrainScene();
 		hideoutScene = new DesertScene();
 		barScene = new BarScene();
 		hotelScene = new BarScene();
