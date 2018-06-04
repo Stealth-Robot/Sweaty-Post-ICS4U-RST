@@ -14,6 +14,7 @@ import backend.player.Player;
 import gui.scenes.BarScene;
 import gui.scenes.CasinoIScene;
 import gui.scenes.DesertScene;
+import gui.scenes.LoadingScene;
 import gui.scenes.Scene;
 import gui.scenes.SceneMaster;
 import images.ImageData;
@@ -23,7 +24,6 @@ public class DrawImageOnCanvas {
 	private Thread t;
 	private boolean running;
 	private BufferStrategy bs;
-	private Graphics2D g;
 	public Scene currentScene;
 	private BufferedImage testImage;
 
@@ -98,9 +98,10 @@ public class DrawImageOnCanvas {
 
 	public void init() {
 		System.out.println("INITIALIZE");
+		currentScene = new LoadingScene();
+		display = new Display();
 		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
 		playerImage.createRotationImages();
-		display = new Display();
 		SceneMaster.createScenes();
 		currentScene = SceneMaster.desertScene;
 	}

@@ -23,7 +23,7 @@ private static Draw canvas;
 
     private void initCanvas() {
     	
-    	  mainFrame = new JFrame("SWEATY POST");
+    	  mainFrame = new JFrame("Sweaty Post");
 		  mainFrame.setVisible(true);
 		  mainFrame.setSize(SCREEN_WIDTH,SCREEN_HEIGHT);
 		  mainFrame.setResizable(false);
