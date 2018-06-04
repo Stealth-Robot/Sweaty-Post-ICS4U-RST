@@ -114,10 +114,10 @@ public class KeyBindings {
 	private static Draw interactKeyBinding(Draw canvas) {
 		Action interactAction = new InteractButtonPressed();
 		Action interactActionRelease = new InteractButtonReleased();
-		canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_E, 0,false)), "dowAction");
-		canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_E, 0,true)), "dowActionRelease");
-		canvas.getActionMap().put( "dowAction", interactAction );
-		canvas.getActionMap().put( "dowActionRelease", interactActionRelease );
+		canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_E, 0,false)), "doeAction");
+		canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_E, 0,true)), "doeActionRelease");
+		canvas.getActionMap().put( "doeAction", interactAction );
+		canvas.getActionMap().put( "doeActionRelease", interactActionRelease );
 		return canvas;
 	}
 
