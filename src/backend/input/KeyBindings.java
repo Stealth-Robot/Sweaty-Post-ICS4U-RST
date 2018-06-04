@@ -1,4 +1,4 @@
-package backend.Movement;
+package backend.input;
 
 import java.awt.event.KeyEvent;
 
@@ -8,6 +8,8 @@ import javax.swing.KeyStroke;
 import gui.Draw;
 import input.DownMovementPressed;
 import input.DownMovementReleased;
+import input.InteractButtonPressed;
+import input.InteractButtonReleased;
 import input.LeftMovementPressed;
 import input.LeftMovementReleased;
 import input.RightMovementPressed;
@@ -25,6 +27,7 @@ public class KeyBindings {
 		canvas = downKeyBinding(canvas);
 		canvas = wKeyBinding(canvas);
 		canvas = upKeyBinding(canvas);
+		canvas = interactKeyBinding(canvas);
 		return canvas;
 	}
 
@@ -105,6 +108,16 @@ public class KeyBindings {
 		canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_UP, 0,true)), "dowActionRelease");
 		canvas.getActionMap().put( "dowAction", upAction );
 		canvas.getActionMap().put( "dowActionRelease", upActionRelease );
+		return canvas;
+	}
+	
+	private static Draw interactKeyBinding(Draw canvas) {
+		Action interactAction = new InteractButtonPressed();
+		Action interactActionRelease = new InteractButtonReleased();
+		canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_E, 0,false)), "doeAction");
+		canvas.getInputMap().put((KeyStroke.getKeyStroke(KeyEvent.VK_E, 0,true)), "doeActionRelease");
+		canvas.getActionMap().put( "doeAction", interactAction );
+		canvas.getActionMap().put( "doeActionRelease", interactActionRelease );
 		return canvas;
 	}
 

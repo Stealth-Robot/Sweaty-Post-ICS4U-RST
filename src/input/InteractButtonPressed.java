@@ -4,12 +4,12 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-import backend.input.MovementFromInputs;
+import backend.input.Interact;
 
-public class DownMovementReleased extends AbstractAction
+public class InteractButtonPressed extends AbstractAction
 {
 	public void actionPerformed( ActionEvent tf )
 	{
-		MovementFromInputs.DownPressed = false;
+		Interact.setPressed(true);
 	} 
 }

@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-import backend.Movement.MovementFromInputs;
+import backend.input.MovementFromInputs;
 
 public class UpMovementReleased extends AbstractAction
 {
