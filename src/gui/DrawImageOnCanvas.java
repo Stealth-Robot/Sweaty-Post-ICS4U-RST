@@ -21,6 +21,7 @@ public class DrawImageOnCanvas {
 	private boolean running;
 	private BufferStrategy bs;
 	private Graphics2D g;
+	public Scene startScene, desertScene, barScene, casinoScene, trainScene, casinoIScene;
 	public Scene currentScene;
 	private BufferedImage testImage;
 
@@ -97,8 +98,13 @@ public class DrawImageOnCanvas {
 		System.out.println("INITIALIZE");
 		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
 		display = new Display();
-		currentScene = new DesertScene();
-		currentScene = new BarScene();
+		startScene = new DesertScene();
+		desertScene = new DesertScene();
+		casinoScene = new DesertScene();
+		trainScene = new DesertScene();
+		barScene = new BarScene();
+		casinoIScene = new BarScene();
+		currentScene = desertScene;
 	}
 
 	public synchronized void start() {
