@@ -14,6 +14,7 @@ import gui.scenes.BarScene;
 import gui.scenes.CasinoIScene;
 import gui.scenes.DesertScene;
 import gui.scenes.Scene;
+import gui.scenes.SceneMaster;
 import images.ImageData;
 
 public class DrawImageOnCanvas {
@@ -22,7 +23,6 @@ public class DrawImageOnCanvas {
 	private boolean running;
 	private BufferStrategy bs;
 	private Graphics2D g;
-	public Scene startScene, desertScene, desertScene2, desertScene3, desertScene4, desertScene5, desertScene6, barScene, casinoScene, trainScene, casinoIScene;
 	public Scene currentScene;
 	private BufferedImage testImage;
 
@@ -98,19 +98,10 @@ public class DrawImageOnCanvas {
 	public void init() {
 		System.out.println("INITIALIZE");
 		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
+		playerImage.createRotationImages();
 		display = new Display();
-		startScene   = new StartScene();
-		desertScene  = new DesertScene();
-		desertScene2 = new DesertScene();
-		desertScene3 = new DesertScene();
-		desertScene4 = new DesertScene();
-		desertScene5 = new DesertScene();
-		desertScene6 = new DesertScene();
-		casinoScene  = new DesertScene();
-		trainScene   = new DesertScene();
-		barScene     = new BarScene();
-		casinoIScene = new CasinoIScene();
-		currentScene = casinoIScene;
+		SceneMaster.createScenes();
+		currentScene = SceneMaster.desertScene;
 	}
 
 	public synchronized void start() {
