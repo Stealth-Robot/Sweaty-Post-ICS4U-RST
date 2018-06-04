@@ -22,9 +22,8 @@ public class DrawImageOnCanvas {
 	private Graphics2D g;
 	public Scene currentScene;
 	private BufferedImage testImage;
-
 	public Player player;
-	ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
+	ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/test/box_green.png"),0,0);
 	public DrawImageOnCanvas() {
 		System.out.println("init");
 		init();
@@ -39,7 +38,6 @@ public class DrawImageOnCanvas {
 
 	public Player.Movement currentOrientation = Player.Movement.NONE;
 	public void render(Graphics g) {
-
 		currentScene.render(g);
 		drawPlayer(g);
 	}
@@ -47,25 +45,27 @@ public class DrawImageOnCanvas {
 	public void drawPlayer(Graphics g) {
 		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
 		player.updateCharacter(move.x, move.y);
-		if(currentOrientation == Player.Movement.NORTH
-				||currentOrientation == Player.Movement.NORTH_EAST
-				||currentOrientation == Player.Movement.NORTH_WEST) {
-			g.drawImage(playerImage.getDownImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+		int y = Display.SCREEN_HEIGHT - Display.PIXEL_IMAGE_SIZE - (int)player.getPosition().y;
+		if(currentOrientation == Player.Movement.SOUTH
+				||currentOrientation == Player.Movement.SOUTH_EAST
+				||currentOrientation == Player.Movement.SOUTH_WEST) {
+			g.drawImage(playerImage.getDownImage(), (int)player.getPosition().x,y ,null);
 		}
 		else if (currentOrientation == Player.Movement.WEST) {
-			g.drawImage(playerImage.getLeftImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+			g.drawImage(playerImage.getLeftImage(), (int)player.getPosition().x, y,null);
 		}
 		else if (currentOrientation == Player.Movement.EAST) {
-			g.drawImage(playerImage.getRightImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+			g.drawImage(playerImage.getRightImage(), (int)player.getPosition().x, y,null);
 		}
 		else {
-			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, (int)player.getPosition().y,null);
+			g.drawImage(playerImage.getImage(), (int)player.getPosition().x, y,null);
 		}
 	}
 
 	private void tick() {
 		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
 		Player.Movement m = player.updateCharacter(move.x, move.y);
+	//	System.out.println(player.position);
 		if(m != Player.Movement.NONE) {
 			currentOrientation = m;
 		}
