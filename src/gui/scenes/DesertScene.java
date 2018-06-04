@@ -17,22 +17,25 @@ public class DesertScene extends Scene {
 				        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
 				        {
 				            case 1:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert3.png");
+				            	testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertRock.png");
 			        		break;
 				            case 2:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertRock.png");
-			        		break;
-				            case 3:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert2.png");
-			        		break;
-				            case 4:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertFlower.png");
-			        		break;
-				            case 5:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert2.png");
+				            	testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertFlower.png");
 			        		break;
 				            default:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+				            	int desertGen = (int) (3 * Math.random() + 1);
+			    		        switch (desertGen)  //switches are used to set the tile based on a random number (1-6)
+			    		        {
+			    		            case 1:  
+			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert2.png");
+			    	        		break;
+			    		            case 2:  
+			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert3.png");
+			    	        		break;
+			    		            default:  
+			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+			    	        		break;
+			    		        }
 			        		break;
 				        }
 	        		}
