@@ -12,8 +12,10 @@ import backend.input.Interact;
 import backend.input.MovementFromInputs;
 import backend.player.Player;
 import gui.scenes.BarScene;
+import gui.scenes.CasinoIScene;
 import gui.scenes.DesertScene;
 import gui.scenes.Scene;
+import gui.scenes.SceneMaster;
 import images.ImageData;
 
 public class DrawImageOnCanvas {
@@ -97,9 +99,10 @@ public class DrawImageOnCanvas {
 	public void init() {
 		System.out.println("INITIALIZE");
 		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
+		playerImage.createRotationImages();
 		display = new Display();
-		currentScene = new DesertScene();
-		currentScene = new BarScene();
+		SceneMaster.createScenes();
+		currentScene = SceneMaster.desertScene;
 	}
 
 	public synchronized void start() {

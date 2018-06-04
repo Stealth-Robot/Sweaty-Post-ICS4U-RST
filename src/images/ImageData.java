@@ -20,6 +20,8 @@ public class ImageData {
 		this.xPos = xPos * Display.PIXEL_IMAGE_SIZE;
 		this.yPos = (Display.SCREEN_HEIGHT - Display.PIXEL_IMAGE_SIZE) - (yPos * Display.PIXEL_IMAGE_SIZE);
 		this.image = image.getScaledInstance(Display.PIXEL_IMAGE_SIZE, Display.PIXEL_IMAGE_SIZE, Image.SCALE_DEFAULT);
+	}
+	public void createRotationImages() {
 		rightImage = rotateCw(toBufferedImage(this.image));
 		downImage = rotateCw(toBufferedImage(rightImage));
 		leftImage = rotateCw(toBufferedImage(downImage));

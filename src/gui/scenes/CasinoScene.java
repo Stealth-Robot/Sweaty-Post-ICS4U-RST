@@ -5,7 +5,7 @@ import java.awt.Image;
 import gui.DrawImageOnCanvas.ImageLoader;
 import images.ImageData;
 
-public class DesertScene extends Scene {
+public class CasinoScene extends Scene {
 
 	@Override
 	public void instantiate() {
