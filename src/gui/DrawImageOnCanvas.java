@@ -8,7 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import backend.Movement.MovementFromInputs;
+import backend.input.Interact;
+import backend.input.MovementFromInputs;
 import backend.player.Player;
 import gui.scenes.BarScene;
 import gui.scenes.DesertScene;

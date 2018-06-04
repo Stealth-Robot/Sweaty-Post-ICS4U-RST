@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
-import backend.Movement.KeyBindings;
+import backend.input.KeyBindings;
 import input.*;;
 
 public class Display {

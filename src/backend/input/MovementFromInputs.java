@@ -1,4 +1,4 @@
-package backend.Movement;
+package backend.input;
 
 import gui.Vector2;
 
