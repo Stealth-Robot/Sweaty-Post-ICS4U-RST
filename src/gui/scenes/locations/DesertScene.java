@@ -1,8 +1,9 @@
-package gui.scenes;
+package gui.scenes.locations;
 
 import java.awt.Image;
 
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.scenes.Scene;
 import images.ImageData;
 
 public class DesertScene extends Scene {

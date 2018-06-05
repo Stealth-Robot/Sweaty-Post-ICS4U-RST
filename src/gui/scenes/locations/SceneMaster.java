@@ -1,6 +1,7 @@
-package gui.scenes;
+package gui.scenes.locations;
 
 import gui.StartScene;
+import gui.scenes.Scene;
 
 public class SceneMaster {
 	public static Scene startScene, hideoutScene, hotelScene, jailScene, shopScene, desertScene, desertScene2,

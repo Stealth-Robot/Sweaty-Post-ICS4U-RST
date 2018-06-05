@@ -11,12 +11,12 @@ import javax.imageio.ImageIO;
 import backend.input.Interact;
 import backend.input.MovementFromInputs;
 import backend.player.Player;
-import gui.scenes.BarScene;
-import gui.scenes.CasinoIScene;
-import gui.scenes.DesertScene;
-import gui.scenes.LoadingScene;
 import gui.scenes.Scene;
-import gui.scenes.SceneMaster;
+import gui.scenes.locations.BarScene;
+import gui.scenes.locations.CasinoIScene;
+import gui.scenes.locations.DesertScene;
+import gui.scenes.locations.LoadingScene;
+import gui.scenes.locations.SceneMaster;
 import images.ImageData;
 
 public class DrawImageOnCanvas {

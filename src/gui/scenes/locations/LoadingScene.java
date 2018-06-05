@@ -1,6 +1,7 @@
-package gui.scenes;
+package gui.scenes.locations;
 
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.scenes.Scene;
 import images.ImageData;
 
 public class LoadingScene extends Scene {

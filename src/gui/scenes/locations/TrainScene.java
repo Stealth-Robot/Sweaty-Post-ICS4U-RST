@@ -1,4 +1,4 @@
-package gui.scenes;
+package gui.scenes.locations;
 
 import java.awt.Image;
 
