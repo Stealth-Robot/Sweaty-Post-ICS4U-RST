@@ -18,17 +18,19 @@ abstract class InteractableCollider extends InteractiveCollider {
 	@Override
 	public Collisions collision(Collider player, Player.Movement direction) {
 		Collisions c = Collisions.NONE;
-		if(Interact.interacted()) {
+	
+		if(Interact.interacted() && interacted(player,direction)) {
 			c = super.collision(player, direction);
 		}
 		return c;
 	}
+	public Player.Movement temp = Player.Movement.NONE;
 	public boolean interacted(Collider player, Player.Movement direction) {
-		Player.Movement temp = direction;
-		if (direction == Player.Movement.NORTH_EAST || direction == Player.Movement.NORTH_WEST) temp = Player.Movement.NORTH;
-		if (direction == Player.Movement.SOUTH_EAST || direction == Player.Movement.SOUTH_WEST) temp = Player.Movement.SOUTH;
-
-
+		if(direction != Player.Movement.NONE) {
+			temp = direction;
+			if (direction == Player.Movement.NORTH_EAST || direction == Player.Movement.NORTH_WEST) temp = Player.Movement.NORTH;
+			if (direction == Player.Movement.SOUTH_EAST || direction == Player.Movement.SOUTH_WEST) temp = Player.Movement.SOUTH;
+		}
 		if (player.getPosition().y < super.getPosition().y)
 			if (Player.Movement.NORTH == temp) return true;
 		if (player.getPosition().y > super.getPosition().y)

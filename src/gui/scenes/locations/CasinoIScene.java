@@ -4,6 +4,7 @@ import java.awt.Image;
 
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
+import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
 import images.ImageData;
@@ -70,7 +71,7 @@ public class CasinoIScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		sceneColliders.add(new SceneChangeCollider(RectangleCreator.createDimensionalRectangle(1, 1, 1, 0),SceneMaster.desertScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.desertScene));
 	}
 
 

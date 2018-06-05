@@ -20,6 +20,6 @@ public class Main {
 	public static void main(String[] args) {
 		game = new DrawImageOnCanvas();
 		//sceneColliders.add(RectangleCreator.createDimensionalRectangle(1,1,2,2));
-		new WildWest();
+		//new WildWest();
 	}
 }
