@@ -17,8 +17,8 @@ public class MovementFromInputs {
 		y = 0;
 		if (RightPressed) x++;
 		if (LeftPressed) x--;
-		if (UpPressed) y--;
-		if (DownPressed) y++;
+		if (UpPressed) y++;
+		if (DownPressed) y--;
 		
 		return new Vector2(x, y);
 	}

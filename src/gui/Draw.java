@@ -43,6 +43,7 @@ public class Draw extends JPanel {
 				first = false;
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			// System.out.println("PaintComponent ERROR catch");
 		}
 	}
