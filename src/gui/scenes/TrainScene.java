@@ -95,6 +95,8 @@ public class TrainScene extends Scene {
 			        	testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
 			        if(x==4&&y==1)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/environments/house/Steps.png");
+			        if(x==4&&y==2)
+			        	testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseStep.png");
 			        environment.add(new ImageData(testImage,x,y));
 	        	}
 	        }

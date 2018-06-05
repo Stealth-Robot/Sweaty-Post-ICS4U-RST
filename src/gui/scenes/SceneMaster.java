@@ -16,11 +16,11 @@ public class SceneMaster {
 		desertScene6 = new DesertScene();
 		casinoScene = new DesertScene();
 		trainScene = new TrainScene();
-	/*	hideoutScene = new DesertScene();
+		hideoutScene = new DesertScene();
 		barScene = new BarScene();
 		hotelScene = new BarScene();
 		shopScene = new BarScene();
 		jailScene = new BarScene();
 		casinoIScene = new CasinoIScene();
-	*/}
+	}
 }

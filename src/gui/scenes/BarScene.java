@@ -9,7 +9,7 @@ public class BarScene extends Scene {
 
 	@Override
 	public void instantiate() {
-		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
 	        		if(y>4||y<=3) {
@@ -17,26 +17,26 @@ public class BarScene extends Scene {
 				        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
 				        {
 				            case 1:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor2.png");
+				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor2.png");
 			        		break;
 				            case 2:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor2.png");
+				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor2.png");
 			        		break;
 				            case 3:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor2.png");
+				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor2.png");
 			        		break;
 				            case 4:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor2.png");
+				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor2.png");
 			        		break;
 				            case 5:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor2.png");
+				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor2.png");
 			        		break;
 				            default:  
-				                testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor.png");
+				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor.png");
 			        		break;
 				        }
 				        if(y==2&&x==1||y==1&&x==3||y==2&&x==6) {
-				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor3.png");
+				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor3.png");
 				        }
 	        		}
 	        		else
@@ -45,16 +45,16 @@ public class BarScene extends Scene {
 	    		        switch (railGen)  //switches are used to set the tile based on a random number (1-6)
 	    		        {
 	    		            case 1:  
-	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/BarMessy.png");
+	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarMessy.png");
 	    	        		break;
 	    		            default:  
-	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Bar.png");
+	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/Bar.png");
 	    	        		break;
 	    		        }
 	    		        if(x==7)
-	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/BarCorner.png");
+	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarCorner.png");
 	    		        if(x==8)
-	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/BarFloor.png");
+	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor.png");
 				        if(x==4)
 				        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarInteract.png");
 	        		}
