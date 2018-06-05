@@ -9,9 +9,11 @@ public class Collider extends Rectangle implements CollisionInteraction {
 		super(length, width, position);
 		// TODO Auto-generated constructor stub
 	}
-
+	public Collider(Rectangle rectangle) {
+		super(rectangle);
+	}
 	public enum Collisions {
-		NONE, NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST;
+		NONE, NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST, ANY;
 	}
 
 	@Override

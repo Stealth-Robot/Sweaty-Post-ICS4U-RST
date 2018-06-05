@@ -8,7 +8,8 @@ import images.ImageData;
 
 public class StartScene extends Scene {
 
-	public void instantiate() {
+	@Override
+	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
@@ -66,6 +67,12 @@ public class StartScene extends Scene {
 			        environment.add(new ImageData(testImage,x,y));
 	        	}
 	        }
+		
+	}
+
+	@Override
+	public void createColliders() {
+		// TODO Auto-generated method stub
 		
 	}
 

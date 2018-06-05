@@ -3,13 +3,15 @@ package gui.scenes.locations;
 import java.awt.Image;
 
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.objects.RectangleCreator;
+import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
 public class CasinoIScene extends Scene {
 
 	@Override
-	public void instantiate() {
+	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
@@ -64,7 +66,12 @@ public class CasinoIScene extends Scene {
 	        environment.add(new ImageData(testImage,1,5));
 	        testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarExit.png");
 	        environment.add(new ImageData(testImage,1,0));
-		
 	}
+
+	@Override
+	public void createColliders() {
+		sceneColliders.add(new SceneChangeCollider(RectangleCreator.createDimensionalRectangle(1, 1, 1, 0),SceneMaster.desertScene));
+	}
+
 
 }

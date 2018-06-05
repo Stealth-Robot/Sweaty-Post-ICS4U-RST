@@ -9,7 +9,7 @@ import images.ImageData;
 public class BarScene extends Scene {
 
 	@Override
-	public void instantiate() {
+	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
@@ -64,6 +64,12 @@ public class BarScene extends Scene {
 	        }
 	        testImage = ImageLoader.loadImage("src/images/sprites/interactables/NPCMale.png");
 	        environment.add(new ImageData(testImage,4,5));
+		
+	}
+
+	@Override
+	public void createColliders() {
+		// TODO Auto-generated method stub
 		
 	}
 

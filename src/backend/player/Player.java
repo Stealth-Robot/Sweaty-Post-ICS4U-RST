@@ -1,6 +1,7 @@
 package backend.player;
 
 import gui.Display;
+import gui.DrawImageOnCanvas;
 import gui.Vector2;
 import gui.objects.Rectangle;
 import gui.objects.colliders.Collider;
@@ -67,10 +68,10 @@ public class Player extends Collider {
 			position.y -= yAxis / magnitude;
 		}
 		Movement m = move(xAxis, yAxis);
-		for(Rectangle c : Main.sceneColliders) {
+		for(Rectangle c : DrawImageOnCanvas.currentScene.sceneColliders) {
 			Collider.Collisions cc = c.collision(this, m);
 		//	System.out.println(cc);
-			if(cc != Collider.Collisions.NONE) {
+			if(cc != Collider.Collisions.NONE && cc != Collider.Collisions.ANY) {
 				if(cc == Collider.Collisions.NORTH) {
 					position.y -= yAxis / magnitude;
 				}

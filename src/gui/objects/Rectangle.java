@@ -1,7 +1,6 @@
 package gui.objects;
 
 import backend.player.Player;
-import gui.Display;
 import gui.Vector2;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.Collider.Collisions;
@@ -17,7 +16,11 @@ public class Rectangle {
 		this.width = width;
 		this.position = position;
 	}
-
+	public Rectangle(Rectangle rectangle) {
+		this.length = rectangle.getLength();
+		this.width = rectangle.getWidth();
+		this.position = rectangle.getPosition();
+	}
 	public int getLength() {
 		return length;
 	}
@@ -48,9 +51,6 @@ public class Rectangle {
 	}
 
 	public Collisions collision(Collider player, Player.Movement direction) {
-		if (direction == Player.Movement.NONE) {
-			return Collisions.NONE;
-		}
 		if (direction == Player.Movement.NORTH) {
 			if (getInside(new Vector2(player.getPosition().x, player.getPosition().y + player.getWidth()))
 					|| getInside(new Vector2(player.getPosition().x + player.getLength(),
@@ -176,6 +176,13 @@ public class Rectangle {
 				return Collisions.EAST;
 			}
 		}
-		return Collisions.NONE;
+			if(getInside(new Vector2(player.getPosition().x, player.getPosition().y)) 
+					||getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y))
+					||getInside(new Vector2(player.getPosition().x, player.getPosition().y + player.getWidth()))
+					||getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth()))) {
+				return Collisions.ANY;
+			}
+			return Collisions.NONE;
+		
 	}
 }

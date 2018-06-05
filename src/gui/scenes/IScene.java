@@ -2,5 +2,6 @@ package gui.scenes;
 
 public interface IScene {
 
-	public void instantiate();
+	public void createEnvironment();
+	public void createColliders();
 }

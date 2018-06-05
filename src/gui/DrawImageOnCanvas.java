@@ -24,7 +24,7 @@ public class DrawImageOnCanvas {
 	private Thread t;
 	private boolean running;
 	private BufferStrategy bs;
-	public Scene currentScene;
+	public static Scene currentScene;
 	private BufferedImage testImage;
 	public Player player;
 	ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);

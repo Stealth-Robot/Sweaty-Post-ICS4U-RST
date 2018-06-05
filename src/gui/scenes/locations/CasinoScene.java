@@ -9,7 +9,7 @@ import images.ImageData;
 public class CasinoScene extends Scene {
 
 	@Override
-	public void instantiate() {
+	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
@@ -43,5 +43,12 @@ public class CasinoScene extends Scene {
 	        }
 		
 	}
+
+	@Override
+	public void createColliders() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

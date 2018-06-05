@@ -3,20 +3,27 @@ package gui.objects.colliders;
 import backend.input.Interact;
 import backend.player.Player;
 import gui.Vector2;
+import gui.objects.Rectangle;
 
 abstract class InteractableCollider extends InteractiveCollider {
-	public InteractableCollider(int length, int width, Vector2 position, double battleChance, double battleTime) {
+	public InteractableCollider(int length, int width, Vector2 position) {
 		super(length, width, position);
+	}
+	public InteractableCollider(Rectangle rectangle) {
+		super(rectangle);
 	}
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
 	}
 	@Override
 	public Collisions collision(Collider player, Player.Movement direction) {
-		return null;
-		
+		Collisions c = Collisions.NONE;
+		if(Interact.interacted()) {
+			c = super.collision(player, direction);
+		}
+		return c;
 	}
-	public boolean Interacted(Player.Movement direction, Player player) {
+	public boolean interacted(Collider player, Player.Movement direction) {
 		Player.Movement temp = direction;
 		if (direction == Player.Movement.NORTH_EAST || direction == Player.Movement.NORTH_WEST) temp = Player.Movement.NORTH;
 		if (direction == Player.Movement.SOUTH_EAST || direction == Player.Movement.SOUTH_WEST) temp = Player.Movement.SOUTH;
