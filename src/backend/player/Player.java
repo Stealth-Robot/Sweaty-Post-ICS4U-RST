@@ -2,6 +2,7 @@ package backend.player;
 
 import gui.Display;
 import gui.Vector2;
+import gui.objects.Rectangle;
 import gui.objects.colliders.Collider;
 import main.Main;
 
@@ -24,10 +25,10 @@ public class Player extends Collider {
 	 */
 	private Movement move(double xAxis, double yAxis) {
 		if(xAxis == 0) {
-			if(yAxis > 0)
-				return Movement.NORTH;
 			if(yAxis < 0)
 				return Movement.SOUTH;
+			if(yAxis > 0)
+				return Movement.NORTH;
 		}
 		if(yAxis == 0) {
 			if(xAxis > 0)
@@ -35,17 +36,17 @@ public class Player extends Collider {
 			if(xAxis < 0)
 				return Movement.WEST;
 		}
-		if(xAxis > 0 && yAxis > 0) {
-			return Movement.NORTH_EAST;
-		}
-		else if(xAxis > 0 && yAxis < 0) {
+		if(xAxis > 0 && yAxis < 0) {
 			return Movement.SOUTH_EAST;
 		}
-		else if(xAxis < 0 && yAxis < 0) {
-			return Movement.SOUTH_WEST;
+		else if(xAxis > 0 && yAxis > 0) {
+			return Movement.NORTH_EAST;
 		}
 		else if(xAxis < 0 && yAxis > 0) {
 			return Movement.NORTH_WEST;
+		}
+		else if(xAxis < 0 && yAxis < 0) {
+			return Movement.SOUTH_WEST;
 		}
 		
 		return Movement.NONE;
@@ -66,8 +67,9 @@ public class Player extends Collider {
 			position.y -= yAxis / magnitude;
 		}
 		Movement m = move(xAxis, yAxis);
-		for(Collider c : Main.sceneColliders) {
+		for(Rectangle c : Main.sceneColliders) {
 			Collider.Collisions cc = c.collision(this, m);
+		//	System.out.println(cc);
 			if(cc != Collider.Collisions.NONE) {
 				if(cc == Collider.Collisions.NORTH) {
 					position.y -= yAxis / magnitude;
@@ -80,22 +82,22 @@ public class Player extends Collider {
 					position.x -= xAxis / magnitude;
 				}
 				else if(cc == Collider.Collisions.SOUTH_EAST) {
-					position.y += yAxis / magnitude;
+					position.y -= yAxis / magnitude;
 					position.x -= xAxis / magnitude;
 				}
 				else if(cc == Collider.Collisions.SOUTH) {
-					position.y += yAxis / magnitude;
+					position.y -= yAxis / magnitude;
 				}
 				else if(cc == Collider.Collisions.SOUTH_WEST) {
-					position.y += yAxis / magnitude;
-					position.x += xAxis / magnitude;
+					position.y -= yAxis / magnitude;
+					position.x -= xAxis / magnitude;
 				}
 				else if(cc == Collider.Collisions.WEST) {
-					position.x += xAxis / magnitude;
+					position.x -= xAxis / magnitude;
 				}
 				else if(cc == Collider.Collisions.NORTH_WEST) {
 					position.y -= yAxis / magnitude;
-					position.x += xAxis / magnitude;
+					position.x -= xAxis / magnitude;
 				}
 			}
 		}
