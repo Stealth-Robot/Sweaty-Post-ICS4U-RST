@@ -11,7 +11,11 @@ abstract class InteractableCollider extends InteractiveCollider {
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
 	}
-
+	@Override
+	public Collisions collision(Collider player, Player.Movement direction) {
+		return null;
+		
+	}
 	public boolean Interacted(Player.Movement direction, Player player) {
 		Player.Movement temp = direction;
 		if (direction == Player.Movement.NORTH_EAST || direction == Player.Movement.NORTH_WEST) temp = Player.Movement.NORTH;
