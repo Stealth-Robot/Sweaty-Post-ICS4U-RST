@@ -10,8 +10,9 @@ import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.locations.SceneMaster;
 import wildWest.WildWest;
-
 import java.lang.Math;
+
+
 //update
 public class Main {
 	
