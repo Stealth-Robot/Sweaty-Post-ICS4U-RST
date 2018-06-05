@@ -36,7 +36,7 @@ public class BarScene extends Scene {
 			        		break;
 				        }
 				        if(y==2&&x==1||y==1&&x==3||y==2&&x==6) {
-				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor3.png");
+				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/Table.png");
 				        }
 	        		}
 	        		else

@@ -12,7 +12,7 @@ public class CasinoIScene extends Scene {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
-	        		if(y>4||y<=3) {
+	        		if(y>4||y<=3||y==4&&x>=3) {
 		        		int worldGen = (int) (18 * Math.random() + 1);
 				        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
 				        {
@@ -35,8 +35,8 @@ public class CasinoIScene extends Scene {
 				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor.png");
 			        		break;
 				        }
-				        if(y==2&&x==1||y==1&&x==3||y==2&&x==6) {
-				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor3.png");
+				        if(y==1&&x==4||y==4&&x==4||y==4&&x==7||y==1&&x==7) {
+				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/Table.png");
 				        }
 	        		}
 	        		else
@@ -51,18 +51,18 @@ public class CasinoIScene extends Scene {
 	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/Bar.png");
 	    	        		break;
 	    		        }
-	    		        if(x==7)
+	    		        if(x==2)
 	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarCorner.png");
-	    		        if(x==8)
-	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor.png");
-				        if(x==4)
+				        if(x==1)
 				        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarInteract.png");
 	        		}
 			        environment.add(new ImageData(testImage,x,y));
 	        	}
 	        }
 	        testImage = ImageLoader.loadImage("src/images/sprites/interactables/NPCMale.png");
-	        environment.add(new ImageData(testImage,4,5));
+	        environment.add(new ImageData(testImage,1,5));
+	        testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarExit.png");
+	        environment.add(new ImageData(testImage,1,0));
 		
 	}
 
