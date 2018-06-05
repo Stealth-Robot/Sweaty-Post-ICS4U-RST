@@ -9,7 +9,7 @@ import images.ImageData;
 public class StartScene extends Scene {
 
 	public void instantiate() {
-		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
 	        		if(y>0) {
@@ -17,23 +17,23 @@ public class StartScene extends Scene {
 				        switch (worldGen)  //switches are used to set the tile based on a random number (1-6)
 				        {
 				            case 1:  
-				            	testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertRock.png");
+				            	testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/DesertRock.png");
 			        		break;
 				            case 2:  
-				            	testImage = ImageLoader.loadImage("src/images/sprites/environments/DesertFlower.png");
+				            	testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/DesertFlower.png");
 			        		break;
 				            default:  
 				            	int desertGen = (int) (3 * Math.random() + 1);
 			    		        switch (desertGen)  //switches are used to set the tile based on a random number (1-6)
 			    		        {
 			    		            case 1:  
-			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert2.png");
+			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert2.png");
 			    	        		break;
 			    		            case 2:  
-			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert3.png");
+			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert3.png");
 			    	        		break;
 			    		            default:  
-			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+			    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 			    	        		break;
 			    		        }
 			        		break;
@@ -45,19 +45,19 @@ public class StartScene extends Scene {
 	    		        switch (railGen)  //switches are used to set the tile based on a random number (1-6)
 	    		        {
 	    		            case 1:  
-	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/RailBroken1.png");
+	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/RailBroken1.png");
 	    	        		break;
 	    		            case 2:  
-	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/RailBroken2.png");
+	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/RailBroken2.png");
 	    	        		break;
 	    		            default:  
-	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/Rail.png");
+	    		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Rail.png");
 	    	        		break;
 	    		        }
 	    		        if(x==8)
-	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/Desert.png");
+	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	    		        if(x==7)
-	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/RailEnd.png");
+	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/RailEnd.png");
 	        		}
 			        if(x==4&&y==5)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeUp.png");
