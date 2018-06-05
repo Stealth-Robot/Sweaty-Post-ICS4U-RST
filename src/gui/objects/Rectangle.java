@@ -77,14 +77,6 @@ public class Rectangle {
 				return Collisions.WEST;
 			}
 		}
-		if (direction == Player.Movement.NORTH_EAST) {
-			if (getInside(new Vector2(player.getPosition().x, player.getPosition().y + player.getWidth()))
-					|| getInside(new Vector2(player.getPosition().x + player.getLength(),
-							player.getPosition().y + player.getWidth()))
-					|| getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y))) {
-				return Collisions.NORTH_EAST;
-			}
-		}
 
 		if (direction == Player.Movement.SOUTH_EAST) {
 			if (!getInside(new Vector2(player.getPosition().x, player.getPosition().y))
@@ -138,26 +130,50 @@ public class Rectangle {
 
 		if (direction == Player.Movement.NORTH_WEST) {
 			if (!getInside(new Vector2(player.getPosition().x, player.getPosition().y))
-					&& getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth()))
-					&& !getInside(new Vector2(player.getPosition().x,
+					&& !getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth()))
+					&& getInside(new Vector2(player.getPosition().x,
 							player.getPosition().y + player.getWidth()))
-					&& !getInside(new Vector2(player.getPosition().x + player.getLength() - 1, player.getPosition().y + player.getWidth()))
-					&& !getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth() + 1))) {
+					&& !getInside(new Vector2(player.getPosition().x + 1, player.getPosition().y + player.getWidth()))
+					&& !getInside(new Vector2(player.getPosition().x, player.getPosition().y + player.getWidth() - 1))) {
 				return Collisions.NORTH_WEST;
 			}
-			if (getInside(new Vector2(player.getPosition().x, player.getPosition().y))) {
-				if (getInside(new Vector2(player.getPosition().x + 1, player.getPosition().y))) {
-					return Collisions.SOUTH;
+			if (getInside(new Vector2(player.getPosition().x, player.getPosition().y + player.getWidth()))) {
+				if (getInside(new Vector2(player.getPosition().x + 1, player.getPosition().y + player.getWidth()))) {
+					return Collisions.NORTH;
 				} else {
 					return Collisions.WEST;
 				}
 			}
-			if (getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y))) {
-				return Collisions.SOUTH;
+			if (getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth()))) {
+				return Collisions.NORTH;
 			}
 			if (getInside(new Vector2(player.getPosition().x,
-					player.getPosition().y + player.getWidth()))) {
+					player.getPosition().y))) {
 				return Collisions.WEST;
+			}
+		}
+		if (direction == Player.Movement.NORTH_EAST) {
+			if (!getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y))
+					&& getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth()))
+					&& !getInside(new Vector2(player.getPosition().x,
+							player.getPosition().y + player.getWidth()))
+					&& !getInside(new Vector2(player.getPosition().x + player.getLength() - 1, player.getPosition().y + player.getWidth()))
+					&& !getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth() - 1))) {
+				return Collisions.NORTH_EAST;
+			}
+			if (getInside(new Vector2(player.getPosition().x + player.getLength(), player.getPosition().y + player.getWidth()))) {
+				if (getInside(new Vector2(player.getPosition().x + player.getLength() - 1, player.getPosition().y + player.getWidth()))) {
+					return Collisions.NORTH;
+				} else {
+					return Collisions.EAST;
+				}
+			}
+			if (getInside(new Vector2(player.getPosition().x, player.getPosition().y + player.getWidth()))) {
+				return Collisions.NORTH;
+			}
+			if (getInside(new Vector2(player.getPosition().x + player.getLength(),
+					player.getPosition().y))) {
+				return Collisions.EAST;
 			}
 		}
 		return Collisions.NONE;

@@ -56,8 +56,6 @@ public class DesertScene extends Scene {
 	    		        if(x==7)
 	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/RailEnd.png");
 	        		}
-		        if(x == 2 && y == 2) 
-		        	testImage = ImageLoader.loadImage("src/images/test/box_green.png");
 			        environment.add(new ImageData(testImage,x,y));
 	        	}
 	        }

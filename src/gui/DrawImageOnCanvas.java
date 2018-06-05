@@ -23,7 +23,7 @@ public class DrawImageOnCanvas {
 	public Scene currentScene;
 	private BufferedImage testImage;
 	public Player player;
-	ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/test/box_green.png"),0,0);
+	ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
 	public DrawImageOnCanvas() {
 		System.out.println("init");
 		init();
