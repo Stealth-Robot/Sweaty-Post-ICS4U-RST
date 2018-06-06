@@ -1,8 +1,11 @@
-package gui;
+package gui.scenes.locations;
 
 import java.awt.Image;
 
+import gui.DrawImageOnCanvas;
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.objects.RectangleCreator;
+import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -60,8 +63,8 @@ public class StartScene extends Scene {
 	    		        if(x==7)
 	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/RailEnd.png");
 	        		}
-			        if(x==4&&y==5)
-			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeUp.png");
+			        if(x==8&&y==3)
+			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeRight.png");
 			        if(x==0&&y==3)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeLeft.png");
 			        environment.add(new ImageData(testImage,x,y));
@@ -72,8 +75,8 @@ public class StartScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		// TODO Auto-generated method stub
-		
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 3),SceneMaster.hotelScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene));
 	}
 
 }

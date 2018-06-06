@@ -103,7 +103,7 @@ public class DrawImageOnCanvas {
 		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
 		playerImage.createRotationImages();
 		SceneMaster.createScenes();
-		currentScene = SceneMaster.casinoIScene;
+		currentScene = SceneMaster.saloonIScene;
 	}
 
 	public synchronized void start() {

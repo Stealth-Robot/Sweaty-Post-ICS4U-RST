@@ -76,10 +76,10 @@ public class CasinoIScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.desertScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 4),SceneMaster.desertScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.desertScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.desertScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.desertScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.hotelScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 4),SceneMaster.startScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.startScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.startScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.saloonScene));
 	}
 }
