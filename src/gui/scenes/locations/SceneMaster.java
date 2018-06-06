@@ -6,7 +6,7 @@ public class SceneMaster {
 	public static Scene startScene, saloonScene, hotelScene, bankScene, gunfightScene, jailScene, railwayScene,
 						saloonIScene, hotelIScene, bankIScene, gunfightIScene, jailIScene,railwayIScene;
 	public static void createScenes() {
-		
+		System.out.print("createScenes()");
 		startScene = new StartScene(); //start
 		saloonScene = new DesertScene(); //saloon outside (need 2)***************
 		hotelScene = new DesertScene(); //hotel outside

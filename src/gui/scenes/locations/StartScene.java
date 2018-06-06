@@ -76,7 +76,7 @@ public class StartScene extends Scene {
 	@Override
 	public void createColliders() {
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 3),SceneMaster.hotelScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene));
+		//addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene));
 	}
 
 }

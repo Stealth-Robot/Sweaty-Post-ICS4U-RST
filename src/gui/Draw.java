@@ -44,7 +44,7 @@ public class Draw extends JPanel {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			// System.out.println("PaintComponent ERROR catch");
+			System.out.println("PaintComponent ERROR catch");
 		}
 	}
 }
