@@ -19,6 +19,11 @@ public class Main {
 	public static DrawImageOnCanvas game;
 	public static void main(String[] args) {
 		game = new DrawImageOnCanvas();
+<<<<<<< HEAD
 		new WildWest();
+=======
+		//sceneColliders.add(RectangleCreator.createDimensionalRectangle(1,1,2,2));
+		//new WildWest();
+>>>>>>> a63341d066ed35ea360a811a63178a73940dcea2
 	}
 }

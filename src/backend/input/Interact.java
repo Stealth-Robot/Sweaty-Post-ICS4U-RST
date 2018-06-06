@@ -1,7 +1,7 @@
 package backend.input;
 
 public class Interact {
-	private static boolean pressed, rpressed;
+	private static boolean pressed, rpressed = true;
 	
 	/**
 	 * Returns true for the tick that the interaction took place in
