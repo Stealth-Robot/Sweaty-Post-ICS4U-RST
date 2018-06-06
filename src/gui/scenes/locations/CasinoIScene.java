@@ -39,9 +39,14 @@ public class CasinoIScene extends Scene {
 				                testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor.png");
 			        		break;
 				        }
-				        if(y==1&&x==4||y==4&&x==4||y==4&&x==7||y==1&&x==7) {
-				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/Table.png");
-				        }
+				        if(y==1&&x==4)
+				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BlackjackTable.png");
+				        if(y==4&&x==4)
+				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/NumGuessTable.png");
+				        if(y==4&&x==7)
+				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/DieTable.png");
+				        if(y==1&&x==7)
+				        	testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/RPSTable.png");
 	        		}
 	        		else
 	        		{
@@ -71,8 +76,10 @@ public class CasinoIScene extends Scene {
 
 	@Override
 	public void createColliders() {
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.desertScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 4),SceneMaster.desertScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.desertScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.desertScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.desertScene));
 	}
-
-
 }
