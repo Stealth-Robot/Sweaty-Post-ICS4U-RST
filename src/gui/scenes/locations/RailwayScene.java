@@ -8,7 +8,12 @@ import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
-public class TrainScene extends Scene {
+public class RailwayScene extends Scene {
+
+	public RailwayScene(int identifier) {
+		super(identifier);
+		System.out.print(identifier + ",");
+	}
 
 	@Override
 	public void createEnvironment() {
@@ -108,7 +113,7 @@ public class TrainScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.railwayScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.railwayIScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 4),SceneMaster.startScene));
 	}
 }

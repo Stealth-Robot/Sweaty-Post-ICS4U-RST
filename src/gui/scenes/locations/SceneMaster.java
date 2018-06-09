@@ -8,25 +8,25 @@ public class SceneMaster {
 	public static void createScenes() {
 		System.out.print("createScenes()");
 
-		railwayIScene = new BarScene(); //railway station inside
-		railwayScene = new TrainScene(); //railway station outside
+		railwayIScene = new BarScene(1); //railway station inside
+		railwayScene = new RailwayScene(2); //railway station outside
 		
-		startScene = new StartScene(); //start
+		startScene = new StartScene(3); //start
 
-		saloonIScene = new CasinoIScene(); //saloon inside
-		saloonScene = new DesertScene(); //saloon outside (need 2)***************
+		saloonIScene = new CasinoIScene(4); //saloon inside
+		saloonScene = new DesertScene(5); //saloon outside (need 2)***************
 
-		bankIScene = new BarScene(); //bank inside
-		bankScene = new DesertScene(); //bank outside
+		bankIScene = new BarScene(6); //bank inside
+		bankScene = new DesertScene(7); //bank outside
 
-		jailIScene = new BarScene(); //jail inside
-		jailScene = new DesertScene(); //jail outside
+		jailIScene = new BarScene(8); //jail inside
+		jailScene = new DesertScene(9); //jail outside
 
-		hotelIScene = new BarScene(); //hotel inside
-		hotelScene = new DesertScene(); //hotel outside
+		hotelIScene = new BarScene(10); //hotel inside
+		hotelScene = new DesertScene(11); //hotel outside
 
-		casinoScene = new CasinoIScene(); //saloon inside
-		endScene = new EndScene(); //gunfight outside
-		gunfightScene = new GunfightScene(); //gunfight inside
+		casinoScene = new CasinoIScene(12); //saloon inside
+		endScene = new EndScene(13); //gunfight outside
+		gunfightScene = new GunfightScene(14); //gunfight inside
 	}
 }

@@ -10,8 +10,7 @@ import images.ImageData;
 public abstract class Scene implements IScene {
 	public ArrayList<ImageData> environment;
 	public ArrayList<Rectangle> sceneColliders;
-	public Scene() {
-	
+	public Scene(int identifier) {
 	}
 	public void initialize() {
 		environment = new ArrayList<ImageData>();

@@ -8,6 +8,11 @@ import images.ImageData;
 
 public class DesertScene extends Scene {
 
+	public DesertScene(int identifier) {
+		super(identifier);
+		System.out.print(identifier + ",");
+	}
+
 	@Override
 	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
