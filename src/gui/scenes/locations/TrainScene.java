@@ -3,6 +3,8 @@ package gui.scenes.locations;
 import java.awt.Image;
 
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.objects.RectangleCreator;
+import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -106,9 +108,7 @@ public class TrainScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		// TODO Auto-generated method stub
-		
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.railwayIScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 4),SceneMaster.startScene));
 	}
-
-
 }

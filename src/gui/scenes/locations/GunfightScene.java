@@ -9,7 +9,7 @@ import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
-public class StartScene extends Scene {
+public class GunfightScene extends Scene {
 
 	@Override
 	public void createEnvironment() {
@@ -75,7 +75,7 @@ public class StartScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 3),SceneMaster.saloonScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 3),SceneMaster.saloonIScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene));
 	}
 
