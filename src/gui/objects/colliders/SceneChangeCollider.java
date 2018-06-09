@@ -17,7 +17,7 @@ public class SceneChangeCollider extends InteractableCollider {
 	}
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
-		DrawImageOnCanvas.currentScene = scene;
+		scene.initialize();
 	}
 
 }

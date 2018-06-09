@@ -101,12 +101,12 @@ public class DrawImageOnCanvas {
 
 	public void init() {
 		System.out.println("INITIALIZE");
-		currentScene = new LoadingScene();
+		new LoadingScene().initialize();
 		display = new Display();
 		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
 		playerImage.createRotationImages();
 		SceneMaster.createScenes();
-		currentScene = SceneMaster.saloonIScene;
+		SceneMaster.saloonIScene.initialize();
 	}
 
 	public synchronized void start() {

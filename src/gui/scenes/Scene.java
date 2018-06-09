@@ -3,15 +3,21 @@ package gui.scenes;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import gui.DrawImageOnCanvas;
 import gui.objects.Rectangle;
 import images.ImageData;
 
 public abstract class Scene implements IScene {
-	public ArrayList<ImageData> environment = new ArrayList<ImageData>();
-	public ArrayList<Rectangle> sceneColliders = new ArrayList<Rectangle>();
+	public ArrayList<ImageData> environment;
+	public ArrayList<Rectangle> sceneColliders;
 	public Scene() {
+		environment = new ArrayList<ImageData>();
+		sceneColliders = new ArrayList<Rectangle>();
+	}
+	public void initialize() {
 		this.createEnvironment();
 		this.createColliders();
+		DrawImageOnCanvas.currentScene = this;
 	}
 	public void render(Graphics g) {
 		for(ImageData i : environment) {
