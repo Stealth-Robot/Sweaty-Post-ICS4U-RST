@@ -3,6 +3,7 @@ package gui.scenes.locations;
 import java.awt.Image;
 
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.Vector2;
 import gui.objects.RectangleCreator;
 import gui.objects.colliders.BattleCollider;
 import gui.objects.colliders.Collider;
@@ -77,7 +78,7 @@ public class CasinoIScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1)));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.startScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 4),SceneMaster.startScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.startScene));
