@@ -108,7 +108,7 @@ public class TrainScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.railwayIScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.railwayScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 4),SceneMaster.startScene));
 	}
 }
