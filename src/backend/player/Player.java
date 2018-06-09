@@ -1,5 +1,6 @@
 package backend.player;
 
+import backend.input.Interact;
 import gui.Display;
 import gui.DrawImageOnCanvas;
 import gui.Vector2;
@@ -52,7 +53,10 @@ public class Player extends Collider {
 		
 		return Movement.NONE;
 	}
+	public Movement facingDir;
+	public boolean interacting = false;
 	public Movement updateCharacter(double xAxis, double yAxis) {
+		interacting = Interact.interacted();
 		//System.out.println(xAxis);
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		if(xAxis == 0 && yAxis == 0) {

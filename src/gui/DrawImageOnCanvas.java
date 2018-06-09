@@ -69,6 +69,9 @@ public class DrawImageOnCanvas {
 	private void tick() {
 		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
 		Player.Movement m = player.updateCharacter(move.x, move.y);
+		if(m != Player.Movement.NONE) {
+			player.facingDir = m;
+		}
 	//	System.out.println(player.position);
 		if(m != Player.Movement.NONE) {
 			currentOrientation = m;

@@ -2,8 +2,10 @@ package gui.objects.colliders;
 
 import backend.input.Interact;
 import backend.player.Player;
+import gui.Display;
 import gui.Vector2;
 import gui.objects.Rectangle;
+import main.Main;
 
 abstract class InteractableCollider extends InteractiveCollider {
 	public InteractableCollider(int length, int width, Vector2 position) {
@@ -18,14 +20,14 @@ abstract class InteractableCollider extends InteractiveCollider {
 	@Override
 	public Collisions collision(Collider player, Player.Movement direction) {
 		Collisions c = Collisions.NONE;
-	
-		if(Interact.interacted() && interacted(player,direction)) {
+		if(Main.game.player.interacting && interacted(player,direction)) {
 			c = super.collision(player, direction);
 		}
 		return c;
 	}
 	public Player.Movement temp = Player.Movement.NONE;
 	public boolean interacted(Collider player, Player.Movement direction) {
+		direction = Main.game.player.facingDir;
 		if(direction != Player.Movement.NONE) {
 			temp = direction;
 			if (direction == Player.Movement.NORTH_EAST || direction == Player.Movement.NORTH_WEST) temp = Player.Movement.NORTH;

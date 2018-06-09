@@ -17,6 +17,6 @@ public abstract class InteractiveCollider extends Collider implements CollisionI
 		if(!c.equals(Collisions.NONE)) {
 			onCollision(player,c);
 		}
-		return c;
+		return Collisions.NONE;
 	}
 }
