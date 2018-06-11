@@ -42,7 +42,8 @@ public class Rectangle {
 	}
 
 	public void setPosition(Vector2 position) {
-		this.position = position;
+		this.position.x = position.x;
+		this.position.y = position.y;
 	}
 
 	public boolean getInside(Vector2 playerPos) {
