@@ -1,13 +1,7 @@
 package gui.objects.colliders;
 
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
 
-=======
 import backend.player.Player;
->>>>>>> 367cacf491d79e792b1fb14e60d20c979edf2dbe
-import gui.Display;
-import gui.DrawImageOnCanvas;
 import gui.Vector2;
 import gui.VectorCreator;
 import gui.objects.Rectangle;
