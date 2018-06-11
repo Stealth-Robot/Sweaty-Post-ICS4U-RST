@@ -2,7 +2,10 @@ package gui.scenes.locations;
 
 import java.awt.Image;
 
+import gui.Vector2;
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.objects.RectangleCreator;
+import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -65,6 +68,8 @@ public class BarScene extends Scene {
 				        if(x==4)
 				        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarInteract.png");
 	        		}
+			        if(x==1&&y==0)
+			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarExit.png");
 			        environment.add(new ImageData(testImage,x,y));
 	        	}
 	        }
@@ -75,5 +80,7 @@ public class BarScene extends Scene {
 
 	@Override
 	public void createColliders() {
+		if(identifier == 1)
+			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.railwayScene, new Vector2(1,1)));
 	}
 }
