@@ -8,7 +8,7 @@ public class RectangleCreator {
 	public static Rectangle dimensionalRectangle(int length, int width, int x, int y) {
 		return new Rectangle(length * Display.PIXEL_IMAGE_SIZE, width * Display.PIXEL_IMAGE_SIZE, new Vector2(x * Display.PIXEL_IMAGE_SIZE, y * Display.PIXEL_IMAGE_SIZE));
 	}
-	public static Rectangle colliderRectangle(int x, int y) {
+	public static Rectangle colliderRectangle(double x, double y) {
 		return new Rectangle(Display.PIXEL_IMAGE_SIZE, Display.PIXEL_IMAGE_SIZE, new Vector2(x * Display.PIXEL_IMAGE_SIZE, y * Display.PIXEL_IMAGE_SIZE));
 	}
 }
