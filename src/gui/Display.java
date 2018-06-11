@@ -1,15 +1,11 @@
 package gui;
-import java.awt.Canvas;
 import java.awt.Dimension;
-import java.awt.event.KeyEvent;
 
-import javax.swing.Action;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
-import backend.input.KeyBindings;
-import input.*;;
+import backend.input.KeyBindings;;
 
 public class Display {
 private static Draw canvas;

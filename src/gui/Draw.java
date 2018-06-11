@@ -5,13 +5,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import main.Main;
 
 @SuppressWarnings("serial")
 public class Draw extends JPanel {
-
 	public static final int GAME_SPEED = 10000;
 	boolean first = true;
 	public void rpaint() {
@@ -28,10 +28,9 @@ public class Draw extends JPanel {
 		
 		try {
 			
-			if (Main.game != null) {
+			if (Main.game != null && !Main.paused) {
 				Main.game.run(g);
 			}
-
 			if (first) {
 				ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
 				exec.scheduleAtFixedRate(new Runnable() {

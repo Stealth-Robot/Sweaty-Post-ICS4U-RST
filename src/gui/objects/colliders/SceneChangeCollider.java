@@ -1,5 +1,7 @@
 package gui.objects.colliders;
 
+import javax.swing.JOptionPane;
+
 import gui.Display;
 import gui.DrawImageOnCanvas;
 import gui.Vector2;
