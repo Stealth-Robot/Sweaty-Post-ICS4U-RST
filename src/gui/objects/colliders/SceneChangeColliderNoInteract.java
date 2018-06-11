@@ -1,27 +1,26 @@
 package gui.objects.colliders;
 
 import backend.player.Player;
-import gui.Display;
-import gui.DrawImageOnCanvas;
 import gui.Vector2;
 import gui.VectorCreator;
 import gui.objects.Rectangle;
+import gui.objects.colliders.Collider.Collisions;
 import gui.scenes.Scene;
 import main.Main;
 
-public class SceneChangeCollider extends InteractableCollider {
+public class SceneChangeColliderNoInteract extends InteractiveCollider {
 	private Scene scene;
 	private Vector2 position;
 	private Player.Movement direction;
-	public SceneChangeCollider(int length, int width, Vector2 position, Scene scene) {
+	public SceneChangeColliderNoInteract(int length, int width, Vector2 position, Scene scene) {
 		super(length, width, position);
 		this.scene = scene;
 	}
-	public SceneChangeCollider(Rectangle rectangle, Scene scene) {
+	public SceneChangeColliderNoInteract(Rectangle rectangle, Scene scene) {
 		super(rectangle);
 		this.scene = scene;
 	}
-	public SceneChangeCollider(Rectangle rectangle, Scene scene, Vector2 position, Player.Movement direction) {
+	public SceneChangeColliderNoInteract(Rectangle rectangle, Scene scene, Vector2 position, Player.Movement direction) {
 		super(rectangle);
 		this.scene = scene;
 		this.position = new Vector2(position.x, position.y);

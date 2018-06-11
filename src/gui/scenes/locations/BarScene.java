@@ -2,6 +2,7 @@ package gui.scenes.locations;
 
 import java.awt.Image;
 
+import backend.player.Player;
 import gui.Vector2;
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
@@ -81,6 +82,6 @@ public class BarScene extends Scene {
 	@Override
 	public void createColliders() {
 		if(identifier == 1)
-			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.railwayScene, new Vector2(1,1)));
+			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.railwayScene, new Vector2(1,1), Player.Movement.NORTH));
 	}
 }

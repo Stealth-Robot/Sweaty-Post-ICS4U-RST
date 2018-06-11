@@ -2,6 +2,7 @@ package gui.scenes.locations;
 
 import java.awt.Image;
 
+import backend.player.Player;
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.Vector2;
 import gui.objects.RectangleCreator;
@@ -86,9 +87,9 @@ public class CasinoIScene extends Scene {
 	@Override
 	public void createColliders() {
 		if(identifier == 4)
-			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1)));
+			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1), Player.Movement.NORTH));
 		if(identifier == 12)
-			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1)));
+			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1), Player.Movement.NORTH));
 		/*addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.startScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 4),SceneMaster.startScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.startScene)); //they work but need to be battle colliders
