@@ -8,9 +8,11 @@ import images.ImageData;
 
 public class DesertScene extends Scene {
 
+	int identifier;
 	public DesertScene(int identifier) {
 		super(identifier);
 		System.out.print(identifier + ",");
+		this.identifier = identifier;
 	}
 
 	@Override

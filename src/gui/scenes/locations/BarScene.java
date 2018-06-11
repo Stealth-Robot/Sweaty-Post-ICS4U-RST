@@ -7,10 +7,11 @@ import gui.scenes.Scene;
 import images.ImageData;
 
 public class BarScene extends Scene {
-
+	int identifier;
 	public BarScene(int identifier) {
 		super(identifier);
 		System.out.print(identifier + ",");
+		this.identifier = identifier;
 	}
 
 	@Override
@@ -74,8 +75,5 @@ public class BarScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		// TODO Auto-generated method stub
-		
 	}
-
 }

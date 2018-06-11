@@ -13,10 +13,11 @@ import images.ImageData;
 
 public class CasinoIScene extends Scene {
 
-
+	int identifier;
 	public CasinoIScene(int identifier) {
 		super(identifier);
 		System.out.print(identifier + ",");
+		this.identifier = identifier;
 	}
 
 	@Override
@@ -84,11 +85,14 @@ public class CasinoIScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1)));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.startScene));
+		if(identifier == 4)
+			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1)));
+		if(identifier == 12)
+			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1)));
+		/*addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.startScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 4),SceneMaster.startScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.startScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.startScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.startScene)); //they work but need to be battle colliders
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.startScene));*/
 		
 	}
 }
