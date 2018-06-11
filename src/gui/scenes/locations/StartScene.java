@@ -2,8 +2,9 @@ package gui.scenes.locations;
 
 import java.awt.Image;
 
-import gui.DrawImageOnCanvas;
+import gui.Display;
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.Vector2;
 import gui.objects.RectangleCreator;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.scenes.Scene;
@@ -81,7 +82,7 @@ public class StartScene extends Scene {
 	@Override
 	public void createColliders() {
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 3),SceneMaster.saloonScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene, new Vector2(2 * Display.PIXEL_IMAGE_SIZE,2 * Display.PIXEL_IMAGE_SIZE)));
 	}
 
 }

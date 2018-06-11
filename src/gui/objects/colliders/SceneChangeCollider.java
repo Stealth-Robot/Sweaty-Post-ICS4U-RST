@@ -21,7 +21,7 @@ public class SceneChangeCollider extends InteractableCollider {
 	public SceneChangeCollider(Rectangle rectangle, Scene scene, Vector2 position) {
 		super(rectangle);
 		this.scene = scene;
-		//this.position = new Vector2(position.x, position.y);
+		this.position = new Vector2(position.x, position.y);
 	}
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {

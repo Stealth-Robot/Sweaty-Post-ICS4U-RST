@@ -56,6 +56,7 @@ public class Player extends Collider {
 	public Movement facingDir;
 	public boolean interacting = false;
 	public Movement updateCharacter(double xAxis, double yAxis) {
+	
 		interacting = Interact.interacted();
 		//System.out.println(xAxis);
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
