@@ -11,11 +11,13 @@ public abstract class Scene implements IScene {
 	public ArrayList<ImageData> environment;
 	public ArrayList<Rectangle> sceneColliders;
 	public Scene(int identifier) {
+		environment = new ArrayList<ImageData>();
+		this.createEnvironment();
 	}
 	public void initialize() {
-		environment = new ArrayList<ImageData>();
+		
 		sceneColliders = new ArrayList<Rectangle>();
-		this.createEnvironment();
+		
 		this.createColliders();
 		DrawImageOnCanvas.currentScene = this;
 	}

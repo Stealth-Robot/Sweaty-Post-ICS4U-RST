@@ -83,7 +83,7 @@ public class StartScene extends Scene {
 	@Override
 	public void createColliders() {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 3),SceneMaster.saloonScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene, new Vector2(7.9,3), Player.Movement.WEST));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.railwayScene, new Vector2(7,3), Player.Movement.WEST));
 	}
 
 }
