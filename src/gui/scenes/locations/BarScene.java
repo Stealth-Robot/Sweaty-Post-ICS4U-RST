@@ -1,12 +1,12 @@
 package gui.scenes.locations;
 
 import java.awt.Image;
-
 import backend.player.Player;
 import gui.Vector2;
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
-import gui.objects.colliders.SceneChangeCollider;
+import gui.objects.colliders.Collider;
+import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -69,7 +69,7 @@ public class BarScene extends Scene {
 				        if(x==4)
 				        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarInteract.png");
 	        		}
-			        if(x==1&&y==0)
+			        if(x==4&&y==0)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarExit.png");
 			        environment.add(new ImageData(testImage,x,y));
 	        	}
@@ -81,7 +81,18 @@ public class BarScene extends Scene {
 
 	@Override
 	public void createColliders() {
+		addCollider(new Collider(RectangleCreator.colliderRectangle(0,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(1,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(2,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(3,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(4,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(5,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(6,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(7,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(1,2)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(3,1)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(6,2)));
 		if(identifier == 1)
-			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.railwayScene, new Vector2(0,1), Player.Movement.NORTH));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.railwayScene, new Vector2(4,1), Player.Movement.NORTH));
 	}
 }
