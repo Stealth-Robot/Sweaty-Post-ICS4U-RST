@@ -52,11 +52,31 @@ public class DesertScene extends Scene {
 	   		        }
 	   		        if(x==3&&y==4)
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseOutsideCorner4.png");
+	   		        
+///////////////////   Below dosen't work because identifier is seen as 0   ///////////////////////////////////////////////////////////
 	   		        if(identifier == 5) {
 		   		        if(x==4&&y==4)
 	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/saloonSign1.png");
 		   		        if(x==5&&y==4)
 	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/saloonSign2.png");
+	   		        }
+	   		        else if(identifier == 7) {
+		   		        if(x==4&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/bankSign1.png");
+		   		        if(x==5&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/bankSign2.png");
+	   		        }
+	   		        else if(identifier == 9) {
+		   		        if(x==4&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/jailSign1.png");
+		   		        if(x==5&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/jailSign2.png");
+	   		        }
+	   		        else if(identifier == 11) {
+		   		        if(x==4&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/hotelSign1.png");
+		   		        if(x==5&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/hotelSign2.png");
 	   		        }
 	   		        else {
 		   		        if(x==4&&y==4)
@@ -64,6 +84,7 @@ public class DesertScene extends Scene {
 		   		        if(x==5&&y==4)
 	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
 	   		        }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	   		        if(x==6&&y==4)
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseStep.png");
 	   		        if(x==6&&y==3)
