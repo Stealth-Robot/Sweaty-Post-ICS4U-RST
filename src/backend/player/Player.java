@@ -6,7 +6,7 @@ import gui.DrawImageOnCanvas;
 import gui.Vector2;
 import gui.objects.Rectangle;
 import gui.objects.colliders.Collider;
-import main.Gunfight;
+import main.Main;
 
 public class Player extends Collider {
 	
