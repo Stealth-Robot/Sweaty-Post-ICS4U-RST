@@ -94,7 +94,13 @@ public class BarScene extends Scene {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(6,2)));
 		if(identifier == 1)
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.railwayScene, new Vector2(4,0.5), Player.Movement.NORTH,Player.Movement.SOUTH));
-		//if(identifier == 1)
-		//	addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.railwayScene, new Vector2(4,0.5), Player.Movement.NORTH,Player.Movement.SOUTH));
+		if(identifier == 4)
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.saloonScene, new Vector2(6,2.5), Player.Movement.NORTH,Player.Movement.SOUTH));
+		if(identifier == 6)
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.bankScene, new Vector2(6,2.5), Player.Movement.NORTH,Player.Movement.SOUTH));
+		if(identifier == 8)
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.jailScene, new Vector2(6,2.5), Player.Movement.NORTH,Player.Movement.SOUTH));
+		if(identifier == 10)
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.hotelScene, new Vector2(6,2.5), Player.Movement.NORTH,Player.Movement.SOUTH));
 	}
 }

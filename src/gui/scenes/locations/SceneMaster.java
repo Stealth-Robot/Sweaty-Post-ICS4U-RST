@@ -13,7 +13,7 @@ public class SceneMaster {
 		
 		startScene = new StartScene(3); //start
 
-		saloonIScene = new CasinoIScene(4); //saloon inside
+		saloonIScene = new BarScene(4); //saloon inside
 		saloonScene = new DesertScene(5); //saloon outside (need 2)***************
 
 		bankIScene = new BarScene(6); //bank inside

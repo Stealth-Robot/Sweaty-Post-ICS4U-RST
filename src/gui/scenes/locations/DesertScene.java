@@ -6,13 +6,14 @@ import backend.player.Player;
 import gui.Vector2;
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
+import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.scenes.Scene;
 import images.ImageData;
 
 public class DesertScene extends Scene {
 
-	int identifier;
+	private int identifier;
 	public DesertScene(int identifier) {
 		super(identifier);
 		System.out.print(identifier + ",");
@@ -47,15 +48,22 @@ public class DesertScene extends Scene {
 			  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 			  	        		break;
 			  		        }
-	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/desert.png");
 			      		break;
 	   		        }
 	   		        if(x==3&&y==4)
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseOutsideCorner4.png");
-	   		        if(x==4&&y==4)
-  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
-	   		        if(x==5&&y==4)
-  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
+	   		        if(identifier == 5) {
+		   		        if(x==4&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/saloonSign1.png");
+		   		        if(x==5&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/saloonSign2.png");
+	   		        }
+	   		        else {
+		   		        if(x==4&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
+		   		        if(x==5&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
+	   		        }
 	   		        if(x==6&&y==4)
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseStep.png");
 	   		        if(x==6&&y==3)
@@ -83,10 +91,32 @@ public class DesertScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		if(identifier == 5) {
+		addCollider(new Collider(RectangleCreator.colliderRectangle(7,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(7,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(3,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(3,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(4,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(5,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(6,4)));
+		if(identifier == 5) {//saloon
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.startScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
-			//addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.startScene, new Vector2(7,2), Player.Movement.NORTH, Player.Movement.NORTH));
-			//addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.startScene, new Vector2(7,2), Player.Movement.EAST, Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.bankScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.saloonIScene, new Vector2(4,1), Player.Movement.NORTH, Player.Movement.NORTH));
+		}
+		if(identifier == 7) {//bank
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.saloonScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.jailScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.bankIScene, new Vector2(4,1), Player.Movement.NORTH, Player.Movement.NORTH));
+		}
+		if(identifier == 9) {//jail
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.bankScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.hotelScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.jailIScene, new Vector2(4,1), Player.Movement.NORTH, Player.Movement.NORTH));
+		}
+		if(identifier == 11) {//hotel
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.jailScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+			//addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.bankScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.hotelIScene, new Vector2(4,1), Player.Movement.NORTH, Player.Movement.NORTH));
 		}
 	}
 
