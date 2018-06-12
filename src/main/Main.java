@@ -15,6 +15,7 @@ public class Main {
 		game = new DrawImageOnCanvas();
 		intro();
 		//new WildWest();
+	//	DialogCreator.createDialog("aaa", "bbb");
 	}
 
 	public static void intro () {

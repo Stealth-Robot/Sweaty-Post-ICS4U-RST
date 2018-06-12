@@ -2,12 +2,12 @@ package backend.input;
 
 public class Interact {
 	private static boolean pressed, rpressed = true;
-	
 	/**
 	 * Returns true for the tick that the interaction took place in
 	 * @return
 	 */
 	public static boolean interacted() {
+	//	System.out.print(pressed ? "True\n" : "");
 		if (pressed && rpressed) {
 			rpressed = false;
 			return true;
