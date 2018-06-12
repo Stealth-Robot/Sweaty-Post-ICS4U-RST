@@ -1,7 +1,7 @@
 package backend.battle;
 
 public class BattleAI {
-	public int choice() {
+	public static int choice() {
 	int temp;
 		do 
 			temp = ((int)(Math.random() * 3) + 1);
