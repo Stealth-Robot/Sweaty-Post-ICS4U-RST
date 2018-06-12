@@ -6,6 +6,7 @@ import backend.player.Player;
 import gui.Vector2;
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
+import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.scenes.Scene;
@@ -116,8 +117,8 @@ public class RailwayScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.railwayIScene));
-		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 4),SceneMaster.startScene));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(1,1)));
+		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 2),SceneMaster.railwayIScene, new Vector2(1,1), Player.Movement.NORTH));
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 3),SceneMaster.startScene, new Vector2(1,3), Player.Movement.EAST));
 	}
 }

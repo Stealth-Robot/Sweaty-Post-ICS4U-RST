@@ -103,7 +103,7 @@ public class DrawImageOnCanvas {
 		System.out.println("INITIALIZE");
 		new LoadingScene(0).initialize();
 		display = new Display();
-		player = new Player(Display.PIXEL_IMAGE_SIZE,Display.PIXEL_IMAGE_SIZE,new Vector2(0,0));
+		player = new Player(Display.PIXEL_IMAGE_SIZE - 1,Display.PIXEL_IMAGE_SIZE - 1,new Vector2(0,0));
 		playerImage.createRotationImages();
 		SceneMaster.createScenes();
 		SceneMaster.startScene.initialize();

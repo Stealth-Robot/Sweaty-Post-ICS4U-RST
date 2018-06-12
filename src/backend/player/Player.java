@@ -66,10 +66,10 @@ public class Player extends Collider {
 		magnitude /= SPEED;
 		position.x += xAxis / magnitude;
 		position.y += yAxis / magnitude;
-		if(position.x < 0 || position.x > Display.SCREEN_WIDTH - Display.PIXEL_IMAGE_SIZE) {
+		if(position.x < 0 || position.x > Display.SCREEN_WIDTH - Display.PIXEL_IMAGE_SIZE + 1) {
 			position.x -= xAxis / magnitude;
 		}
-		if(position.y < 0 || position.y > Display.SCREEN_HEIGHT - Display.PIXEL_IMAGE_SIZE) {
+		if(position.y < 0 || position.y > Display.SCREEN_HEIGHT - Display.PIXEL_IMAGE_SIZE + 1) {
 			position.y -= yAxis / magnitude;
 		}
 		Movement m = move(xAxis, yAxis);
