@@ -2,7 +2,11 @@ package gui.scenes.locations;
 
 import java.awt.Image;
 
+import backend.player.Player;
+import gui.Vector2;
 import gui.DrawImageOnCanvas.ImageLoader;
+import gui.objects.RectangleCreator;
+import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -43,14 +47,15 @@ public class DesertScene extends Scene {
 			  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 			  	        		break;
 			  		        }
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/desert.png");
 			      		break;
-			        }
+	   		        }
+	   		        if((x>1&&x<7)&&(y>4&&y<6))
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
 			        if(x==8&&y==3)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeRight.png");
-			        if(x==4&&y==0)
-			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeDown.png");
-			        if(x==4&&y==5)
-			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeUp.png");
+			        if(x==0&&y==3)
+			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeLeft.png");
 			       environment.add(new ImageData(testImage,x,y));
 	        	}
 	        }
@@ -58,8 +63,11 @@ public class DesertScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		// TODO Auto-generated method stub
-		
+		if(identifier == 5) {
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.startScene, new Vector2(7,3), Player.Movement.WEST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.startScene, new Vector2(7,3), Player.Movement.NORTH));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.startScene, new Vector2(7,3), Player.Movement.EAST));
+		}
 	}
 
 }
