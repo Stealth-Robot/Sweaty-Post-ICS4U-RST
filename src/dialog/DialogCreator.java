@@ -3,7 +3,7 @@ package dialog;
 import javax.swing.JOptionPane;
 
 import gui.Display;
-import main.Main;
+import main.Gunfight;
 
 public class DialogCreator {
 

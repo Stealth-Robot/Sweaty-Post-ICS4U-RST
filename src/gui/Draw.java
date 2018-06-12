@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import main.Main;
+import main.Gunfight;
 
 @SuppressWarnings("serial")
 public class Draw extends JPanel {
@@ -28,8 +28,8 @@ public class Draw extends JPanel {
 		
 		try {
 			
-			if (Main.game != null && !Main.paused) {
-				Main.game.run(g);
+			if (Gunfight.game != null && !Gunfight.paused) {
+				Gunfight.game.run(g);
 			}
 			if (first) {
 				ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
