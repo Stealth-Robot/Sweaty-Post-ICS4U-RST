@@ -67,7 +67,7 @@ public class RailwayScene extends Scene {
 	    	        		break;
 	    		        }
 	        		}
-			        if(x==8&&y==3)
+			        if(x==8&&y==2)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeRight.png");
 			        
 			        if(x==0&&y==5)
@@ -125,7 +125,7 @@ public class RailwayScene extends Scene {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(5,3)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(5,4)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
-		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, 2),SceneMaster.railwayIScene, new Vector2(4,1), Player.Movement.NORTH));
-		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 3),SceneMaster.startScene, new Vector2(1,3), Player.Movement.EAST));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, 1.95),SceneMaster.railwayIScene, new Vector2(4,1), Player.Movement.NORTH,Player.Movement.NORTH));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.startScene, new Vector2(1,2), Player.Movement.EAST,Player.Movement.EAST));
 	}
 }

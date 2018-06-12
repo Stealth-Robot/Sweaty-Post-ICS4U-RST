@@ -93,6 +93,8 @@ public class BarScene extends Scene {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(3,1)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(6,2)));
 		if(identifier == 1)
-			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.railwayScene, new Vector2(4,1), Player.Movement.NORTH));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.railwayScene, new Vector2(4,0.5), Player.Movement.NORTH,Player.Movement.SOUTH));
+		//if(identifier == 1)
+		//	addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.railwayScene, new Vector2(4,0.5), Player.Movement.NORTH,Player.Movement.SOUTH));
 	}
 }
