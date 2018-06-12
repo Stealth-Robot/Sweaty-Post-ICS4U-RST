@@ -1,5 +1,9 @@
 package gui;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -38,6 +42,11 @@ private static Draw canvas;
 	        mainFrame.pack();
 	       mainFrame.requestFocus();
 	       canvas.requestFocus();
+	       
+	       Toolkit toolkit = Toolkit.getDefaultToolkit();
+	       Image image = toolkit.getImage("src/images/sprites/Player.png");
+	       Cursor c = toolkit.createCustomCursor(image , new Point(mainFrame.getX(), mainFrame.getY()), "img");
+	       mainFrame.setCursor (c);
     }
 
     public JPanel getCanvas() {

@@ -6,7 +6,7 @@ import gui.Vector2;
 import gui.VectorCreator;
 import gui.objects.Rectangle;
 import gui.scenes.Scene;
-import main.Gunfight;
+import main.Main;
 
 public class SceneChangeCollider extends InteractableCollider {
 	private Scene scene;
@@ -30,9 +30,9 @@ public class SceneChangeCollider extends InteractableCollider {
 	public void onCollision(Collider collision, Collisions direction) {
 		scene.initialize();
 		if(position != null) {
-			Gunfight.game.player.setPosition(VectorCreator.dimensionalVector2(position.x, position.y));
-			Gunfight.game.player.facingDir = this.direction;
-			Gunfight.game.currentOrientation = this.direction;
+			Main.game.player.setPosition(VectorCreator.dimensionalVector2(position.x, position.y));
+			Main.game.player.facingDir = this.direction;
+			Main.game.currentOrientation = this.direction;
 		}
 	}
 
