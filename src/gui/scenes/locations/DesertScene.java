@@ -50,11 +50,31 @@ public class DesertScene extends Scene {
 	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/desert.png");
 			      		break;
 	   		        }
-	   		        if((x>1&&x<7)&&(y>4&&y<6))
+	   		        if(x==3&&y==4)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseOutsideCorner4.png");
+	   		        if(x==4&&y==4)
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
-			        if(x==8&&y==3)
+	   		        if(x==5&&y==4)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
+	   		        if(x==6&&y==4)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseStep.png");
+	   		        if(x==6&&y==3)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/Steps.png");
+	   		        if(x==7&&y==4)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseOutsideCorner3.png");
+	   		        if(x==3&&y==5)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseEdgeLeft.png");
+	   		        if(x==4&&y==5)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseInsideCorner3.png");
+	   		        if(x==5&&y==5)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseEdgeInsideDown.png");
+	   		        if(x==6&&y==5)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseInsideCorner4.png");
+	   		        if(x==7&&y==5)
+  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseEdgeRight.png");
+			        if(x==8&&y==2)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeRight.png");
-			        if(x==0&&y==3)
+			        if(x==0&&y==2)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeLeft.png");
 			       environment.add(new ImageData(testImage,x,y));
 	        	}
@@ -64,9 +84,9 @@ public class DesertScene extends Scene {
 	@Override
 	public void createColliders() {
 		if(identifier == 5) {
-			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.startScene, new Vector2(7,3), Player.Movement.WEST));
-			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.startScene, new Vector2(7,3), Player.Movement.NORTH));
-			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.startScene, new Vector2(7,3), Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.startScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+			//addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.startScene, new Vector2(7,2), Player.Movement.NORTH, Player.Movement.NORTH));
+			//addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.startScene, new Vector2(7,2), Player.Movement.EAST, Player.Movement.EAST));
 		}
 	}
 

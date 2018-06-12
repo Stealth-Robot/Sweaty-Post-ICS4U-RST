@@ -71,9 +71,9 @@ public class StartScene extends Scene {
 	    		        if(x==7)
 	    		        	testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/RailEnd.png");
 	        		}
-			        if(x==8&&y==3)
+			        if(x==8&&y==2)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeRight.png");
-			        if(x==0&&y==3)
+			        if(x==0&&y==2)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeLeft.png");
 			        environment.add(new ImageData(testImage,x,y));
 	        	}
@@ -83,8 +83,8 @@ public class StartScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 3),SceneMaster.saloonScene, new Vector2(1,3), Player.Movement.EAST));
-		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 3),SceneMaster.railwayScene, new Vector2(7,3), Player.Movement.WEST));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.saloonScene, new Vector2(1,2), Player.Movement.EAST,Player.Movement.EAST));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.railwayScene, new Vector2(7,2), Player.Movement.WEST,Player.Movement.WEST));
 	}
 
 }
