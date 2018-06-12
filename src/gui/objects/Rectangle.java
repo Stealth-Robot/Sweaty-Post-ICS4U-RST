@@ -7,11 +7,11 @@ import gui.objects.colliders.Collider.Collisions;
 
 public class Rectangle {
 
-	private int length;
-	private int width;
+	private double length;
+	private double width;
 	private Vector2 position;
 
-	public Rectangle(int length, int width, Vector2 position) {
+	public Rectangle(double length, double width, Vector2 position) {
 		this.length = length;
 		this.width = width;
 		this.position = position;
@@ -21,7 +21,7 @@ public class Rectangle {
 		this.width = rectangle.getWidth();
 		this.position = rectangle.getPosition();
 	}
-	public int getLength() {
+	public double getLength() {
 		return length;
 	}
 
@@ -29,7 +29,7 @@ public class Rectangle {
 		this.length = length;
 	}
 
-	public int getWidth() {
+	public double getWidth() {
 		return width;
 	}
 

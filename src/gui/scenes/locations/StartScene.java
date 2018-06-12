@@ -8,6 +8,7 @@ import gui.Vector2;
 import gui.objects.RectangleCreator;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.SpeechCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 

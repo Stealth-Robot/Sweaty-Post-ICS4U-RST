@@ -7,6 +7,7 @@ import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.SpeechCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -90,8 +91,9 @@ public class BarScene extends Scene {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(6,4)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(7,4)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(1,2)));
-		addCollider(new Collider(RectangleCreator.colliderRectangle(3,1)));
+		addCollider(new Collider(RectangleCreator.dimensionalRectangle(0.95,0.95,3,1)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(6,2)));
+		addCollider(new SpeechCollider(RectangleCreator.colliderRectangle(4,4),"no","uu"));
 		if(identifier == 1)
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),SceneMaster.railwayScene, new Vector2(4,0.5), Player.Movement.NORTH,Player.Movement.SOUTH));
 		if(identifier == 4)

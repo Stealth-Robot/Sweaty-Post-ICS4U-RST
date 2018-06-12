@@ -44,7 +44,7 @@ private static Draw canvas;
 	       canvas.requestFocus();
 	       
 	       Toolkit toolkit = Toolkit.getDefaultToolkit();
-	       Image image = toolkit.getImage("src/images/cursors/Crosshair.png");
+	       Image image = toolkit.getImage("src/images/cursors/BulletCursor.png");
 	       Cursor c = toolkit.createCustomCursor(image , new Point(mainFrame.getX(), mainFrame.getY()), "img");
 	       mainFrame.setCursor (c);
     }
