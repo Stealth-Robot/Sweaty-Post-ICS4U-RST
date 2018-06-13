@@ -15,9 +15,6 @@ abstract class InteractableColliderNoConstraint extends InteractiveCollider {
 		super(rectangle);
 	}
 	@Override
-	public void onCollision(Collider collision, Collisions direction) {
-	}
-	@Override
 	public Collisions collision(Collider player, Player.Movement direction) {
 		Collisions c = Collisions.NONE;
 		if(Main.game.player.interacting) {

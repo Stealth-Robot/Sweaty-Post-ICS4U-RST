@@ -1,5 +1,7 @@
 package main;
 
+import javax.swing.JOptionPane;
+
 import dialog.DialogCreator;
 import gui.DrawImageOnCanvas;
 
@@ -15,7 +17,7 @@ public class Main {
 		game = new DrawImageOnCanvas();
 		intro();
 		//new WildWest();
-	//	DialogCreator.createDialog("aaa", "bbb");
+		//int i =DialogCreator.createDialog("The Title of the Character","The Story of the Text",null,"I wish this to be the case","I hate every single one of you");
 	}
 
 	public static void intro () {
