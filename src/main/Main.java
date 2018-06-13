@@ -17,7 +17,10 @@ public class Main {
 		game = new DrawImageOnCanvas();
 		intro();
 		new WildWest();
+
+		//new WildWest();
 		//int i =DialogCreator.createDialog("The Title of the Character","The Story of the Text",null,"I wish this to be the case","I hate every single one of you");
+
 	}
 
 	public static void intro () {
