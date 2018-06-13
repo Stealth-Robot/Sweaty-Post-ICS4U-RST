@@ -103,7 +103,9 @@ public class WildWest implements ActionListener
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-
+		int action = BattleAI.choice(player,enemy);
+		System.out.println("AI: " + action);
+		enemy.actions(action);
 		String command = event.getActionCommand();
 		boolean turn = false;
 		if (command.equals("shoot")) {
@@ -120,7 +122,7 @@ public class WildWest implements ActionListener
 		}
 		
 		if (turn) {
-			enemy.actions(BattleAI.choice());
+			
 			win = player.tick(enemy);
 			loss = enemy.tick(player);
 			player.resetTurn();

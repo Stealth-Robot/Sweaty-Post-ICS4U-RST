@@ -3,8 +3,8 @@ package backend.battle;
 public class BattleCharacter {
 	public int bullets;
 	private int maxBullets;
-	private boolean armored;
-	private boolean shot;
+	public boolean armored;
+	public boolean shot;
 	int turn;
 
 	/**

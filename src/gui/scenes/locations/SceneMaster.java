@@ -26,7 +26,7 @@ public class SceneMaster {
 		hotelScene = new DesertScene(11); //hotel outside
 
 		casinoScene = new CasinoIScene(12); //saloon inside
-		endScene = new EndScene(13); //gunfight outside
+		endScene = new DesertScene(13); //gunfight outside
 		gunfightScene = new GunfightScene(14); //gunfight inside
 	}
 }

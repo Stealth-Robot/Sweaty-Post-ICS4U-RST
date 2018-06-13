@@ -9,6 +9,7 @@ import gui.objects.RectangleCreator;
 import gui.objects.colliders.BattleCollider;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeCollider;
+import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -86,11 +87,14 @@ public class CasinoIScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		if(identifier == 4)
-			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1), Player.Movement.NORTH));
-		if(identifier == 12)
-			addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.startScene, new Vector2(1,1), Player.Movement.NORTH));
-		/*addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.startScene));
+		if(identifier == 12) {
+			addCollider(new Collider(RectangleCreator.colliderRectangle(0,4)));
+			addCollider(new Collider(RectangleCreator.colliderRectangle(2,4)));
+			addCollider(new Collider(RectangleCreator.colliderRectangle(1,5)));
+			//addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(1, 0),SceneMaster.endScene, new Vector2(1,1), Player.Movement.NORTH));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(1,-0.95),SceneMaster.endScene, new Vector2(6,2), Player.Movement.SOUTH, Player.Movement.SOUTH));
+		}
+			/*addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 4),SceneMaster.startScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 4),SceneMaster.startScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(7, 1),SceneMaster.startScene)); //they work but need to be battle colliders
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(4, 1),SceneMaster.startScene));*/
