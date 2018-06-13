@@ -3,6 +3,7 @@ package main;
 import javax.swing.JOptionPane;
 
 import gui.DrawImageOnCanvas;
+import wildWest.WildWest;
 
 
 //update
@@ -15,7 +16,7 @@ public class Main {
 	public static void main(String[] args) {
 		game = new DrawImageOnCanvas();
 		intro();
-		//new WildWest();
+		new WildWest();
 		//int i =DialogCreator.createDialog("The Title of the Character","The Story of the Text",null,"I wish this to be the case","I hate every single one of you");
 	}
 
