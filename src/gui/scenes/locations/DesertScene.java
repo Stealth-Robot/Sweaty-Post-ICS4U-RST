@@ -13,15 +13,14 @@ import images.ImageData;
 
 public class DesertScene extends Scene {
 
-	private int identifier;
 	public DesertScene(int identifier) {
 		super(identifier);
 		System.out.print(identifier + ",");
-		this.identifier = identifier;
 	}
 
 	@Override
 	public void createEnvironment() {
+		System.out.println("\n" + identifier);
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {

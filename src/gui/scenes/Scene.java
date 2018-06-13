@@ -10,8 +10,10 @@ import images.ImageData;
 public abstract class Scene implements IScene {
 	public ArrayList<ImageData> environment;
 	public ArrayList<Rectangle> sceneColliders;
+	protected int identifier;
 	public Scene(int identifier) {
 		environment = new ArrayList<ImageData>();
+		this.identifier = identifier;
 		this.createEnvironment();
 	}
 	public void initialize() {
