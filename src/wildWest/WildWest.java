@@ -11,7 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
+import backend.player.Player;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -27,8 +29,8 @@ public class WildWest implements ActionListener
 	private BattleCharacter player, enemy;
 
 	private final int AMMOSIZE = 100;
-	private final int E = 3;
-	
+	private final int ENEMYRATIO = 5;
+
 	public WildWest() 
 	{
 		frame = new JFrame("Wild Wild West");
@@ -52,7 +54,7 @@ public class WildWest implements ActionListener
 		contentPane.setBackground(Color.white);
 
 		enemySprite = new JLabel();
-		enemySprite.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT)));
+		enemySprite.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getImage().getScaledInstance((new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconWidth() * ENEMYRATIO), new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconHeight() * ENEMYRATIO, Image.SCALE_DEFAULT)));
 		eAmmo = new JLabel();
 		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		pAmmo = new JLabel();
@@ -62,8 +64,8 @@ public class WildWest implements ActionListener
 		GroupLayout layout = new GroupLayout(contentPane);
 		contentPane.setLayout(layout);
 		layout.setAutoCreateGaps(true);
-        layout.setAutoCreateContainerGaps(true);
-		
+		layout.setAutoCreateContainerGaps(true);
+
 		layout.setVerticalGroup(layout.createSequentialGroup()
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(eAmmo)
@@ -87,24 +89,48 @@ public class WildWest implements ActionListener
 						.addComponent(enemySprite)
 						.addComponent(protect))
 				);
-		
+
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
 		frame.pack(); // Sizes and displays the frame
 		frame.setVisible(true); //lets the program know that the frame is visible as opposed to invisible
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
+
+		String command = event.getActionCommand();
+		boolean win = false;
+		boolean loss = false;
+		boolean turn = false;
+		if (command.equals("shoot")) {
+			player.actions(1);
+			turn = true;
+		}
+		if (command.equals("reload")) {
+			player.actions(2);
+			turn = true;
+		}
+		if (command.equals("protect")) {
+			player.actions(3);
+			turn = true;
+		}
 		
-		 String command = event.getActionCommand();
-		 if (command.equals("shoot")) {
-		 }
-		 if (command.equals("reload")) {
-		 }
-		 if (command.equals("protect")) {
-		 }
-		 
+		if (turn) {
+			enemy.actions(BattleAI.choice());
+			win = player.tick(enemy);
+			loss = enemy.tick(player);
+			player.resetTurn();
+			enemy.resetTurn();	
+			replaceImage();
+			System.out.println("Win: "+win);
+			System.out.println("Loss: "+loss);
+		if (loss || win) {
+			shoot.setEnabled(false);
+			reload.setEnabled(false);
+			protect.setEnabled(false);
+		}
+	}
 
 	}
 
@@ -112,6 +138,24 @@ public class WildWest implements ActionListener
 	{
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		WildWest play = new WildWest();
+	}
+
+	private void replaceImage() {
+		if (player.bullets == 0)		pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (player.bullets == 1) 	pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoOne.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (player.bullets == 2) 	pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoTwo.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (player.bullets == 3) 	pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoThree.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (player.bullets == 4) 	pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoFour.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (player.bullets == 5) 	pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoFive.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else 							pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoSix.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		if (enemy.bullets == 0)			eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (enemy.bullets == 1) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoOne.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (enemy.bullets == 2) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoTwo.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (enemy.bullets == 3) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoThree.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (enemy.bullets == 4) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoFour.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else if (enemy.bullets == 5) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoFive.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+		else 							eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoSix.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
+	
 	}
 
 	public static void main(String[] args) // Methods that create and show a GUI should be run from an event-dispatching thread

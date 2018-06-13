@@ -1,7 +1,7 @@
 package backend.battle;
 
 public class BattleCharacter {
-	int bullets;
+	public int bullets;
 	private int maxBullets;
 	private boolean armored;
 	private boolean shot;
@@ -22,11 +22,11 @@ public class BattleCharacter {
 	 * Called after the chracter makes their choice
 	 * @param enemy
 	 */
-	public void tick(BattleCharacter enemy) {
+	public boolean tick(BattleCharacter enemy) {
 		if (bullets > maxBullets) {
 			bullets = maxBullets;
 		} 
-		shooting(enemy);
+		return shooting(enemy);
 	}
 
 	/**
@@ -39,11 +39,11 @@ public class BattleCharacter {
 
 	/**
 	 * Calls the action chosen to perform
-	 * @param choice (1 = reload, 2 = shoot, 3 = defend)
+	 * @param choice (1 = shoot, 2 = reload, 3 = defend)
 	 */
 	public void actions(int choice) {
-		if (choice == 1) reload();
-		if (choice == 2) shoot();
+		if (choice == 1) shoot();
+		if (choice == 2) reload();
 		if (choice == 3) defend();
 	}
 
@@ -66,7 +66,8 @@ public class BattleCharacter {
 	 * @return
 	 */
 	public boolean shooting(BattleCharacter enemy) {
-		return (enemy.getShot());
+		if (shot) return (enemy.getShot());
+		else return false;
 	}
 
 	/**
@@ -75,7 +76,7 @@ public class BattleCharacter {
 	 */
 	public boolean getShot() {
 		if (shot) return false;
-		else if (armored) return false;
+		if (armored) return false;
 		else return true;
 	}
 }
