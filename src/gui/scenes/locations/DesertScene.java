@@ -53,7 +53,7 @@ public class DesertScene extends Scene {
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseOutsideCorner4.png");
 	   		        
 ///////////////////   Below dosen't work because identifier is seen as 0   ///////////////////////////////////////////////////////////
-	   		        if(identifier == 5) {
+	   		        if(identifier == 5||identifier == 13) {
 		   		        if(x==4&&y==4)
 	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/saloonSign1.png");
 		   		        if(x==5&&y==4)
@@ -135,8 +135,13 @@ public class DesertScene extends Scene {
 		}
 		if(identifier == 11) {//hotel
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.jailScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
-			//addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.bankScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.endScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.hotelIScene, new Vector2(4,1), Player.Movement.NORTH, Player.Movement.NORTH));
+		}
+		if(identifier == 13) {//hotel
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.jailScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.endScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.casinoScene, new Vector2(1,1), Player.Movement.NORTH, Player.Movement.NORTH));
 		}
 	}
 
