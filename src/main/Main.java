@@ -15,11 +15,6 @@ public class Main {
 	public static void main(String[] args) {
 		game = new DrawImageOnCanvas();
 		intro();
-<<<<<<< HEAD
-=======
-		//new WildWest();
-		//int i =DialogCreator.createDialog("The Title of the Character","The Story of the Text",null,"I wish this to be the case","I hate every single one of you");
->>>>>>> a26cc16953f53ff10c2bf8ff60f59574fe9de99a
 	}
 
 	public static void intro () {
