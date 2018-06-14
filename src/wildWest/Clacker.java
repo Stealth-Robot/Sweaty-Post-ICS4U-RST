@@ -50,16 +50,6 @@ public class Clacker implements ActionListener, Minigame
 		Clacker play = new Clacker();
 	}
 
-	public static void main(String[] args) // Methods that create and show a GUI should be run from an event-dispatching thread
-	{
-		javax.swing.SwingUtilities.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				runGUI();
-			}
-		});
-	}
 
 	public void gameReset() //resets the game variables for a new game
 	{
@@ -74,7 +64,7 @@ public class Clacker implements ActionListener, Minigame
 	@Override
 	public void start() {
 		frame = new JFrame("Clacker");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Create and set up the frame
+	//	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Create and set up the frame
 
 		contentPane = new JPanel();
 		contentPane.setLayout(new GridLayout(0, 4, 10, 5));
@@ -86,12 +76,11 @@ public class Clacker implements ActionListener, Minigame
 		rollDie.setActionCommand("Roll Die");
 		rollDie.addActionListener(this);
 		contentPane.add(rollDie);
-
-		dieFace = new JLabel(new ImageIcon(getClass().getResource("die1.gif")));
+		dieFace = new JLabel(new ImageIcon(getClass().getResource("../images/minigames/die1.gif")));
 		dieFace.setAlignmentX(JLabel.LEFT_ALIGNMENT); 
 		dieFace.setBorder(BorderFactory.createEmptyBorder(15, 5, 5, 5));
 		contentPane.add(dieFace);	//Initializes 2 labels that each show a die face
-		dieFace2 = new JLabel(new ImageIcon(getClass().getResource("die1.gif")));
+		dieFace2 = new JLabel(new ImageIcon(getClass().getResource("../images/minigames/die1.gif")));
 		dieFace2.setAlignmentX(JLabel.RIGHT_ALIGNMENT);
 		dieFace2.setBorder(BorderFactory.createEmptyBorder(15, 5, 5, 5));
 		contentPane.add(dieFace2);
@@ -138,27 +127,27 @@ public class Clacker implements ActionListener, Minigame
 	        switch (newRoll)  //switches are used to set the dice face values based on a random number (1-6)
 	        {
 	            case 1:  
-						dieFace.setIcon(new ImageIcon(getClass().getResource("die1.gif")));
+						dieFace.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die1.gif")));
 						die1Value = 1;
 						break;
 	            case 2:
-					dieFace.setIcon(new ImageIcon(getClass().getResource("die2.gif")));
+					dieFace.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die2.gif")));
 					die1Value = 2;
 					break;
 	            case 3:
-					dieFace.setIcon(new ImageIcon(getClass().getResource("die3.gif")));
+					dieFace.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die3.gif")));
 					die1Value = 3;
 					break;
 	            case 4:
-					dieFace.setIcon(new ImageIcon(getClass().getResource("die4.gif")));
+					dieFace.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die4.gif")));
 					die1Value = 4;
 					break;
 	            case 5:
-					dieFace.setIcon(new ImageIcon(getClass().getResource("die5.gif")));
+					dieFace.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die5.gif")));
 					die1Value = 5;
 					break;
 	            default:
-					dieFace.setIcon(new ImageIcon(getClass().getResource("die6.gif")));
+					dieFace.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die6.gif")));
 					die1Value = 6;
 					break;
 	        }
@@ -166,27 +155,27 @@ public class Clacker implements ActionListener, Minigame
 	        switch (newRoll) //switches are used to set the dice face values based on a random number (1-6)
 	        {
 	            case 1:  
-						dieFace2.setIcon(new ImageIcon(getClass().getResource("die1.gif")));
+						dieFace2.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die1.gif")));
 						die2Value = 1;
 						break;
 	            case 2:
-					dieFace2.setIcon(new ImageIcon(getClass().getResource("die2.gif")));
+					dieFace2.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die2.gif")));
 					die2Value = 2;
 					break;
 	            case 3:
-					dieFace2.setIcon(new ImageIcon(getClass().getResource("die3.gif")));
+					dieFace2.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die3.gif")));
 					die2Value = 3;
 					break;
 	            case 4:
-					dieFace2.setIcon(new ImageIcon(getClass().getResource("die4.gif")));
+					dieFace2.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die4.gif")));
 					die2Value = 4;
 					break;
 	            case 5:
-					dieFace2.setIcon(new ImageIcon(getClass().getResource("die5.gif")));
+					dieFace2.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die5.gif")));
 					die2Value = 5;
 					break;
 	            default:
-					dieFace2.setIcon(new ImageIcon(getClass().getResource("die6.gif")));
+					dieFace2.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die6.gif")));
 					die2Value = 6;
 					break;
 	        }
@@ -197,8 +186,8 @@ public class Clacker implements ActionListener, Minigame
 		else if (eventName.equals("Reset Game")) 
 		{
 			gameReset();
-			dieFace.setIcon(new ImageIcon(getClass().getResource("die1.gif"))); //sets the die back to value of 1
-			dieFace2.setIcon(new ImageIcon(getClass().getResource("die1.gif"))); 
+			dieFace.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die1.gif"))); //sets the die back to value of 1
+			dieFace2.setIcon(new ImageIcon(getClass().getResource("../images/minigames/die1.gif"))); 
 			countRolls.setText("Rolls: 0"); //sets roll count to 0 (not null) upon reset
 
 			for (int n = 0; n < 12; n++) //sets the background and buttons

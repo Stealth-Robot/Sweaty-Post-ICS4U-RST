@@ -10,6 +10,7 @@ import gui.objects.colliders.BattleCollider;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.MinigameCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.dialog.RPSCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 import wildWest.Clacker;
@@ -106,6 +107,7 @@ public class CasinoIScene extends Scene {
 			addCollider(new Collider(RectangleCreator.colliderRectangle(1,5)));
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(1,-0.95),SceneMaster.endScene, new Vector2(6,2), Player.Movement.SOUTH, Player.Movement.SOUTH));
 			addCollider(new MinigameCollider(RectangleCreator.colliderRectangle(7,5),new Clacker()));
+			addCollider(new RPSCollider(RectangleCreator.colliderRectangle(4, 5)));
 		}		
 	}
 }
