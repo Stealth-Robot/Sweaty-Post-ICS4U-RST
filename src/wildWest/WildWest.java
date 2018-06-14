@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
 import backend.player.Player;
+import javafx.stage.WindowEvent;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -23,16 +24,20 @@ public class WildWest implements ActionListener
 	JFrame frame;
 	JPanel contentPane;
 	private JTextArea log;
-	private JButton shoot, reload, protect;
+	private JButton shoot, reload, dodge;
 	private JLabel enemySprite, pAmmo, eAmmo;
 
 	private BattleCharacter player, enemy;
 
 	private final int AMMOSIZE = 100;
 	private final int ENEMYRATIO = 5;
+	boolean win;
+	boolean loss;
 
 	public WildWest() 
 	{
+		win = false;
+		loss = false;
 		frame = new JFrame("Wild Wild West");
 
 		contentPane = new JPanel();
@@ -46,9 +51,9 @@ public class WildWest implements ActionListener
 		reload = new JButton("Reload");
 		reload.setActionCommand("reload");
 		reload.addActionListener(this);
-		protect = new JButton("Protect");
-		protect.setActionCommand("protect");
-		protect.addActionListener(this);
+		dodge = new JButton("Dodge");
+		dodge.setActionCommand("dodge");
+		dodge.addActionListener(this);
 
 		contentPane.setBorder(BorderFactory.createEmptyBorder(30, 30, 0, 30));
 		contentPane.setBackground(Color.white);
@@ -74,7 +79,7 @@ public class WildWest implements ActionListener
 						.addComponent(pAmmo)
 						.addComponent(shoot)
 						.addComponent(reload)
-						.addComponent(protect))
+						.addComponent(dodge))
 				);
 
 		layout.setHorizontalGroup(layout.createSequentialGroup()
@@ -87,7 +92,7 @@ public class WildWest implements ActionListener
 						.addComponent(reload))
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addComponent(enemySprite)
-						.addComponent(protect))
+						.addComponent(dodge))
 				);
 
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
@@ -102,8 +107,6 @@ public class WildWest implements ActionListener
 		System.out.println("AI: " + action);
 		enemy.actions(action);
 		String command = event.getActionCommand();
-		boolean win = false;
-		boolean loss = false;
 		boolean turn = false;
 		if (command.equals("shoot")) {
 			player.actions(1);
@@ -113,7 +116,7 @@ public class WildWest implements ActionListener
 			player.actions(2);
 			turn = true;
 		}
-		if (command.equals("protect")) {
+		if (command.equals("dodge")) {
 			player.actions(3);
 			turn = true;
 		}
@@ -125,15 +128,26 @@ public class WildWest implements ActionListener
 			player.resetTurn();
 			enemy.resetTurn();	
 			replaceImage();
-			System.out.println("Win: "+win);
-			System.out.println("Loss: "+loss);
 		if (loss || win) {
 			shoot.setEnabled(false);
-			reload.setEnabled(false);
-			protect.setEnabled(false);
+			dodge.setEnabled(false);
+			if (win) {
+				shoot.setText("You Win");
+				dodge.setText("You Win");
+				reload.setText("Continue");
+				reload.setActionCommand("Continue");
+			} 
+			if (loss) {
+				shoot.setText("You Lose");
+				dodge.setText("You Lose");
+				reload.setText("Continue");
+				reload.setActionCommand("Continue");
+			} 
 		}
 	}
-
+		if (command.equals("Continue")) {
+			frame.dispose();
+		}
 	}
 
 	private static void runGUI() //actually runs the GUI

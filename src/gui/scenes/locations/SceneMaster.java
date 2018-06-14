@@ -3,8 +3,8 @@ package gui.scenes.locations;
 import gui.scenes.Scene;
 
 public class SceneMaster {
-	public static Scene startScene, saloonScene, hotelScene, bankScene, gunfightScene, jailScene, railwayScene,
-	saloonIScene, casinoScene, hotelIScene, bankIScene, gunfightIScene, jailIScene,railwayIScene, endScene;
+	public static Scene startScene, saloonScene, hotelScene, bankScene, gunfightScene, jailScene, railwayScene, hotelRoomScene,
+	saloonIScene, casinoScene, hotelIScene, bankIScene, gunfightIScene, jailIScene,railwayIScene, endScene, jailCellScene;
 	public static void createScenes() {
 		System.out.print("createScenes()");
 
@@ -28,5 +28,12 @@ public class SceneMaster {
 		casinoScene = new CasinoIScene(12); //saloon inside
 		endScene = new DesertScene(13); //gunfight outside
 		gunfightScene = new GunfightScene(14); //gunfight inside
+
+		jailCellScene = new JailCellScene(15); //gunfight inside
+		jailCellScene = new JailCellScene(16); //gunfight inside
+		jailCellScene = new JailCellScene(17); //gunfight inside
+		hotelRoomScene = new HotelRoomScene(15); //gunfight inside
+		hotelRoomScene = new HotelRoomScene(16); //gunfight inside
+		hotelRoomScene = new HotelRoomScene(17); //gunfight inside
 	}
 }
