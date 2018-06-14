@@ -12,10 +12,8 @@ public class Main {
 	
 	public static DrawImageOnCanvas game;
 	public static void main(String[] args) {
-		//game = new DrawImageOnCanvas();
+		game = new DrawImageOnCanvas();
 		//intro();
-		new WildWest();
-		new WildWest();
 		new WildWest();
 	}
 
