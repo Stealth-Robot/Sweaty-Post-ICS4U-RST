@@ -16,9 +16,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import gui.objects.Minigame;
+
 import java.awt.Color;
 
-public class Clacker implements ActionListener 
+public class Clacker implements ActionListener, Minigame
 {
 	JFrame frame;
 	JPanel contentPane;
@@ -38,6 +41,38 @@ public class Clacker implements ActionListener
 
 	public Clacker() 
 	{
+		
+	}
+
+	private static void runGUI() //actually runs the GUI
+	{
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		Clacker play = new Clacker();
+	}
+
+	public static void main(String[] args) // Methods that create and show a GUI should be run from an event-dispatching thread
+	{
+		javax.swing.SwingUtilities.invokeLater(new Runnable() 
+		{
+			public void run() 
+			{
+				runGUI();
+			}
+		});
+	}
+
+	public void gameReset() //resets the game variables for a new game
+	{
+		die1Value = 0;
+		die2Value = 0;
+		diceValue = 0;
+		numRolls = 0;
+		playerHasWon = false;
+		rolls = 0;
+	}
+
+	@Override
+	public void start() {
 		frame = new JFrame("Clacker");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Create and set up the frame
 
@@ -204,32 +239,5 @@ public class Clacker implements ActionListener
 			rollDie.setText("Roll Die");//otherwise the roll button stays the same as normal
 			rollDie.setEnabled(true);
 		}
-	}
-
-	private static void runGUI() //actually runs the GUI
-	{
-		JFrame.setDefaultLookAndFeelDecorated(true);
-		Clacker play = new Clacker();
-	}
-
-	public static void main(String[] args) // Methods that create and show a GUI should be run from an event-dispatching thread
-	{
-		javax.swing.SwingUtilities.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				runGUI();
-			}
-		});
-	}
-
-	public void gameReset() //resets the game variables for a new game
-	{
-		die1Value = 0;
-		die2Value = 0;
-		diceValue = 0;
-		numRolls = 0;
-		playerHasWon = false;
-		rolls = 0;
 	}
 }
