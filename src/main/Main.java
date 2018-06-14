@@ -1,7 +1,5 @@
 package main;
 
-import javax.swing.JOptionPane;
-
 import gui.DrawImageOnCanvas;
 import wildWest.WildWest;
 
