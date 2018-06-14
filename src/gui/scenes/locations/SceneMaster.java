@@ -32,8 +32,8 @@ public class SceneMaster {
 		jailCellScene = new JailCellScene(15); //gunfight inside
 		jailCellScene = new JailCellScene(16); //gunfight inside
 		jailCellScene = new JailCellScene(17); //gunfight inside
-		hotelRoomScene = new HotelRoomScene(15); //gunfight inside
-		hotelRoomScene = new HotelRoomScene(16); //gunfight inside
-		hotelRoomScene = new HotelRoomScene(17); //gunfight inside
+		hotelRoomScene = new HotelRoomScene(18); //gunfight inside
+		hotelRoomScene = new HotelRoomScene(19); //gunfight inside
+		hotelRoomScene = new HotelRoomScene(20); //gunfight inside
 	}
 }
