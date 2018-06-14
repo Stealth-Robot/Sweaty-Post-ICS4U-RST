@@ -10,7 +10,7 @@ import java.util.*;
 
 public class QueueTest 
 {
-	public static void main(String[] args)
+	public QueueTest()
 	{
 		final int MAX_ITEMS = 3; 
 		Queue q = new Queue(MAX_ITEMS); 
