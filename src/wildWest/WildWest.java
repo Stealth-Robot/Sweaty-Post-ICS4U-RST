@@ -2,6 +2,7 @@ package wildWest;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
@@ -13,8 +14,6 @@ import javax.swing.JTextArea;
 
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
-import backend.player.Player;
-import javafx.stage.WindowEvent;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -26,6 +25,7 @@ public class WildWest implements ActionListener
 	private JTextArea log;
 	private JButton shoot, reload, dodge;
 	private JLabel enemySprite, pAmmo, eAmmo;
+	private LogQueue logText;
 
 	private BattleCharacter player, enemy;
 
@@ -55,6 +55,10 @@ public class WildWest implements ActionListener
 		dodge.setActionCommand("dodge");
 		dodge.addActionListener(this);
 
+		log = new JTextArea();
+		logText = new LogQueue(5);
+		logText.enqueue("This is the log");
+		
 		contentPane.setBorder(BorderFactory.createEmptyBorder(30, 30, 0, 30));
 		contentPane.setBackground(Color.white);
 
@@ -80,9 +84,12 @@ public class WildWest implements ActionListener
 						.addComponent(shoot)
 						.addComponent(reload)
 						.addComponent(dodge))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+						.addComponent(log))
 				);
 
 		layout.setHorizontalGroup(layout.createSequentialGroup()
+				.addComponent(log)
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addComponent(eAmmo)
 						.addComponent(pAmmo))
@@ -94,7 +101,9 @@ public class WildWest implements ActionListener
 						.addComponent(enemySprite)
 						.addComponent(dodge))
 				);
-
+		
+		updateLog();
+		
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
 		frame.pack(); // Sizes and displays the frame
 		frame.setVisible(true); //lets the program know that the frame is visible as opposed to invisible
@@ -104,19 +113,24 @@ public class WildWest implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		int action = BattleAI.choice(player,enemy);
-		System.out.println("AI: " + action);
+		if (action == 1) logText.enqueue("The enemy has shoot at you");
+		if (action == 2) logText.enqueue("The enemy has reloaded their gun");
+		if (action == 3) logText.enqueue("The enemy has attempted to dodge");
 		enemy.actions(action);
 		String command = event.getActionCommand();
 		boolean turn = false;
 		if (command.equals("shoot")) {
 			player.actions(1);
+			logText.enqueue("You have shot at the enemy");
 			turn = true;
 		}
 		if (command.equals("reload")) {
+			logText.enqueue("You have reloaded your gun");
 			player.actions(2);
 			turn = true;
 		}
 		if (command.equals("dodge")) {
+			logText.enqueue("You get in cover to avoid enemy fire");
 			player.actions(3);
 			turn = true;
 		}
@@ -132,12 +146,14 @@ public class WildWest implements ActionListener
 			shoot.setEnabled(false);
 			dodge.setEnabled(false);
 			if (win) {
+				logText.enqueue("The enemy gotten shot and died");
 				shoot.setText("You Win");
 				dodge.setText("You Win");
 				reload.setText("Continue");
 				reload.setActionCommand("Continue");
 			} 
 			if (loss) {
+				logText.enqueue("The enemy has shot you and you died");
 				shoot.setText("You Lose");
 				dodge.setText("You Lose");
 				reload.setText("Continue");
@@ -148,6 +164,7 @@ public class WildWest implements ActionListener
 		if (command.equals("Continue")) {
 			frame.dispose();
 		}
+		updateLog();
 	}
 
 	private static void runGUI() //actually runs the GUI
@@ -172,6 +189,17 @@ public class WildWest implements ActionListener
 		else if (enemy.bullets == 5) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoFive.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		else 							eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoSix.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 	
+	}
+	
+	private void updateLog() {
+		String logString = "";
+		LogQueue tempQueue = logText;
+		for (int i = 0; i < 4; i++) {
+			try {
+			logString += tempQueue.dequeue() + "\n";
+			} catch (Exception e) {}
+			log.setText(logString);
+		}
 	}
 
 	public static void main(String[] args) // Methods that create and show a GUI should be run from an event-dispatching thread
