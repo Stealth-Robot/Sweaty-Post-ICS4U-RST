@@ -83,14 +83,14 @@ public class BarScene extends Scene {
 
 	@Override
 	public void createColliders() {
-		addCollider(new Collider(RectangleCreator.colliderRectangle(0,4)));
-		addCollider(new Collider(RectangleCreator.colliderRectangle(1,4)));
-		addCollider(new Collider(RectangleCreator.colliderRectangle(2,4)));
-		addCollider(new Collider(RectangleCreator.colliderRectangle(3,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(0,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(1,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(2,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(3,5)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(4,5)));
-		addCollider(new Collider(RectangleCreator.colliderRectangle(5,4)));
-		addCollider(new Collider(RectangleCreator.colliderRectangle(6,4)));
-		addCollider(new Collider(RectangleCreator.colliderRectangle(7,4)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(6,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(7,5)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(1,2)));
 		addCollider(new Collider(RectangleCreator.dimensionalRectangle(0.95,0.95,3,1)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(6,2)));
