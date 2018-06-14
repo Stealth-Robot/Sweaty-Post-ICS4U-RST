@@ -20,7 +20,6 @@ public class DesertScene extends Scene {
 
 	@Override
 	public void createEnvironment() {
-		System.out.println("\n" + identifier);
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
 	        for(int x = 0; x < 9; x++) {
 	        	for(int y = 0; y < 6; y++) {
@@ -51,8 +50,7 @@ public class DesertScene extends Scene {
 	   		        }
 	   		        if(x==3&&y==4)
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseOutsideCorner4.png");
-	   		        
-///////////////////   Below dosen't work because identifier is seen as 0   ///////////////////////////////////////////////////////////
+
 	   		        if(identifier == 5||identifier == 13) {
 		   		        if(x==4&&y==4)
 	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/saloonSign1.png");
@@ -78,12 +76,9 @@ public class DesertScene extends Scene {
 	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/hotelSign2.png");
 	   		        }
 	   		        else {
-		   		        if(x==4&&y==4)
-	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
-		   		        if(x==5&&y==4)
-	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseDot.png");
+		   		        if(x==4&&y==4||x==5&&y==4)
+	  		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseEdgeDown.png");
 	   		        }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	   		        if(x==6&&y==4)
   		                testImage = ImageLoader.loadImage("src/images/sprites/environments/house/HouseStep.png");
 	   		        if(x==6&&y==3)
@@ -138,9 +133,9 @@ public class DesertScene extends Scene {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.endScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.hotelIScene, new Vector2(4,1), Player.Movement.NORTH, Player.Movement.NORTH));
 		}
-		if(identifier == 13) {//hotel
-			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.jailScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
-			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.endScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
+		if(identifier == 13) {//casino
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.hotelScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.gunfightScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.casinoScene, new Vector2(1,1), Player.Movement.NORTH, Player.Movement.NORTH));
 		}
 	}
