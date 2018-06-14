@@ -50,7 +50,7 @@ public class BarScene extends Scene {
 						testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/BarFloor.png");
 						break;
 					}
-					if (y == 2 && x == 1 || y == 1 && x == 3 || y == 2 && x == 6) {
+					if ((y == 2 && x == 1 || y == 1 && x == 3 || y == 2 && x == 6) && identifier != 8) {
 						testImage = ImageLoader.loadImage("src/images/sprites/environments/inside/Table.png");
 					}
 				} else {
@@ -72,16 +72,17 @@ public class BarScene extends Scene {
 					if (x == 4)
 						testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarInteract.png");
 				}
-   		        if(identifier == 8) {
-					testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarExit.png");
-   		        }
 				if (x == 4 && y == 0)
 					testImage = ImageLoader.loadImage("src/images/sprites/interactables/BarExit.png");
 				environment.add(new ImageData(testImage, x, y));
 			}
 		}
-		testImage = ImageLoader.loadImage("src/images/sprites/interactables/NPCMale.png");
-		environment.add(new ImageData(testImage, 4, 5));
+		if (identifier == 8) {
+			environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/BarExitUp.png"), 1, 5));
+			environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/BarExitUp.png"), 3, 5));
+			environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/BarExitUp.png"), 5, 5));
+		}
+		environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/NPCMale.png"), 4, 5));
 
 	}
 
@@ -106,7 +107,6 @@ public class BarScene extends Scene {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.saloonScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
 		}
-
 		if (identifier == 6)
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.bankScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
