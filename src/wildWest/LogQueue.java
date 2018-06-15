@@ -26,6 +26,12 @@ public class LogQueue
 		maxSize = maxItems;
 	} 
 
+	public LogQueue(LogQueue old) {
+		data = old.data;
+		front = old.front;
+		rear = old.rear;
+		maxSize = old.maxSize;
+	}
 	/** 
 	 * Returns the front item without removing it from 
 	 * the queue. 
