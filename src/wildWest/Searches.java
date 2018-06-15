@@ -12,30 +12,31 @@ public class Searches
 	 * Does a binary interpolation search of an int array, 
 	 * estimates approximate location of any given int in the array
 	 */
-	public static int interpolationSearch(Integer[] actualNums, int arrayStart, int arrayEnd, int targetNum) throws Exception 
-	{
-		if (arrayStart < arrayEnd)
-		{
-		/*sets up my special math variables for manipulating and priming the search*/
-			double start = (double)targetNum - actualNums[arrayStart];
-			double end = (double)actualNums[arrayEnd - 1];
-			double actual = actualNums[arrayStart];
-			int arrayMid = (int) Math.round(((arrayEnd - 1) - arrayStart) * (start) / (end - actual));
-			
-			if((start)/(end - actual) < 0 || (start)/(end - actual) > 1) //checks if number exists in the array and exits if necessary
-			{
-				System.out.println("That number does not exist within the scope of this search:");
-				return -1;
-			}
-			System.out.println("Estimated Location of Element " + targetNum + " is at Position " + (arrayMid + arrayStart));
-			 
-			if (targetNum == actualNums[arrayStart + arrayMid]) //if it is in the middle of the array
-				return (arrayStart + arrayMid);
-			else if (targetNum < actualNums[arrayStart + arrayMid])  //if it is in the first section of the array
-				return (interpolationSearch(actualNums, arrayStart, arrayStart + arrayMid, targetNum));
-			else //if it is in the end section of the array
-				return (interpolationSearch(actualNums, arrayStart + arrayMid + 1, arrayEnd, targetNum));
-		}
-		return (-1); //returns -1 (invalid number code) if the array start isn't smaller than its end (math error)
+	public static int interpolationSearch(Integer[] items, int start, int end, int goal) throws Exception 
+	{System.out.println("aa" + goal);
+		//if(goal > items[end-1] || goal < items[start]) {
+				//	error();
+				//}
+				System.out.println("\nSTART: " + start + ", END: " + end);
+				if (start > end) {
+					return (-1);
+				} else {
+					
+					double proportional = ((double)goal - items[start]) / ((double)items[end - 1] -items[start]);
+					if(proportional < 0 || proportional > 1) {
+						System.out.println("Looks like ur numbah doesnt exist :(");
+						return -1;
+					}
+					int mid = (int) Math.round(((end - 1) - start) * proportional);
+					System.out.println("PROPORTIONAL: " + proportional);
+					System.out.println("GUESS: Element " + (mid + start) + ", value " + items[mid + start] + ", looking for " + goal);
+					if (goal == items[start + mid]) {
+						return (start + mid);
+					} else if (goal < items[start + mid]) {
+						return (interpolationSearch(items, start, start + mid, goal));
+					} else {
+						return (interpolationSearch(items, start + mid + 1, end, goal));
+					}
+				}
 	}
 }
