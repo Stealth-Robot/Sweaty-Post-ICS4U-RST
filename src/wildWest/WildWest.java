@@ -18,7 +18,7 @@ import backend.battle.BattleCharacter;
 import java.awt.Color;
 import java.awt.Image;
 
-public class WildWest implements ActionListener 
+public class WildWest implements ActionListener, Cloneable
 {
 	JFrame frame;
 	JPanel contentPane;
@@ -57,8 +57,13 @@ public class WildWest implements ActionListener
 
 		log = new JTextArea();
 		logText = new LogQueue(5);
-		logText.enqueue("This is the log");
-		
+				logText.enqueue("1");
+				logText.enqueue("2");
+				logText.enqueue("3");
+				logText.enqueue("4");
+				logText.enqueue("5");
+				logText.enqueue("6");
+
 		contentPane.setBorder(BorderFactory.createEmptyBorder(30, 30, 0, 30));
 		contentPane.setBackground(Color.white);
 
@@ -84,12 +89,13 @@ public class WildWest implements ActionListener
 						.addComponent(shoot)
 						.addComponent(reload)
 						.addComponent(dodge))
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-						.addComponent(log))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE))
+				.addComponent(log)
+				
 				);
 
 		layout.setHorizontalGroup(layout.createSequentialGroup()
-				.addComponent(log)
+						.addComponent(log)
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addComponent(eAmmo)
 						.addComponent(pAmmo))
@@ -101,9 +107,9 @@ public class WildWest implements ActionListener
 						.addComponent(enemySprite)
 						.addComponent(dodge))
 				);
-		
+
 		updateLog();
-		
+
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
 		frame.pack(); // Sizes and displays the frame
 		frame.setVisible(true); //lets the program know that the frame is visible as opposed to invisible
@@ -134,33 +140,33 @@ public class WildWest implements ActionListener
 			player.actions(3);
 			turn = true;
 		}
-		
+
 		if (turn) {
-			
+
 			win = player.tick(enemy);
 			loss = enemy.tick(player);
 			player.resetTurn();
 			enemy.resetTurn();	
 			replaceImage();
-		if (loss || win) {
-			shoot.setEnabled(false);
-			dodge.setEnabled(false);
-			if (win) {
-				logText.enqueue("The enemy gotten shot and died");
-				shoot.setText("You Win");
-				dodge.setText("You Win");
-				reload.setText("Continue");
-				reload.setActionCommand("Continue");
-			} 
-			if (loss) {
-				logText.enqueue("The enemy has shot you and you died");
-				shoot.setText("You Lose");
-				dodge.setText("You Lose");
-				reload.setText("Continue");
-				reload.setActionCommand("Continue");
-			} 
+			if (loss || win) {
+				shoot.setEnabled(false);
+				dodge.setEnabled(false);
+				if (win) {
+					logText.enqueue("The enemy gotten shot and died");
+					shoot.setText("You Win");
+					dodge.setText("You Win");
+					reload.setText("Continue");
+					reload.setActionCommand("Continue");
+				} 
+				if (loss) {
+					logText.enqueue("The enemy has shot you and you died");
+					shoot.setText("You Lose");
+					dodge.setText("You Lose");
+					reload.setText("Continue");
+					reload.setActionCommand("Continue");
+				} 
+			}
 		}
-	}
 		if (command.equals("Continue")) {
 			frame.dispose();
 		}
@@ -188,15 +194,16 @@ public class WildWest implements ActionListener
 		else if (enemy.bullets == 4) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoFour.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		else if (enemy.bullets == 5) 	eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoFive.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		else 							eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoSix.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
-	
+
 	}
-	
+
 	private void updateLog() {
 		String logString = "";
-		LogQueue tempQueue = logText;
-		for (int i = 0; i < 4; i++) {
+		LogQueue tempQueue = new LogQueue(5);
+		tempQueue = logText;
+		for (int i = 0; i < 5; i++) {
 			try {
-			logString += tempQueue.dequeue() + "\n";
+				logString += tempQueue.dequeue() + "\n";
 			} catch (Exception e) {}
 			log.setText(logString);
 		}

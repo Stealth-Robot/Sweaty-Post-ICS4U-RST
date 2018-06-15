@@ -46,6 +46,14 @@ public class LogQueue
 	 * post: The front item of the queue has been removed 
 	 * and returned. 
 	 */
+	@Override
+	public String[] clone() {
+		return data;
+	}
+	
+	public void takeClone(String[] data) {
+		this.data = data;
+	}
 
 	public String dequeue() 
 	{
@@ -77,8 +85,8 @@ public class LogQueue
 			front = 0; 
 			data[rear] = num; 
 		}
-		else if (rear == maxSize) {
-			for (int i  = 0; i < data.length; i++) {
+		else if (rear == maxSize-1) {
+			for (int i  = 0; i < data.length-1; i++) {
 				data[i] = data[i+1];
 			}
 			data[rear] = num;
