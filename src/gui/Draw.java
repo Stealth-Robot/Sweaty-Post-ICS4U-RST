@@ -1,3 +1,9 @@
+/*
+ * Draw.java
+ * draws Main.game to screen
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui;
 
 import java.awt.Graphics;

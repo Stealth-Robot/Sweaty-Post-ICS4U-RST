@@ -1,3 +1,9 @@
+/*
+ * Villain.java
+ * sets up the default villian class which extends human class
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package PresentationClasses;
 /*
  * This is something we have to implement :(
@@ -9,6 +15,8 @@ public class Villain extends Human {
 	String mustachColour, hatColour, look;
 	int drunkenness, numberOfDamsels;
 	ArrayList<Human> Damsels;
+	public String hatColor;
+	public String mustacheColor;
 
 	/**
 	 * @param name
@@ -40,5 +48,13 @@ public class Villain extends Human {
 		numberOfDamsels++;
 		Human Damsel = new Human(name, false);
 		Damsels.add(Damsel);
+	}
+
+	public void villainSetup(String name, String hatColor, String mustacheColor, String sex, String horseName, String whiskyPreference) {
+		this.hatColor = hatColor; 
+		this.mustacheColor = mustacheColor; 
+		this.sex = sex; 
+		this.horseName = horseName; 
+		this.whiskeyPreference = whiskyPreference; 
 	}
 }

@@ -1,10 +1,9 @@
 /* 
 * Clacker.java 
-* application that plays a dice game. 
-* Marcus Kubilius & Matthew Edwards
-* ICS4UR 
-* 4/19/2018 
-*/ 
+* application that plays a dice game.
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package wildWest;
 
 import java.awt.GridLayout;

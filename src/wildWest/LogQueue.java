@@ -1,9 +1,8 @@
 /*
- * Queue3.java
+ * LogQueue.java
  * sorts ints 
- * Marcus Kubilius
- * ICS4U
- * 5/16/2018
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
  */
 package wildWest;
 

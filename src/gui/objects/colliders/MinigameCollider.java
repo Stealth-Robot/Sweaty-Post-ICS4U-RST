@@ -1,3 +1,9 @@
+/*
+ * MinigameCollider.java
+ * sets up colliders that call the minigames
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders;
 
 import gui.objects.Minigame;

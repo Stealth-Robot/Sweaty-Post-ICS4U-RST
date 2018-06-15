@@ -1,3 +1,9 @@
+/*
+ * Scene.java
+ * sets up the default scene all called scenes extend
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.scenes;
 
 import java.awt.Graphics;

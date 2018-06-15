@@ -1,3 +1,9 @@
+/*
+ * MovementFromInputs.java
+ * sets up movement based of of interact key pressed
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package backend.input;
 
 import gui.Vector2;

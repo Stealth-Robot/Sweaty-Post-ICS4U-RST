@@ -1,4 +1,13 @@
+/*
+ * Player.java
+ * sets up the player instantiation and constructor and regulates movement
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package backend.player;
+
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import backend.input.Interact;
 import gui.Display;
@@ -12,11 +21,41 @@ public class Player extends Collider {
 	
 	public Vector2 position;
 	public static final double SPEED = 1;
-	public int drunkness = 2;
+	public int drunkness = 0;
 	public enum Movement {
 		NONE, NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST;
 	}
-	
+	public String say(String words) {
+		char[] newSentence = new char[words.toCharArray().length];
+		for(int i = 0; i < words.toCharArray().length; i++) {
+			if(Math.random() * 100.0 < drunkness) {
+				newSentence[i] = (char)(new Random().nextInt(26) + 'a');
+			}
+			else {
+				newSentence[i] = words.toCharArray()[i];
+			}
+		}
+		String s = new String(newSentence);
+		//System.out.println(s);
+		return s;
+	}
+	public String[] say(String words[]) {
+		for(int q = 0; q < words.length; q++) {
+		char[] newSentence = new char[words[q].toCharArray().length];
+		for(int i = 0; i < words[q].toCharArray().length; i++) {
+			if(Math.random() * 100.0 < drunkness) {
+				newSentence[i] = (char)(new Random().nextInt(26) + 'a');
+			}
+			else {
+				newSentence[i] = words[q].toCharArray()[i];
+			}
+		}
+		String s = new String(newSentence);
+		words[q] = s;
+		//System.out.println(s);
+		}
+		return words;
+	}
 	public Player(int length, int width, Vector2 position) {
 		super(length,width,position);
 		this.position = position;
@@ -54,19 +93,65 @@ public class Player extends Collider {
 		
 		return Movement.NONE;
 	}
+	int tickCounter = 0;
+	int ticks = 100;
+	int currentMovement = 0;
 	public Movement facingDir;
 	public boolean interacting = false;
 	public Movement updateCharacter(double xAxis, double yAxis) {
+		if(drunkness >= 100) {
+			tickCounter++;
+			if(tickCounter > ticks) {
+				currentMovement = ThreadLocalRandom.current().nextInt(0, 3 + 1);
+				tickCounter = 0;
+			}
+			switch(currentMovement) {
+			case 0:
+				break;
+			case 1:
+				xAxis = -xAxis;
+				yAxis = -yAxis;
+				break;
+			case 2:
+				double temp = xAxis;
+				xAxis = yAxis;
+				yAxis = temp;
+				break;
+			case 3:
+				double temp2 = xAxis;
+				xAxis = -yAxis;
+				yAxis = -temp2;
+				break;
+			}
+		}
+		else if(drunkness >= 75) {
+			double temp = xAxis;
+			xAxis = -yAxis;
+			yAxis = -temp;
+		}
+		else if(drunkness >= 50) {
+			double temp = xAxis;
+			xAxis = yAxis;
+			yAxis = temp;
+		}
+		else if(drunkness >= 25) {
+			xAxis = -xAxis;
+			yAxis = -yAxis;
+	}
 	
+	
+		
 		interacting = Interact.interacted();
-		//System.out.println(xAxis);
+		System.out.println(xAxis + "," + yAxis);
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		if(xAxis == 0 && yAxis == 0) {
 			magnitude = 1;
 		}
+	
 		magnitude /= SPEED;
 		position.x += xAxis / magnitude;
 		position.y += yAxis / magnitude;
+		
 		if(position.x < 0 || position.x > Display.SCREEN_WIDTH - Display.PIXEL_IMAGE_SIZE + 1) {
 			position.x -= xAxis / magnitude;
 		}

@@ -1,3 +1,9 @@
+/*
+ * RPSCollider.java
+ * plays a game of RPS
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders.dialog;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -22,6 +28,9 @@ public class RPSCollider extends SpeechCollider {
 			i = DialogCreator.createDialog("Casino Guy 3","WE ARE PLAYING ROCK PAPER SCISSORS what do u pick",null,"Rock","Paper","Scissors","Exit");
 			int otherRoll = ThreadLocalRandom.current().nextInt(1, 3 + 1);
 			i++;
+			if(i == 0 || i == 4) {
+				break;
+			}
 			String played = otherRoll == 1 ? "Rock" : (otherRoll == 2 ? "Paper" : "Scissors");
 			if(otherRoll == i) {
 				DialogCreator.createDialog("Casino Guy 3","I played " + played + ", We tied lmao",null,"Ok");

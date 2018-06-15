@@ -1,10 +1,19 @@
+/*
+ * Human.java
+ * sets up default human class
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package PresentationClasses;
 /*
  * This is something we have to implement :(
  * - grayden
  */
 public class Human {
-	private String name, sex, horseName, whiskeyPreference;
+	public String name;
+	public String sex;
+	public String horseName;
+	public String whiskeyPreference;
 	
 	/**
 	 * Set the name and sex of the human

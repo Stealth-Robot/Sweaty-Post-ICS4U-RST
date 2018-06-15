@@ -1,3 +1,9 @@
+/*
+ * DialogCreator.java
+ * when called, creates dialogue boxes
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package dialog;
 
 import javax.swing.ImageIcon;
@@ -6,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import gui.Display;
 import gui.DrawImageOnCanvas.ImageLoader;
+import main.Main;
 
 public class DialogCreator {
 
@@ -22,9 +29,9 @@ public class DialogCreator {
 	 * @return
 	 */
 	public static int createDialog(String title, String text, ImageIcon image, String... buttons) {
-		int returnValue = JOptionPane.showOptionDialog(Display.mainFrame, text, title,
-		        JOptionPane.NO_OPTION,-1,image, buttons, buttons[0]);
-		System.out.println(returnValue);
+		buttons = Main.game.player.say(buttons);
+		int returnValue = JOptionPane.showOptionDialog(Display.mainFrame, Main.game.player.say(text),  Main.game.player.say(title),
+		        JOptionPane.NO_OPTION,-1,image,buttons , buttons[0]);
 		return returnValue;
 	}
 

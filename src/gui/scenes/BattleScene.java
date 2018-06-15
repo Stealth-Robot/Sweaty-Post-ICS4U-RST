@@ -1,3 +1,9 @@
+/*
+ * BattleScene.java
+ * generates the battle Scene
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.scenes;
 
 public class BattleScene extends Scene{

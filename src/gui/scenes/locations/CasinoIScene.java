@@ -1,3 +1,9 @@
+/*
+ * CasinoIScene.java
+ * generates the casino scene
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.scenes.locations;
 
 import java.awt.Image;
@@ -107,7 +113,7 @@ public class CasinoIScene extends Scene {
 			addCollider(new Collider(RectangleCreator.colliderRectangle(1,5)));
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(1,-0.95),SceneMaster.endScene, new Vector2(6,2), Player.Movement.SOUTH, Player.Movement.SOUTH));
 			addCollider(new MinigameCollider(RectangleCreator.colliderRectangle(7,5),new Clacker()));
-			addCollider(new RPSCollider(RectangleCreator.colliderRectangle(4, 5)));
+			addCollider(new RPSCollider(RectangleCreator.colliderRectangle(7, 2)));
 		}		
 	}
 }
