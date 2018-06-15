@@ -22,9 +22,9 @@ public class Main {
 	public static void main(String[] args) {
 		villianSetup();
 		game = new DrawImageOnCanvas();
-		new WildWest();
+		new WildWest(Slimy);
 	}
-
+	public static Villain Slimy;
 	public static void villianSetup() {
 		//The Dalton Brothers (Slimy, Sneaky, Shifty and Snitchy)
 		//the Earps (Marshall Virgil, Wyatt, Morgan, and Doc Holliday)
@@ -33,16 +33,16 @@ public class Main {
 				sweatyPost.saloons = 2;
 				sweatyPost.sheriffs = 1;
 				sweatyPost.setTroublemakers(6);
-/*Dalton Bros*/	Villain Slimy = new Villain("Slimy", true);Villain Sneaky = new Villain("Sneaky", true);Villain Shifty = new Villain("Shifty", true);Villain Snitchy = new Villain("Snitchy", true);
+/*Dalton Bros*/ Slimy = new Villain("Slimy", true);Villain Sneaky = new Villain("Sneaky", true);Villain Shifty = new Villain("Shifty", true);Villain Snitchy = new Villain("Snitchy", true);
 /*The Earps*/	Villain Marshall_Virgil = new Villain("Marshall Virgil", true);Villain Wyatt = new Villain("Wyatt", true);Villain Morgan = new Villain("Morgan", true);Villain Doc_Holliday = new Villain("Doc Holliday", true);
-				Slimy.villainSetup("Slimy", "black", "red", "Male", "Beer Gut", "Jack Daniels");
-				Sneaky.villainSetup("Sneaky", "Gold", "brown", "Male", "Shadow", "Beer");
-				Shifty.villainSetup("Shifty", "brown", "none", "Male", "Bookie", "Whiskey");
-				Snitchy.villainSetup("Snitchy", "sandy", "red", "Male", "buki", "Tequila");
-				Marshall_Virgil.villainSetup("Marshall_Virgil", "black", "brown", "Male", "ja", "Wine");
-				Wyatt.villainSetup("Wyatt", "Gold", "none", "Male", "Death Mere", "Water");
-				Morgan.villainSetup("Morgan", "Brown", "red", "Male", "Horsearino", "Mixed Drinks");
-				Doc_Holliday.villainSetup("Doc_Holliday", "sandy", "brown", "Male", "Beer Hater", "Jello Shots");
+				Slimy.villainSetup("Slimy", "Gold", "Red", "Male", "Beer Gut", "Jack Daniels","Blue");
+				Sneaky.villainSetup("Sneaky", "Gold", "brown", "Male", "Shadow", "Beer","Blue");
+				Shifty.villainSetup("Shifty", "brown", "none", "Male", "Bookie", "Whiskey","Blue");
+				Snitchy.villainSetup("Snitchy", "sandy", "red", "Male", "buki", "Tequila","Blue");
+				Marshall_Virgil.villainSetup("Marshall_Virgil", "black", "brown", "Male", "ja", "Wine","Blue");
+				Wyatt.villainSetup("Wyatt", "Gold", "none", "Male", "Death Mere", "Water","Blue");
+				Morgan.villainSetup("Morgan", "Brown", "red", "Male", "Horsearino", "Mixed Drinks","Blue");
+				Doc_Holliday.villainSetup("Doc_Holliday", "sandy", "brown", "Male", "Beer Hater", "Jello Shots","Blue");
 				Human mary = new Human("Mary", false);
 				mary.sex = "female";
 				mary.horseName = "Midnight";

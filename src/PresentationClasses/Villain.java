@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Villain extends Human {
 	String mustachColour, hatColour, look;
 	int drunkenness, numberOfDamsels;
+	public String path;
 	ArrayList<Human> Damsels;
 	public String hatColor;
 	public String mustacheColor;
@@ -50,11 +51,12 @@ public class Villain extends Human {
 		Damsels.add(Damsel);
 	}
 
-	public void villainSetup(String name, String hatColor, String mustacheColor, String sex, String horseName, String whiskyPreference) {
+	public void villainSetup(String name, String hatColor, String mustacheColor, String sex, String horseName, String whiskyPreference, String look) {
 		this.hatColor = hatColor; 
 		this.mustacheColor = mustacheColor; 
 		this.sex = sex; 
 		this.horseName = horseName; 
 		this.whiskeyPreference = whiskyPreference; 
+		this.path = hatColor + mustacheColor + look;
 	}
 }

@@ -6,23 +6,22 @@
  */
 package wildWest;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
-import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 import javax.swing.JTextArea;
 
 import PresentationClasses.Villain;
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
-
-import java.awt.Image;
+import main.Main;
 
 public class WildWest implements ActionListener, Cloneable
 {
@@ -75,8 +74,9 @@ public class WildWest implements ActionListener, Cloneable
 		reload = new JButton();
 		shoot = new JButton();
 		jScrollPane1.setViewportView(jTextArea1);
-
-		enemySprite.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/enemies/GoldRedBlue.png")).getImage().getScaledInstance((new ImageIcon(getClass().getResource("../images/sprites/enemies/GoldRedBlue.png")).getIconWidth()) * ENEMYRATIO, (new ImageIcon(getClass().getResource("../images/sprites/enemies/GoldRedBlue.png")).getIconHeight()) * ENEMYRATIO, Image.SCALE_DEFAULT)));
+		System.out.println("../images/sprites/enemies/" + villain.path + ".png");
+		URL enemySpriteU = getClass().getResource("../images/sprites/enemies/" + villain.path + ".png");
+		enemySprite.setIcon(new ImageIcon(new ImageIcon(enemySpriteU).getImage().getScaledInstance((new ImageIcon(enemySpriteU).getIconWidth()) * ENEMYRATIO, (new ImageIcon(enemySpriteU).getIconHeight()) * ENEMYRATIO, Image.SCALE_DEFAULT)));
 		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 
@@ -218,7 +218,7 @@ public class WildWest implements ActionListener, Cloneable
 	private static void runGUI() //actually runs the GUI
 	{
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		WildWest play = new WildWest();
+		WildWest play = new WildWest(Main.Slimy);
 	}
 
 	private void replaceImage() {
