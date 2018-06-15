@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
 import javax.swing.JTextArea;
 
 import PresentationClasses.Villain;
@@ -56,8 +57,9 @@ public class WildWest implements ActionListener, Cloneable
 		logText = new LogQueue(100);
 
 		frame = new JFrame("Wild Wild West");	
-		contentPane = new JPanel();		
-
+		contentPane = new JPanel();	
+		
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jScrollPane2 = new javax.swing.JScrollPane();
 
@@ -74,7 +76,7 @@ public class WildWest implements ActionListener, Cloneable
 		shoot = new JButton();
 		jScrollPane1.setViewportView(jTextArea1);
 
-		enemySprite.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getImage().getScaledInstance((new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconWidth()) * ENEMYRATIO, (new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconHeight()) * ENEMYRATIO, Image.SCALE_DEFAULT)));
+		enemySprite.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/enemies/GoldRedBlue.png")).getImage().getScaledInstance((new ImageIcon(getClass().getResource("../images/sprites/enemies/GoldRedBlue.png")).getIconWidth()) * ENEMYRATIO, (new ImageIcon(getClass().getResource("../images/sprites/enemies/GoldRedBlue.png")).getIconHeight()) * ENEMYRATIO, Image.SCALE_DEFAULT)));
 		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 
