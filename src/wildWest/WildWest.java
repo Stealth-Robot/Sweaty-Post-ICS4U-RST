@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import PresentationClasses.Villain;
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
 
@@ -46,13 +47,13 @@ public class WildWest implements ActionListener, Cloneable
 	boolean win;
 	boolean loss;
 
-	public WildWest() 
+	public WildWest(Villain villain) 
 	{
 		win = false;
 		loss = false;
 		player = new BattleCharacter(6);
 		enemy = new BattleCharacter(6);
-		logText = new LogQueue(10);
+		logText = new LogQueue(100);
 
 		frame = new JFrame("Wild Wild West");	
 		contentPane = new JPanel();		
@@ -239,7 +240,7 @@ public class WildWest implements ActionListener, Cloneable
 	private void updateLog() {
 		String logString = "";
 		LogQueue tempQueue = new LogQueue(logText);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < logText.maxSize; i++) {
 			try {
 				logString += tempQueue.dequeue() + "\n";
 			} catch (Exception e) {}

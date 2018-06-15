@@ -9,7 +9,7 @@ package wildWest;
 public class LogQueue 
 {
 	private String[] data; 
-	private int front, rear, maxSize; 
+	public int front, rear, maxSize; 
 
 	/** 
 	 * constructor 
