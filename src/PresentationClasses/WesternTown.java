@@ -12,6 +12,8 @@ package PresentationClasses;
 public class WesternTown {
 	private int stables, saloon, sherrifs, troublemakers, time;
 	private String location;
+	public int saloons;
+	public int sheriffs;
 
 	/**
 	 * 
@@ -84,7 +86,7 @@ public class WesternTown {
 	 * @param troublemakers
 	 */
 	public void setTroublemaker(int troublemakers) {
-		this.troublemakers = troublemakers;
+		this.setTroublemakers(troublemakers);
 	}
 	
 	/**
@@ -101,6 +103,10 @@ public class WesternTown {
 	 */
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public void setTroublemakers(int troublemakers) {
+		this.troublemakers = troublemakers;
 	}
 
 }

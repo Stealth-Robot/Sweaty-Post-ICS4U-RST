@@ -10,7 +10,10 @@ package PresentationClasses;
  * - grayden
  */
 public class Human {
-	private String name, sex, horseName, whiskeyPreference;
+	public String name;
+	public String sex;
+	public String horseName;
+	public String whiskeyPreference;
 	
 	/**
 	 * Set the name and sex of the human
