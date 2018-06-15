@@ -3,7 +3,6 @@ package wildWest;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,21 +14,28 @@ import javax.swing.JTextArea;
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
 
-import java.awt.Color;
 import java.awt.Image;
 
 public class WildWest implements ActionListener, Cloneable
 {
 	JFrame frame;
 	JPanel contentPane;
+	private JButton dodge;
+	private JLabel eAmmo;
+	private JLabel enemySprite;
+	private JLabel logIntro;
+	private javax.swing.JScrollPane jScrollPane1;
+	private javax.swing.JScrollPane jScrollPane2;
+	private JTextArea jTextArea1;
 	private JTextArea log;
-	private JButton shoot, reload, dodge;
-	private JLabel enemySprite, pAmmo, eAmmo;
+	private JLabel pAmmo;
+	private JButton reload;
+	private JButton shoot;
 	private LogQueue logText;
 
 	private BattleCharacter player, enemy;
 
-	private final int AMMOSIZE = 100;
+	private final int AMMOSIZE = 125;
 	private final int ENEMYRATIO = 5;
 	boolean win;
 	boolean loss;
@@ -38,76 +44,101 @@ public class WildWest implements ActionListener, Cloneable
 	{
 		win = false;
 		loss = false;
-		frame = new JFrame("Wild Wild West");
-
-		contentPane = new JPanel();
-
 		player = new BattleCharacter(6);
 		enemy = new BattleCharacter(6);
+		logText = new LogQueue(10);
 
-		shoot = new JButton("Shoot");
-		shoot.setActionCommand("shoot");
-		shoot.addActionListener(this);
-		reload = new JButton("Reload");
-		reload.setActionCommand("reload");
-		reload.addActionListener(this);
-		dodge = new JButton("Dodge");
-		dodge.setActionCommand("dodge");
-		dodge.addActionListener(this);
+		frame = new JFrame("Wild Wild West");	
+		contentPane = new JPanel();		
 
+		jScrollPane1 = new javax.swing.JScrollPane();
+		jScrollPane2 = new javax.swing.JScrollPane();
+
+		jTextArea1 = new JTextArea();
 		log = new JTextArea();
-		logText = new LogQueue(5);
-				logText.enqueue("1");
-				logText.enqueue("2");
-				logText.enqueue("3");
-				logText.enqueue("4");
-				logText.enqueue("5");
-				logText.enqueue("6");
 
-		contentPane.setBorder(BorderFactory.createEmptyBorder(30, 30, 0, 30));
-		contentPane.setBackground(Color.white);
-
-		enemySprite = new JLabel();
-		enemySprite.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getImage().getScaledInstance((new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconWidth() * ENEMYRATIO), new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconHeight() * ENEMYRATIO, Image.SCALE_DEFAULT)));
 		eAmmo = new JLabel();
-		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		pAmmo = new JLabel();
+		enemySprite = new JLabel();
+		logIntro = new JLabel();
+
+		dodge = new JButton();
+		reload = new JButton();
+		shoot = new JButton();
+		jScrollPane1.setViewportView(jTextArea1);
+
+		enemySprite.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getImage().getScaledInstance((new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconWidth()) * ENEMYRATIO, (new ImageIcon(getClass().getResource("../images/sprites/Player.png")).getIconHeight()) * ENEMYRATIO, Image.SCALE_DEFAULT)));
+		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 
+		dodge.setText("Dodge");
+		dodge.addActionListener(this);
+		dodge.setActionCommand("dodge");
+		reload.setText("Reload");
+		reload.addActionListener(this);
+		reload.setActionCommand("reload");
+		shoot.setText("Shoot");
+		shoot.addActionListener(this);
+		shoot.setActionCommand("shoot");
 
-		GroupLayout layout = new GroupLayout(contentPane);
-		contentPane.setLayout(layout);
-		layout.setAutoCreateGaps(true);
-		layout.setAutoCreateContainerGaps(true);
+		frame.setResizable(false);
 
-		layout.setVerticalGroup(layout.createSequentialGroup()
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-						.addComponent(eAmmo)
-						.addComponent(enemySprite))
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-						.addComponent(pAmmo)
-						.addComponent(shoot)
-						.addComponent(reload)
-						.addComponent(dodge))
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE))
-				.addComponent(log)
-				
-				);
+		log.setColumns(20);
+		log.setRows(10);
+		log.setEditable(false);
+		log.setText("This is the log");
+		logIntro.setText("Log:");
+		jScrollPane1.setViewportView(log);
 
-		layout.setHorizontalGroup(layout.createSequentialGroup()
-						.addComponent(log)
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-						.addComponent(eAmmo)
-						.addComponent(pAmmo))
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-						.addComponent(shoot))
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-						.addComponent(reload))
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-						.addComponent(enemySprite)
-						.addComponent(dodge))
-				);
-
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(contentPane);
+        contentPane.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(eAmmo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(enemySprite))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(logIntro)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(pAmmo)
+                                .addGap(60, 60, 60)
+                                .addComponent(shoot, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(reload, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(dodge, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 1, Short.MAX_VALUE)))
+                .addGap(43, 43, 43))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eAmmo)
+                    .addComponent(enemySprite))
+                .addGap(200, 200, 200)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pAmmo)
+                    .addComponent(reload, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shoot, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dodge, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(logIntro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        
 		updateLog();
 
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
@@ -132,11 +163,13 @@ public class WildWest implements ActionListener, Cloneable
 		}
 		if (command.equals("reload")) {
 			logText.enqueue("You have reloaded your gun");
+			updateLog();
 			player.actions(2);
 			turn = true;
 		}
 		if (command.equals("dodge")) {
 			logText.enqueue("You get in cover to avoid enemy fire");
+			updateLog();
 			player.actions(3);
 			turn = true;
 		}
@@ -199,8 +232,7 @@ public class WildWest implements ActionListener, Cloneable
 
 	private void updateLog() {
 		String logString = "";
-		LogQueue tempQueue = new LogQueue(5);
-		tempQueue = logText;
+		LogQueue tempQueue = new LogQueue(logText);
 		for (int i = 0; i < 5; i++) {
 			try {
 				logString += tempQueue.dequeue() + "\n";
