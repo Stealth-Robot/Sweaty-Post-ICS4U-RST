@@ -1,3 +1,9 @@
+/*
+ * InteractableCollider.java
+ * sets up a collider that the player can press a key to use
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders;
 
 import backend.player.Player;

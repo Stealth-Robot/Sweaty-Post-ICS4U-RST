@@ -1,3 +1,9 @@
+/*
+ * Human.java
+ * sets up default human class
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package PresentationClasses;
 /*
  * This is something we have to implement :(

@@ -1,3 +1,9 @@
+/*
+ * RectangleCreator.java
+ * generates a rectangle for use with colliders
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects;
 
 import gui.Display;

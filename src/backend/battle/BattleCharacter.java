@@ -1,3 +1,9 @@
+/*
+ * BattleAI.java
+ * the code that runs the wild west game
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package backend.battle;
 
 public class BattleCharacter {

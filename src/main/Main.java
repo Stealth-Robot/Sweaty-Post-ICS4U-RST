@@ -1,3 +1,9 @@
+/*
+ * Main.java
+ * client code that runs the entire application
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package main;
 
 import gui.DrawImageOnCanvas;

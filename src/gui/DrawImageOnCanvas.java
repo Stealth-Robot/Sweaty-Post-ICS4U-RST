@@ -1,3 +1,9 @@
+/*
+ * DrawImageOnCanvas.java
+ * draws everything to the screen
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui;
 import java.awt.Graphics;
 import java.awt.Graphics2D;

@@ -1,3 +1,9 @@
+/*
+ * Villain.java
+ * sets up the default villian class which extends human class
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package PresentationClasses;
 /*
  * This is something we have to implement :(

@@ -1,3 +1,9 @@
+/*
+ * WesternTown.java
+ * sets up default town settings
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package PresentationClasses;
 /*
  * This is something we have to implement :(

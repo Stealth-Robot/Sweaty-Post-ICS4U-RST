@@ -1,3 +1,9 @@
+/*
+ * WildWest.java
+ * runs the game of wild west
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package wildWest;
 
 import java.awt.event.ActionEvent;

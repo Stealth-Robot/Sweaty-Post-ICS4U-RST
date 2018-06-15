@@ -1,3 +1,9 @@
+/*
+ * LoadingScene.java
+ * generates the a loading screen
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.scenes.locations;
 
 import gui.DrawImageOnCanvas.ImageLoader;

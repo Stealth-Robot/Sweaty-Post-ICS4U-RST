@@ -1,3 +1,9 @@
+/*
+ * VectorCreator.java
+ * uses vector2 to generate sizes
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui;
 
 public class VectorCreator {

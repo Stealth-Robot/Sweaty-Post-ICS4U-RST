@@ -1,3 +1,9 @@
+/*
+ * ImageData.java
+ * allows manipulation of images
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package images;
 
 import java.awt.Graphics2D;

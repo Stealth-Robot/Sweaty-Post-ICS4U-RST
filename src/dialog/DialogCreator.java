@@ -1,3 +1,9 @@
+/*
+ * DialogCreator.java
+ * when called, creates dialogue boxes
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package dialog;
 
 import javax.swing.ImageIcon;
