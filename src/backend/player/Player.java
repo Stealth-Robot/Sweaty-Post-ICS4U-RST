@@ -142,7 +142,6 @@ public class Player extends Collider {
 	
 		
 		interacting = Interact.interacted();
-		System.out.println(xAxis + "," + yAxis);
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		if(xAxis == 0 && yAxis == 0) {
 			magnitude = 1;
