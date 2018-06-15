@@ -1,3 +1,9 @@
+/*
+ * RightMovementButtonReleased.java
+ * stops running the code in rightmovementbuttonpressed
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package input;
 
 import java.awt.event.ActionEvent;

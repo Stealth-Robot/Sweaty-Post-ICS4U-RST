@@ -1,3 +1,9 @@
+/*
+ * Player.java
+ * sets up the player instantiation and constructor and regulates movement
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package backend.player;
 
 import java.util.Random;

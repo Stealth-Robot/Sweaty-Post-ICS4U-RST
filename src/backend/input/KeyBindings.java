@@ -1,3 +1,9 @@
+/*
+ * KeyBindings.java
+ * binds various keys for interaction by the player
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package backend.input;
 
 import java.awt.event.KeyEvent;

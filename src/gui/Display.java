@@ -1,3 +1,9 @@
+/*
+ * Display.java
+ * sets up the display for everything to be drawn on the screen
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui;
 import java.awt.Cursor;
 import java.awt.Dimension;

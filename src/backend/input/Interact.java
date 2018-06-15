@@ -1,3 +1,9 @@
+/*
+ * Interact.java
+ * sets up player interaction when a key is pressed
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package backend.input;
 
 public class Interact {

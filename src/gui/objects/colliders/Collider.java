@@ -1,3 +1,9 @@
+/*
+ * Collider.java
+ * base collider for all other colliders to extend
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders;
 
 import gui.Vector2;

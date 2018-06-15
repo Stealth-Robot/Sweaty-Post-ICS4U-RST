@@ -1,3 +1,9 @@
+/*
+ * JailCellScene.java
+ * generates the jailcell scene
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.scenes.locations;
 
 import java.awt.Image;

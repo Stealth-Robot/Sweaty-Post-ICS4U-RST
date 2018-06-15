@@ -1,3 +1,9 @@
+/*
+ * InteractButtonPressed.java
+ * runs code when the interact button is pressed
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package input;
 
 import java.awt.event.ActionEvent;

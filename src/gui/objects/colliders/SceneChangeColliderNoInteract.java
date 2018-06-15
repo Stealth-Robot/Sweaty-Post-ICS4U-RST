@@ -1,3 +1,9 @@
+/*
+ * SceneChangeColliderNoInteract.java
+ * sets up a collider that changes scenes when an object collides with it
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders;
 
 import backend.player.Player;

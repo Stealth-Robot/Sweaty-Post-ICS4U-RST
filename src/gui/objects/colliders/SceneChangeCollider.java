@@ -1,3 +1,9 @@
+/*
+ * SceneChangeCollider.java
+ * sets up a collider that changes scenes when the interact key is pressed
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders;
 
 

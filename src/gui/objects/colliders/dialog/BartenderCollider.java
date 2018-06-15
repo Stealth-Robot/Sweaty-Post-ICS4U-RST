@@ -1,3 +1,9 @@
+/*
+ * BartenderCollider.java
+ * sets up dailogue when getting drinks from the bartender
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders.dialog;
 
 import dialog.DialogCreator;

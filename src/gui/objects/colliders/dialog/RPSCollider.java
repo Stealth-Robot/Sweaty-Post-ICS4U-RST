@@ -1,3 +1,9 @@
+/*
+ * RPSCollider.java
+ * plays a game of RPS
+ * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * June 2018
+ */
 package gui.objects.colliders.dialog;
 
 import java.util.concurrent.ThreadLocalRandom;
