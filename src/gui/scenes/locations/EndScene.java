@@ -90,4 +90,10 @@ public class EndScene extends Scene {
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene));
 	}
 
+	@Override
+	public void createBattleColliders() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

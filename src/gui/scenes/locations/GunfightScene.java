@@ -74,8 +74,13 @@ public class GunfightScene extends Scene {
 	@Override
 	public void createColliders() {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(7,3)));
-		addCollider(new BattleCollider(1, 1, new Vector2(0,0), Main.Slimy));
+		
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.endScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+	}
+
+	@Override
+	public void createBattleColliders() {
+		addBattleCollider(new BattleCollider(1, 1, new Vector2(0,0), Main.Slimy));
 	}
 
 }

@@ -142,4 +142,10 @@ public class RailwayScene extends Scene {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),
 				SceneMaster.startScene, new Vector2(1, 2), Player.Movement.EAST, Player.Movement.EAST));
 	}
+
+	@Override
+	public void createBattleColliders() {
+		// TODO Auto-generated method stub
+		
+	}
 }

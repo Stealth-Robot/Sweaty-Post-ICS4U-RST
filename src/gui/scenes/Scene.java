@@ -16,16 +16,19 @@ import images.ImageData;
 public abstract class Scene implements IScene {
 	public ArrayList<ImageData> environment;
 	public ArrayList<Rectangle> sceneColliders;
+	public ArrayList<Rectangle> battleColliders;
 	protected int identifier;
 	public Scene(int identifier) {
 		environment = new ArrayList<ImageData>();
+		battleColliders = new ArrayList<Rectangle>();
 		this.identifier = identifier;
 		this.createEnvironment();
+		this.createBattleColliders();
 	}
 	public void initialize() {
 		
 		sceneColliders = new ArrayList<Rectangle>();
-		
+		sceneColliders.addAll(battleColliders);
 		this.createColliders();
 		DrawImageOnCanvas.currentScene = this;
 	}
@@ -39,5 +42,8 @@ public abstract class Scene implements IScene {
 	}
 	public void addCollider(Rectangle r) {
 		sceneColliders.add(r);
+	}
+	public void addBattleCollider(Rectangle r) {
+		battleColliders.add(r);
 	}
 }

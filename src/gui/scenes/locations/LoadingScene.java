@@ -28,4 +28,10 @@ public class LoadingScene extends Scene {
 		
 	}
 
+	@Override
+	public void createBattleColliders() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

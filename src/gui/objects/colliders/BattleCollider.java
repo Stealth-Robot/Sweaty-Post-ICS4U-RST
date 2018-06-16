@@ -17,10 +17,14 @@ public class BattleCollider extends InteractiveCollider {
 		super(length, width, position);
 		this.villain = villain;
 	}
-
+boolean first = true;
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
-		new WildWest(villain);
+		if(first) {
+			first = false;
+			new WildWest(villain);
+		}
+		
 	}
 }
 		

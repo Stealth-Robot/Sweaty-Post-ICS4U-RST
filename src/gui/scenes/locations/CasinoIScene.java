@@ -117,4 +117,10 @@ public class CasinoIScene extends Scene {
 			addCollider(new InterpolationCollider(RectangleCreator.colliderRectangle(4, 5)));
 		}		
 	}
+
+	@Override
+	public void createBattleColliders() {
+		// TODO Auto-generated method stub
+		
+	}
 }

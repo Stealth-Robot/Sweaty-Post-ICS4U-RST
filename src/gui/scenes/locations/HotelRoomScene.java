@@ -75,4 +75,10 @@ public class HotelRoomScene extends Scene {
 
 	}
 
+	@Override
+	public void createBattleColliders() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

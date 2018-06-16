@@ -71,4 +71,10 @@ public class JailScene extends Scene {
 	public void createColliders() {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(0, 0)));
 	}
+
+	@Override
+	public void createBattleColliders() {
+		// TODO Auto-generated method stub
+		
+	}
 }
