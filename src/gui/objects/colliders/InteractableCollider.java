@@ -12,12 +12,20 @@ import gui.objects.Rectangle;
 import main.Main;
 
 abstract class InteractableCollider extends InteractiveCollider implements CollisionInteraction {
+	/**
+	 * pre: none
+	 * post: is constructed
+	 */
 	public InteractableCollider(int length, int width, Vector2 position) {
 		super(length, width, position);
 	}
 	public InteractableCollider(Rectangle rectangle) {
 		super(rectangle);
 	}
+	/**
+	 * pre: collision
+	 * post: action is overridden
+	 */
 	@Override
 	public Collisions collision(Collider player, Player.Movement direction) {
 		Collisions c = Collisions.NONE;
@@ -27,6 +35,10 @@ abstract class InteractableCollider extends InteractiveCollider implements Colli
 		return c;
 	}
 	public Player.Movement temp = Player.Movement.NONE;
+	/**
+	 * pre: none
+	 * post: ensures player is facing the right direction and interacts
+	 */
 	public boolean interacted(Collider player, Player.Movement direction) {
 		direction = Main.game.player.facingDir;
 		if(direction != Player.Movement.NONE) {

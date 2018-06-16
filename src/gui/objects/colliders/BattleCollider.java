@@ -11,6 +11,11 @@ import gui.Vector2;
 public class BattleCollider extends InteractiveCollider {
 	private double battleChance;
 	private double battleTime;
+
+	/**
+	 * pre: none
+	 * post: collider is set
+	 */
 	public BattleCollider(int length, int width, Vector2 position) {
 		super(length, width, position);
 		this.battleChance = battleChance;
@@ -18,6 +23,11 @@ public class BattleCollider extends InteractiveCollider {
 	}
 	private double currentTime = 0;
 	private double scaleTime = 0;
+
+	/**
+	 * pre: onCollision
+	 * post: action is overridden
+	 */
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
 		currentTime += System.currentTimeMillis() - scaleTime;
@@ -31,6 +41,10 @@ public class BattleCollider extends InteractiveCollider {
 			}
 		}
 	}
+	/**
+	 * pre: none
+	 * post: battle is generated
+	 */
 	private void generateBattle() {
 		
 	}

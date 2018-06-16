@@ -11,10 +11,18 @@ import wildWest.Searches;
 
 public class InterpolationCollider extends SpeechCollider {
 
+	/**
+	 * pre: none
+	 * post: action is performed
+	 */
 	public InterpolationCollider(Rectangle rectangle) {
 		super(rectangle);
 		// TODO Auto-generated constructor stub
 	}
+	/**
+	 * pre: onCollision
+	 * post: action is overridden
+	 */
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
 		do {

@@ -2,6 +2,7 @@
  * Main.java
  * client code that runs the entire application
  * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * ICS4U
  * June 2018
  */
 package main;

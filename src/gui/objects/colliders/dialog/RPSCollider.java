@@ -17,10 +17,18 @@ import main.Main;
 
 public class RPSCollider extends SpeechCollider {
 
+	/**
+	 * pre: none
+	 * post: is constructed
+	 */
 	public RPSCollider(Rectangle rectangle) {
 		super(rectangle);
 		// TODO Auto-generated constructor stub
 	}
+	/**
+	 * pre: onCollision
+	 * post: is overridden
+	 */
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
 		int i;

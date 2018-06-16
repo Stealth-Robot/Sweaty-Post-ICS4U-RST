@@ -20,13 +20,14 @@ public class DialogCreator {
 		JOptionPane.showMessageDialog(Display.mainFrame, text,title,option);
 	}
 	/**
-	 * 
+	 * pre: values are passed
+	 * post:
 	 * @param title
 	 * @param text
 	 * @param option
 	 * @param image
 	 * @param buttons
-	 * @return
+	 * are created
 	 */
 	public static int createDialog(String title, String text, ImageIcon image, String... buttons) {
 		buttons = Main.game.player.say(buttons);

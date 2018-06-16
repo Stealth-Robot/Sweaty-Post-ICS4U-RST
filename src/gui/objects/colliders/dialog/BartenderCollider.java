@@ -14,9 +14,17 @@ import main.Main;
 
 public class BartenderCollider extends SpeechCollider {
 
+	/**
+	 * pre: none
+	 * post: is constructed
+	 */
 	public BartenderCollider(Rectangle rectangle) {
 		super(rectangle);
 	}
+	/**
+	 * pre: onCollision
+	 * post: overrides action
+	 */
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
 		int i;
