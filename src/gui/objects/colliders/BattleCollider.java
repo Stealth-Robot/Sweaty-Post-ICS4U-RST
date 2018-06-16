@@ -6,46 +6,21 @@
  */
 package gui.objects.colliders;
 
+import PresentationClasses.Villain;
 import gui.Vector2;
+import wildWest.WildWest;
 
 public class BattleCollider extends InteractiveCollider {
-	private double battleChance;
-	private double battleTime;
-
-	/**
-	 * pre: none
-	 * post: collider is set
-	 */
-	public BattleCollider(int length, int width, Vector2 position) {
+	public Villain villain;
+	
+	public BattleCollider(int length, int width, Vector2 position, Villain villain) {
 		super(length, width, position);
-		this.battleChance = battleChance;
-		// TODO Auto-generated constructor stub
+		this.villain = villain;
 	}
-	private double currentTime = 0;
-	private double scaleTime = 0;
 
-	/**
-	 * pre: onCollision
-	 * post: action is overridden
-	 */
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
-		currentTime += System.currentTimeMillis() - scaleTime;
-		if(!direction.equals(Collisions.NONE)) {
-			if(currentTime > battleTime) {
-				scaleTime = System.currentTimeMillis();
-				currentTime = 0;
-				if(Math.random() < battleChance) {
-					//DO BATTLE
-				}
-			}
-		}
-	}
-	/**
-	 * pre: none
-	 * post: battle is generated
-	 */
-	private void generateBattle() {
-		
+		new WildWest(villain);
 	}
 }
+		

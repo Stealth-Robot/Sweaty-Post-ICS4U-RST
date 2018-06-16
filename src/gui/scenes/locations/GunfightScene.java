@@ -8,6 +8,7 @@ package gui.scenes.locations;
 
 import java.awt.Image;
 
+import PresentationClasses.Villain;
 import backend.player.Player;
 import gui.DrawImageOnCanvas;
 import gui.Vector2;
@@ -19,6 +20,7 @@ import gui.objects.colliders.SceneChangeCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.scenes.Scene;
 import images.ImageData;
+import main.Main;
 
 public class GunfightScene extends Scene {
 
@@ -72,7 +74,7 @@ public class GunfightScene extends Scene {
 	@Override
 	public void createColliders() {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(7,3)));
-		addCollider(new BattleCollider(1,1,new Vector2(4,4)));
+		addCollider(new BattleCollider(1, 1, new Vector2(0,0), Main.Slimy));
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.endScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
 	}
 
