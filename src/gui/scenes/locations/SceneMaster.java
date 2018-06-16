@@ -25,7 +25,7 @@ public class SceneMaster {
 		bankIScene = new BarScene(6); //bank inside
 		bankScene = new DesertScene(7); //bank outside
 
-		jailIScene = new BarScene(8); //jail inside
+		jailIScene = new JailScene(8); //jail inside
 		jailScene = new DesertScene(9); //jail outside
 
 		hotelIScene = new BarScene(10); //hotel inside

@@ -46,6 +46,7 @@ public class JailCellScene extends Scene {
 
 	@Override
 	public void createColliders() {
-
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
+				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
 	}
 }

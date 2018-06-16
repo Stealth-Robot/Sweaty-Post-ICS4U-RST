@@ -27,28 +27,23 @@ public class WildWest implements ActionListener, Cloneable
 {
 	JFrame frame;
 	JPanel contentPane;
-	private JButton dodge;
-	private JLabel eAmmo;
-	private JLabel enemySprite;
-	private JLabel logIntro;
-	private javax.swing.JScrollPane jScrollPane1;
-	private javax.swing.JScrollPane jScrollPane2;
-	private JTextArea jTextArea1;
-	private JTextArea log;
+	private JLabel eAmmo,enemySprite,logIntro;
+	private javax.swing.JScrollPane jScrollPane1,jScrollPane2;
+	private JTextArea jTextArea1,log;
 	private JLabel pAmmo;
-	private JButton reload;
-	private JButton shoot;
+	private JButton reload,shoot,dodge;
 	private LogQueue logText;
+	private Villain cVil;
 
 	private BattleCharacter player, enemy;
 
 	private final int AMMOSIZE = 125;
 	private final int ENEMYRATIO = 5;
-	boolean win;
-	boolean loss;
+	boolean win,loss;
 
 	public WildWest(Villain villain) 
 	{
+		setCVil(villain);
 		win = false;
 		loss = false;
 		player = new BattleCharacter(6);
@@ -80,13 +75,13 @@ public class WildWest implements ActionListener, Cloneable
 		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 
-		dodge.setText("Dodge");
+		dodge.setText(Main.game.player.say("Dodge"));
 		dodge.addActionListener(this);
 		dodge.setActionCommand("dodge");
-		reload.setText("Reload");
+		reload.setText(Main.game.player.say("Reload"));
 		reload.addActionListener(this);
 		reload.setActionCommand("reload");
-		shoot.setText("Shoot");
+		shoot.setText(Main.game.player.say("Shoot"));
 		shoot.addActionListener(this);
 		shoot.setActionCommand("shoot");
 
@@ -95,8 +90,8 @@ public class WildWest implements ActionListener, Cloneable
 		log.setColumns(20);
 		log.setRows(10);
 		log.setEditable(false);
-		log.setText("This is the log");
-		logIntro.setText("Log:");
+		log.setText(Main.game.player.say("This is the log"));
+		logIntro.setText(Main.game.player.say("Log:"));
 		jScrollPane1.setViewportView(log);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(contentPane);
@@ -153,31 +148,34 @@ public class WildWest implements ActionListener, Cloneable
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
 		frame.pack(); // Sizes and displays the frame
 		frame.setVisible(true); //lets the program know that the frame is visible as opposed to invisible
+		logText.enqueue(Main.game.player.say(cVil.name + " has arived riding his horse, " + cVil.horseName));
+		logText.enqueue(Main.game.player.say(cVil.name + " plans to drink some delicous " + cVil.whiskeyPreference + " after he kills you"));
+		logText.enqueue(Main.game.player.say(""));
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		int action = BattleAI.choice(player,enemy);
-		if (action == 1) logText.enqueue("The enemy has shoot at you");
-		if (action == 2) logText.enqueue("The enemy has reloaded their gun");
-		if (action == 3) logText.enqueue("The enemy has attempted to dodge");
+		if (action == 1) logText.enqueue(Main.game.player.say(cVil.name + " has shoot at you"));
+		if (action == 2) logText.enqueue(Main.game.player.say(cVil.name + " has reloaded their gun"));
+		if (action == 3) logText.enqueue(Main.game.player.say(cVil.name + " has attempted to dodge"));
 		enemy.actions(action);
 		String command = event.getActionCommand();
 		boolean turn = false;
 		if (command.equals("shoot")) {
 			player.actions(1);
-			logText.enqueue("You have shot at the enemy");
+			logText.enqueue(Main.game.player.say("You have shot at "+ cVil.name));
 			turn = true;
 		}
 		if (command.equals("reload")) {
-			logText.enqueue("You have reloaded your gun");
+			logText.enqueue(Main.game.player.say("You have reloaded your gun"));
 			updateLog();
 			player.actions(2);
 			turn = true;
 		}
 		if (command.equals("dodge")) {
-			logText.enqueue("You get in cover to avoid enemy fire");
+			logText.enqueue(Main.game.player.say("You get in cover to avoid enemy fire"));
 			updateLog();
 			player.actions(3);
 			turn = true;
@@ -194,17 +192,17 @@ public class WildWest implements ActionListener, Cloneable
 				shoot.setEnabled(false);
 				dodge.setEnabled(false);
 				if (win) {
-					logText.enqueue("The enemy gotten shot and died");
-					shoot.setText("You Win");
-					dodge.setText("You Win");
-					reload.setText("Continue");
+					logText.enqueue(Main.game.player.say(cVil.name + " has died to your well aimed shot"));
+					shoot.setText(Main.game.player.say("You Win"));
+					dodge.setText(Main.game.player.say("You Win"));
+					reload.setText(Main.game.player.say("Continue"));
 					reload.setActionCommand("Continue");
 				} 
 				if (loss) {
-					logText.enqueue("The enemy has shot you and you died");
-					shoot.setText("You Lose");
-					dodge.setText("You Lose");
-					reload.setText("Continue");
+					logText.enqueue(Main.game.player.say(cVil.name + " shot you and you have died"));
+					shoot.setText(Main.game.player.say("You Lose"));
+					dodge.setText(Main.game.player.say("You Lose"));
+					reload.setText(Main.game.player.say("Continue"));
 					reload.setActionCommand("Continue");
 				} 
 			}
@@ -259,5 +257,13 @@ public class WildWest implements ActionListener, Cloneable
 				runGUI();
 			}
 		});
+	}
+
+	public Villain getCVill() {
+		return cVil;
+	}
+
+	public void setCVil(Villain cVil) {
+		this.cVil = cVil;
 	}
 }

@@ -95,10 +95,17 @@ public class Player extends Collider {
 	}
 	int tickCounter = 0;
 	int ticks = 100;
+	int i = 0;
+	int decay = 1000;
 	int currentMovement = 0;
 	public Movement facingDir;
 	public boolean interacting = false;
 	public Movement updateCharacter(double xAxis, double yAxis) {
+		i++;
+		if(i > decay) {
+			i = 0;
+			drunkness--;
+		}
 		if(drunkness >= 100) {
 			tickCounter++;
 			if(tickCounter > ticks) {

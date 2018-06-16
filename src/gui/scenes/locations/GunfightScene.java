@@ -13,6 +13,7 @@ import gui.DrawImageOnCanvas;
 import gui.Vector2;
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
+import gui.objects.colliders.BattleCollider;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
@@ -71,6 +72,7 @@ public class GunfightScene extends Scene {
 	@Override
 	public void createColliders() {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(7,3)));
+		addCollider(new BattleCollider(1,1,new Vector2(4,4)));
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.endScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
 	}
 

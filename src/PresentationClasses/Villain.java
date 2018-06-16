@@ -12,51 +12,57 @@ package PresentationClasses;
 import java.util.ArrayList;
 
 public class Villain extends Human {
-	String mustachColour, hatColour, look;
-	int drunkenness, numberOfDamsels;
-	public String path;
+	String hatColor, mustacheColor, look;
+	int drunkenness, damselNum;
 	ArrayList<Human> Damsels;
-	public String hatColor;
-	public String mustacheColor;
+	public String path = "";
 
 	/**
-	 * @param name
-	 * @param male
+	 * pre: none
+	 * post: villain human is constructed
 	 */
 	public Villain(String name, boolean male) {
 		super(name, male);
 		look = "mean";
 		drunkenness = 0;
-		numberOfDamsels = 0;
+		damselNum = 0;
 	}
 
 	/**
-	 * Increase drunkenness level by 1
+	 * pre: none
+	 * post: Increase drunkenness level by 1
 	 */
 	public void drinkWhiskey() {
 		drunkenness++;
 	}
 	
 	/**
-	 * Returns the drunkenness of the villain
-	 * @return drunkenness
+	 * pre: none
+	 * post: eturns the drunkenness of the villain
 	 */
 	public int returnDrunkenness() {
 		return drunkenness;
 	}
-	
+
+/**
+ * pre: villain is not set up
+ * post: variables are assigned to villain
+ */
 	public void TieUpDamsel(String name) {
-		numberOfDamsels++;
+		damselNum++;
 		Human Damsel = new Human(name, false);
 		Damsels.add(Damsel);
 	}
-
-	public void villainSetup(String name, String hatColor, String mustacheColor, String sex, String horseName, String whiskyPreference, String look) {
+/**
+ * pre: villain is not set up
+ * post: variables are assigned to villain
+ */
+	public void villainSetup(String name, String hatColor, String mustacheColor, String look, String sex, String horseName, String whiskyPreference) {
 		this.hatColor = hatColor; 
 		this.mustacheColor = mustacheColor; 
 		this.sex = sex; 
 		this.horseName = horseName; 
 		this.whiskeyPreference = whiskyPreference; 
-		this.path = hatColor + mustacheColor + look;
+		path = hatColor + mustacheColor + look;
 	}
 }
