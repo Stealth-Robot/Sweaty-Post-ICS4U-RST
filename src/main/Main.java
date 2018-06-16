@@ -36,13 +36,13 @@ public class Main {
 		// The Dalton Brothers (Slimy, Sneaky, Shifty and Snitchy)
 		// the Earps (Marshall Virgil, Wyatt, Morgan, and Doc Holliday)
 
-		WesternTown sweatyPost = new WesternTown(); sweatyPost.saloons = 2; sweatyPost.sheriffs = 1; sweatyPost.setTroublemakers(6);
+		WesternTown sweatyPost = new WesternTown(); sweatyPost.saloons = 2; sweatyPost.sheriffs = 1; sweatyPost.setTroublemakers(7);
+		tutorial = new Villain("Bank Robber", true);
 	/* Dalton Bros */ 
 		Slimy = new Villain("Slimy", true);
 		Sneaky = new Villain("Sneaky", true);
 		Shifty = new Villain("Shifty", true);
 		Snitchy = new Villain("Snitchy", true);
-		tutorial = new Villain("Bank Robber", true);
 	/* The Earps */ 
 		Marshall_Virgil = new Villain("Marshall Virgil", true);
 		Wyatt = new Villain("Wyatt", true);

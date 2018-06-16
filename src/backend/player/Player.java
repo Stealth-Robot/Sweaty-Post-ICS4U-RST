@@ -61,9 +61,10 @@ public class Player extends Collider {
 		this.position = position;
 	}
 	/**
-	 * Player movement, 0 = no movement on axis
-	 * @param xAxis -1 for left, 1 for right
-	 * @param yAxis -1 for down, 1 for up
+	 * pre: none
+	 * post: Player movement, 0 = no movement on axis
+	 *  xAxis -1 for left, 1 for right
+	 *  yAxis -1 for down, 1 for up
 	 */
 	private Movement move(double xAxis, double yAxis) {
 		if(xAxis == 0) {

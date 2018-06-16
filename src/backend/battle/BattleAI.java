@@ -7,6 +7,10 @@
 package backend.battle;
 
 public class BattleAI {
+	/**
+	 * pre: none
+	 * post: ai chooses action
+	 */
 	public static int choice(BattleCharacter player, BattleCharacter enemy) {
 		int shoot = 0;
 		for(int i = 0; i < enemy.bullets; i++) {

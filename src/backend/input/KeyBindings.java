@@ -24,6 +24,10 @@ import input.UpMovementPressed;
 import input.UpMovementReleased;
 
 public class KeyBindings {
+	/**
+	 * pre: none
+	 * post: defines and returns bindings
+	 */
 	public static Draw initKeyBindings(Draw canvas) {
 		canvas = aKeyBinding(canvas);
 		canvas = leftKeyBinding(canvas);
@@ -37,6 +41,10 @@ public class KeyBindings {
 		return canvas;
 	}
 
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw aKeyBinding(Draw canvas) {
 		Action aAction = new LeftMovementPressed();
 		Action aActionRelease = new LeftMovementReleased();
@@ -47,6 +55,10 @@ public class KeyBindings {
 		return canvas;
 	}
 
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw leftKeyBinding(Draw canvas) {
 		Action leftAction = new LeftMovementPressed();
 		Action leftActionRelease = new LeftMovementReleased();
@@ -56,7 +68,11 @@ public class KeyBindings {
 		canvas.getActionMap().put( "doaAction", leftAction );
 		return canvas;
 	}
-	
+
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw dKeyBinding(Draw canvas) {
 		Action dAction = new RightMovementPressed();
 		Action dActionRelease = new RightMovementReleased();
@@ -66,7 +82,11 @@ public class KeyBindings {
 		canvas.getActionMap().put( "dodActionRelease", dActionRelease );
 		return canvas;
 	}
-	
+
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw rightKeyBinding(Draw canvas) {
 		Action rightAction = new RightMovementPressed();
 		Action rightActionRelease = new RightMovementReleased();
@@ -77,6 +97,10 @@ public class KeyBindings {
 		return canvas;
 	}
 
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw sKeyBinding(Draw canvas) {
 		Action sAction = new DownMovementPressed();
 		Action sActionRelease = new DownMovementReleased();
@@ -86,7 +110,11 @@ public class KeyBindings {
 		canvas.getActionMap().put( "dosActionRelease", sActionRelease );
 		return canvas;
 	}
-	
+
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw downKeyBinding(Draw canvas) {
 		Action downAction = new DownMovementPressed();
 		Action downActionRelease = new DownMovementReleased();
@@ -96,7 +124,11 @@ public class KeyBindings {
 		canvas.getActionMap().put( "dosActionRelease", downActionRelease );
 		return canvas;
 	}
-	
+
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw wKeyBinding(Draw canvas) {
 		Action wAction = new UpMovementPressed();
 		Action wActionRelease = new UpMovementReleased();
@@ -106,7 +138,11 @@ public class KeyBindings {
 		canvas.getActionMap().put( "dowActionRelease", wActionRelease );
 		return canvas;
 	}
-	
+
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw upKeyBinding(Draw canvas) {
 		Action upAction = new UpMovementPressed();
 		Action upActionRelease = new UpMovementReleased();
@@ -116,7 +152,11 @@ public class KeyBindings {
 		canvas.getActionMap().put( "dowActionRelease", upActionRelease );
 		return canvas;
 	}
-	
+
+	/**
+	 * pre: a key is pressed
+	 * post: action is performed
+	 */
 	private static Draw interactKeyBinding(Draw canvas) {
 		Action interactAction = new InteractButtonPressed();
 		Action interactActionRelease = new InteractButtonReleased();

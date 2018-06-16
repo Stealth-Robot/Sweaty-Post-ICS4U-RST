@@ -9,11 +9,10 @@ package backend.input;
 public class Interact {
 	private static boolean pressed, rpressed = true;
 	/**
-	 * Returns true for the tick that the interaction took place in
-	 * @return
+	 * pre: button pressed
+	 * post: Returns true for the tick that the interaction took place in
 	 */
 	public static boolean interacted() {
-	//	System.out.print(pressed ? "True\n" : "");
 		if (pressed && rpressed) {
 			rpressed = false;
 			return true;
@@ -23,8 +22,8 @@ public class Interact {
 	}
 	
 	/**
-	 * Set the button to be either pressed or not pressed
-	 * @param pressed
+	 * pre: none
+	 * post: Set the button to be either pressed or not pressed
 	 */
 	public static void setPressed(boolean p) {
 		pressed = p;

@@ -17,7 +17,11 @@ public class MovementFromInputs {
 	
 	private static double x;
 	private static double y;
-	
+
+	/**
+	 * pre: coords for vector are received
+	 * post: returns vector
+	 */
 	static public Vector2 getPositionRelativeToInputs() {
 		x = 0;
 		y = 0;
@@ -30,49 +34,49 @@ public class MovementFromInputs {
 	}
 	
 	/**
-	 * @return x
+	 * post: return x
 	 */
 	public double getX() {
 		return x;
 	}
 	
 	/**
-	 * @return y
+	 * post: return y
 	 */
 	public double getY() {
 		return y;
 	}
 	
 	/**
-	 * @return Vector2(x, y)
+	 * post: return Vector2(x, y)
 	 */
 	public Vector2 getPosition() {
 		return new Vector2(x, y);
 	}
 	
 	/**
-	 * increases the x value
+	 * post: increases the x value
 	 */
 	public void increaseX() {
 		x++;
 	}
 	
 	/**
-	 * increase the y value
+	 * post: increase the y value
 	 */
 	public void increaseY() {
 		y++;
 	}
 	
 	/**
-	 * decreases the x value
+	 * post: decreases the x value
 	 */
 	public void decreaseX() {
 		x--;
 	}
 	
 	/**
-	 * decreases the y value
+	 * post: decreases the y value
 	 */
 	public void decreaseY() {
 		y--;

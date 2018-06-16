@@ -14,8 +14,8 @@ public class BattleCharacter {
 	int turn;
 
 	/**
-	 * Called when the battle first starts, a new battle character is created
-	 * and that battle character's maximum ammo is chosen
+	 * Pre: Called when the battle first starts, 
+	 * post: a new battle character is created and that battle character's maximum ammo is chosen
 	 * @param maxBullets
 	 */
 	public BattleCharacter(int maxBullets) {
@@ -25,8 +25,8 @@ public class BattleCharacter {
 	}
 
 	/**
-	 * Called after the chracter makes their choice
-	 * @param enemy
+	 * pre: Called after the character makes their choice
+	 * post: shoots
 	 */
 	public boolean tick(BattleCharacter enemy) {
 		if (bullets > maxBullets) {
@@ -36,7 +36,8 @@ public class BattleCharacter {
 	}
 
 	/**
-	 * Called at the end of each character's turn
+	 * pre: Called at the end of each character's turn
+	 * post: resets armored and shot to false
 	 */
 	public void resetTurn() {
 		armored = false;
@@ -44,8 +45,8 @@ public class BattleCharacter {
 	}
 
 	/**
-	 * Calls the action chosen to perform
-	 * @param choice (1 = shoot, 2 = reload, 3 = defend)
+	 * pre: Calls the action chosen to perform
+	 * post: gives choice (1 = shoot, 2 = reload, 3 = defend)
 	 */
 	public void actions(int choice) {
 		if (choice == 1) shoot();
@@ -53,12 +54,24 @@ public class BattleCharacter {
 		if (choice == 3) defend();
 	}
 
+	/**
+	 * pre: reload is chosen
+	 * post: bullets increase by 1
+	 */
 	private void reload() {
 		bullets++;
 	}
+	/**
+	 * pre: defend is chosen
+	 * post: player becomes armored
+	 */
 	private void defend() {
 		armored = true;
 	}
+	/**
+	 * pre: shoot is selected
+	 * post: shoot becomes true
+	 */
 	private void shoot() {
 		if (bullets > 0) {
 			bullets--;
@@ -67,9 +80,8 @@ public class BattleCharacter {
 	}
 
 	/**
-	 * Calls the getShot function from the enemy battleCharacter
-	 * @param enemy
-	 * @return
+	 * pre: Calls the getShot function from the enemy battleCharacter
+	 * post: returns if shooting or not
 	 */
 	public boolean shooting(BattleCharacter enemy) {
 		if (shot) return (enemy.getShot());
@@ -77,8 +89,8 @@ public class BattleCharacter {
 	}
 
 	/**
-	 * Called from another battleCharacter
-	 * @return
+	 * pre: none
+	 * post: determines if the bullet connects
 	 */
 	public boolean getShot() {
 		if (shot) return false;
