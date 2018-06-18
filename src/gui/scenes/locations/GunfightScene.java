@@ -75,20 +75,24 @@ public class GunfightScene extends Scene {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.endScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
 		Image testImage = ImageLoader.loadImage("src/images/sprites/Enemy.png");
 			if(Main.Marshall_Virgil.ready) {
-		        	postEnvironment.add(new ImageData(testImage,4,3));
-		        	addCollider(new Collider(RectangleCreator.colliderRectangle(4,3)));
+	        	postEnvironment.add(new ImageData(testImage,4,3));
+	        	addCollider(new Collider(RectangleCreator.colliderRectangle(4,3)));
+	        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),3,3));
 		        }
 		        if(Main.Wyatt.ready) {
 		        	postEnvironment.add(new ImageData(testImage,5,5));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
+		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),4,5));
 		        }
 		        if(Main.Morgan.ready) {
 		        	postEnvironment.add(new ImageData(testImage,7,2));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(7,2)));
+		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),6,2));
 		        }
 		        if(Main.Doc_Holliday.ready) {
 		        	postEnvironment.add(new ImageData(testImage,6,0));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(6,0)));
+		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),5,0));
 		        }
 	}
 

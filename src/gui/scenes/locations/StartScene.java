@@ -117,10 +117,10 @@ public class StartScene extends Scene {
 
 	@Override
 	public void createBattleColliders() {
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(2, 4), Main.Slimy,"Oof Oof Oof here comes dat boi","K lol"));
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(5, 4), Main.Sneaky,"Oof Oof Oof here comes dat boi","K lol"));
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(7, 3), Main.Shifty,"Oof Oof Oof here comes dat boi","K lol"));
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(4, 1), Main.Snitchy,"Oof Oof Oof here comes dat boi","K lol"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(2, 4), Main.Slimy,"Im so slimy and evil and dispicable","Are you Gru from Despicable Me?"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(5, 4), Main.Sneaky,"HA I surprised you didn't I!?","... but you didn't? ..."));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(7, 3), Main.Shifty,"Get out of here or pay the price","K, Im going"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(4, 1), Main.Snitchy,"MA! THIS RUFFAGIN STOLE THE COOKIES","What cookies? Are you drunk?"));
 	}
 
 }
