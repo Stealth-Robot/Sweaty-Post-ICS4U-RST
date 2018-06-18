@@ -109,7 +109,7 @@ public class Player extends Collider {
 		if(i > decay) {
 			i = 0;
 			if(drunkness > 0) {
-				System.out.println("Drunk decay");
+				//System.out.println("Drunk decay");
 				drunkness--;
 			}
 		}
@@ -152,9 +152,6 @@ public class Player extends Collider {
 			xAxis = -xAxis;
 			yAxis = -yAxis;
 	}
-	
-	
-		
 		interacting = Interact.interacted();
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		if(xAxis == 0 && yAxis == 0) {
