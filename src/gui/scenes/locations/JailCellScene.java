@@ -91,7 +91,7 @@ public class JailCellScene extends Scene {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(2, 0.05),
 				SceneMaster.jailIScene, new Vector2(5, 5), Player.Movement.NORTH, Player.Movement.SOUTH));
 	       if(identifier==17) {
-		        testImage = ImageLoader.loadImage("src/images/sprites/EneGreyBlue.png");
+		        testImage = ImageLoader.loadImage("src/images/sprites/EnemyDown.png");
 		        if(Main.Surfer_Boi.ready) {
 		        	postEnvironment.add(new ImageData(testImage,5,4));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(5,4)));
