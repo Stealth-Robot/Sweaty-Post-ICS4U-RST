@@ -76,9 +76,12 @@ public class Main {
 				+ "check your damsels in the Hotel. \nIf you die, you lose all of your damsels and you respawn at the hotel. Movement "
 				+ "is the wasd keys and to interact you double click \"e\". \nYou can interact on any tile that has a red box. Test this "
 				+ "newfound knowledge with the Station Master of the train Station. He will \nreward you with damsels! \n\nWhen you "
-				+ "fight an enemy it starts a game of wild west. The rules of tha game are simple: shoot your opponent and don't get "
+				+ "fight an enemy it starts a game of wild west. The rules of the game are simple: shoot your opponent and don't get "
 				+ "shot.\nYou have three choices each turn (Shoot, Reload, or Dodge) \nShoot - if you have bullets, you shoot the enemy"
 				+ " (if he blocks or also shoots nothing hallens) \nReload - you add one bullet to your revolver \nDodge - you block "
-				+ "any bollets shot at you");
+				+ "any bollets shot at you\n\nYour goal is to clear out the Dalton Bros and the Earps. To do this you must battle all "
+				+ "eight of them. Once you have battled all eight \nyou can move on to the next phase with new instructions. There are "
+				+ "also 4 bonus charictors which give more damsels than the normal \nenemies. Killing them is a great way to boost your "
+				+ "score!");
 	}
 }
