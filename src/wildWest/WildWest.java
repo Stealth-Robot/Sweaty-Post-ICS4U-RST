@@ -33,7 +33,7 @@ public class WildWest implements ActionListener, Cloneable
 	private javax.swing.JScrollPane jScrollPane1,jScrollPane2;
 	private JTextArea jTextArea1,log;
 	private JLabel pAmmo;
-	private JButton reload,shoot,dodge;
+	private JButton Button2,Button3,Button1;
 	private LogQueue logText;
 	private Villain cVil;
 
@@ -69,9 +69,9 @@ public class WildWest implements ActionListener, Cloneable
 		enemySprite = new JLabel();
 		logIntro = new JLabel();
 
-		dodge = new JButton();
-		reload = new JButton();
-		shoot = new JButton();
+		Button3 = new JButton();
+		Button2 = new JButton();
+		Button1 = new JButton();
 		jScrollPane1.setViewportView(jTextArea1);
 		System.out.println("../images/sprites/enemies/" + villain.path + ".png");
 		URL enemySpriteU = getClass().getResource("../images/sprites/enemies/" + villain.path + ".png");
@@ -79,16 +79,16 @@ public class WildWest implements ActionListener, Cloneable
 		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 		pAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
 
-		dodge.setText(Main.game.player.say("Dodge"));
-		dodge.addActionListener(this);
-		dodge.setActionCommand("dodge");
-		reload.setText(Main.game.player.say("Reload"));
-		reload.addActionListener(this);
-		reload.setActionCommand("reload");
-		shoot.setText(Main.game.player.say("Shoot"));
-		shoot.addActionListener(this);
-		shoot.setActionCommand("shoot");
-
+		Button1.setText(Main.game.player.say("Shoot"));
+		Button1.addActionListener(this);
+		Button1.setActionCommand("shoot");
+		Button2.setText(Main.game.player.say("Reload"));
+		Button2.addActionListener(this);
+		Button2.setActionCommand("reload");
+		Button3.setText(Main.game.player.say("Dodge"));
+		Button3.addActionListener(this);
+		Button3.setActionCommand("dodge");
+		
 		frame.setResizable(false);
 
 		log.setColumns(20);
@@ -115,11 +115,11 @@ public class WildWest implements ActionListener, Cloneable
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(pAmmo)
                                 .addGap(60, 60, 60)
-                                .addComponent(shoot, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(reload, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(dodge, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 1, Short.MAX_VALUE)))
                 .addGap(43, 43, 43))
             .addGroup(layout.createSequentialGroup()
@@ -137,9 +137,9 @@ public class WildWest implements ActionListener, Cloneable
                 .addGap(200, 200, 200)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pAmmo)
-                    .addComponent(reload, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(shoot, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dodge, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addComponent(logIntro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -193,8 +193,8 @@ public class WildWest implements ActionListener, Cloneable
 			enemy.resetTurn();	
 			replaceImage();
 			if (loss || win) {
-				shoot.setEnabled(false);
-				dodge.setEnabled(false);
+				Button1.setEnabled(false);
+				Button3.setEnabled(false);
 				Main.paused = false;
 				if (win) {
 					URL grave = getClass().getResource("../images/sprites/enemies/Grave.png");
@@ -202,17 +202,17 @@ public class WildWest implements ActionListener, Cloneable
 					logText.enqueue(Main.game.player.say(cVil.name + " has died to your well aimed shot. You have gained his " + cVil.damselNum + " damsels!"));
 					Main.game.player.damsels += cVil.damselNum;
 					cVil.damselNum = 0;
-					shoot.setText(Main.game.player.say("You Win"));
-					dodge.setText(Main.game.player.say("You Win"));
-					reload.setText(Main.game.player.say("Continue"));
-					reload.setActionCommand("Continue");
+					Button1.setText(Main.game.player.say("You Win"));
+					Button3.setText(Main.game.player.say("You Win"));
+					Button2.setText(Main.game.player.say("Continue"));
+					Button2.setActionCommand("Continue");
 				} 
 				if (loss) {
 					logText.enqueue(Main.game.player.say(cVil.name + " shot you and you have died. He has taken your " + Main.game.player.damsels + " damsels."));
-					shoot.setText(Main.game.player.say("You Lose"));
-					dodge.setText(Main.game.player.say("You Lose"));
-					reload.setText(Main.game.player.say("Continue"));
-					reload.setActionCommand("Continue");
+					Button1.setText(Main.game.player.say("You Lose"));
+					Button3.setText(Main.game.player.say("You Lose"));
+					Button2.setText(Main.game.player.say("Continue"));
+					Button2.setActionCommand("Continue");
 					cVil.damselNum += Main.game.player.damsels;
 					Main.game.player.damsels = 0;
 					SceneMaster.hotelIScene.initialize();
