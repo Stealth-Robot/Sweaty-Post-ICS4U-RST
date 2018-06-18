@@ -55,9 +55,6 @@ public class WildWest implements ActionListener, Cloneable
 	 */
 	public WildWest(Villain villain) 
 	{
-		//Get the villain from the villain class and pause the main game
-		if(MovementFromInputs.RightPressed == false && MovementFromInputs.LeftPressed == false && 
-				MovementFromInputs.UpPressed == false && MovementFromInputs.DownPressed == false) {
 		villain.ready = false;
 		Main.paused = true;
 		setCVil(villain);
