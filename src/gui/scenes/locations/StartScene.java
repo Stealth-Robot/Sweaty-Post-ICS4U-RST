@@ -25,7 +25,7 @@ public class StartScene extends Scene {
 
 	public StartScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override

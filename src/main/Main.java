@@ -27,7 +27,6 @@ public class Main {
 		villianSetup();
 
 		game = new DrawImageOnCanvas();
-		//new WildWest(tutorial);
 		DialogCreator.createDialog("Totorial", intro(), 0);
 	}
 

@@ -28,7 +28,7 @@ public class CasinoIScene extends Scene {
 	int identifier;
 	public CasinoIScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 		this.identifier = identifier;
 	}
 

@@ -37,7 +37,7 @@ public class DrawImageOnCanvas {
 	public Player player;
 	ImageData playerImage = new ImageData(ImageLoader.loadImage("src/images/sprites/Player.png"),0,0);
 	public DrawImageOnCanvas() {
-		System.out.println("init");
+		//System.out.println("init");
 		init();
 	}
 boolean first = true;
@@ -116,7 +116,7 @@ boolean first = true;
 	}
 
 	public void init() {
-		System.out.println("INITIALIZE");
+		//System.out.println("INITIALIZE");
 		new LoadingScene(0).initialize();
 		display = new Display();
 		player = new Player(Display.PIXEL_IMAGE_SIZE - 1,Display.PIXEL_IMAGE_SIZE - 1,new Vector2(0,0));

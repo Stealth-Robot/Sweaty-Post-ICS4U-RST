@@ -28,7 +28,7 @@ public class BarScene extends Scene {
 
 	public BarScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override

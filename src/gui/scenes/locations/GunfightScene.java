@@ -27,7 +27,7 @@ public class GunfightScene extends Scene {
 
 	public GunfightScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override

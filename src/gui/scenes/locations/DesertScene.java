@@ -23,7 +23,7 @@ public class DesertScene extends Scene {
 
 	public DesertScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override
@@ -168,9 +168,9 @@ public class DesertScene extends Scene {
 	@Override
 	public void createBattleColliders() {
 		if(identifier==5)
-			addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Burrito_Boi,"Hungry? I know you are, BUT JUST CAUSE IM A BURRITO DOSENT MEAN YOU CAN EAT ME!!!","... You know what? Im hungry for justice"));
+			addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 1), Main.Burrito_Boi,"Hungry? I know you are, BUT JUST CAUSE IM A BURRITO DOSENT MEAN YOU CAN EAT ME!!!","... You know what? Im hungry for justice"));
 		if(identifier==11)
-			addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Bepsi_Boi,"Thirsty? I know you are, BUT JUST CAUSE IM A SODA POP DOSENT MEAN YOU CAN DRINK ME!!!","... Deja Vu! Im thirsty for justice"));
+			addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 1), Main.Bepsi_Boi,"Thirsty? I know you are, BUT JUST CAUSE IM A SODA POP DOSENT MEAN YOU CAN DRINK ME!!!","... Deja Vu! Im thirsty for justice"));
 	}
 
 }

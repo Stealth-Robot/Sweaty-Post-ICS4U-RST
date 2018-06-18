@@ -22,7 +22,7 @@ public class RailwayScene extends Scene {
 
 	public RailwayScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override

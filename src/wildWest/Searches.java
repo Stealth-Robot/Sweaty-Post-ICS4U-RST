@@ -13,23 +13,24 @@ public class Searches
 	 * estimates approximate location of any given int in the array
 	 */
 	public static int interpolationSearch(Integer[] items, int start, int end, int goal) throws Exception 
-	{System.out.println("aa" + goal);
+	{
+		//System.out.println("aa" + goal);
 		//if(goal > items[end-1] || goal < items[start]) {
 				//	error();
 				//}
-				System.out.println("\nSTART: " + start + ", END: " + end);
+				//System.out.println("\nSTART: " + start + ", END: " + end);
 				if (start > end) {
 					return (-1);
 				} else {
 					
 					double proportional = ((double)goal - items[start]) / ((double)items[end - 1] -items[start]);
 					if(proportional < 0 || proportional > 1) {
-						System.out.println("Looks like ur numbah doesnt exist :(");
+						//System.out.println("Looks like ur numbah doesnt exist :(");
 						return -1;
 					}
 					int mid = (int) Math.round(((end - 1) - start) * proportional);
-					System.out.println("PROPORTIONAL: " + proportional);
-					System.out.println("GUESS: Element " + (mid + start) + ", value " + items[mid + start] + ", looking for " + goal);
+					//System.out.println("PROPORTIONAL: " + proportional);
+					//System.out.println("GUESS: Element " + (mid + start) + ", value " + items[mid + start] + ", looking for " + goal);
 					if (goal == items[start + mid]) {
 						return (start + mid);
 					} else if (goal < items[start + mid]) {

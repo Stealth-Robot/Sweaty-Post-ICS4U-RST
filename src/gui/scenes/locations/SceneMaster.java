@@ -13,7 +13,7 @@ public class SceneMaster {
 	saloonIScene, casinoScene, hotelIScene, bankIScene, gunfightIScene, jailIScene,railwayIScene, endScene, 
 	 hotelRoomScene, jailCellScene1, jailCellScene2, jailCellScene3;
 	public static void createScenes() {
-		System.out.print("createScenes()");
+		///System.out.print("createScenes()");
 
 		railwayIScene = new BarScene(1); //railway station inside
 		railwayScene = new RailwayScene(2); //railway station outside

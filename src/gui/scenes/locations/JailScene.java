@@ -25,7 +25,7 @@ public class JailScene extends Scene {
 
 	public JailScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 		this.identifier = identifier;
 	}
 

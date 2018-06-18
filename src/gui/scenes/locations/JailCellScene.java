@@ -25,7 +25,7 @@ public class JailCellScene extends Scene {
 
 	public JailCellScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override

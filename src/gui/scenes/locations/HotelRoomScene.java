@@ -23,7 +23,7 @@ public class HotelRoomScene extends Scene {
 
 	public HotelRoomScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override
