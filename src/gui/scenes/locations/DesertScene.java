@@ -158,7 +158,7 @@ public class DesertScene extends Scene {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.casinoScene, new Vector2(1,1), Player.Movement.NORTH, Player.Movement.NORTH));
 		}
 	       if(identifier==5) {
-		        testImage = ImageLoader.loadImage("src/images/sprites/EneGreyBlue.png");
+		        testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
 		        if(Main.Burrito_Boi.ready) {
 		        	postEnvironment.add(new ImageData(testImage,0,0));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(0,0)));
