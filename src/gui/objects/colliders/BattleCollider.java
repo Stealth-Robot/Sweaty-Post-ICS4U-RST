@@ -9,7 +9,7 @@ package gui.objects.colliders;
 import PresentationClasses.Villain;
 import gui.Vector2;
 import gui.objects.Rectangle;
-import wildWest.WildWest;
+import minigames.WildWest;
 
 public class BattleCollider extends InteractiveCollider {
 	public Villain villain;

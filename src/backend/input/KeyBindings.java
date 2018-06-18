@@ -26,7 +26,7 @@ import input.UpMovementReleased;
 public class KeyBindings {
 	/**
 	 * pre: none
-	 * post: defines and returns bindings
+	 * post: defines and returns a canvas with bindings
 	 */
 	public static Draw initKeyBindings(Draw canvas) {
 		canvas = aKeyBinding(canvas);

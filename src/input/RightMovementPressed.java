@@ -14,6 +14,11 @@ import backend.input.MovementFromInputs;
 
 public class RightMovementPressed extends AbstractAction
 {
+	/**
+	 * Pre: Is called via a keypress of the associated button
+	 * During: Set the RightPressed boolean to true
+	 * Post: 
+	 */
 	@Override
 	public void actionPerformed( ActionEvent tf )
 	{

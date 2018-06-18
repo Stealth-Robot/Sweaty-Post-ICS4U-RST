@@ -14,6 +14,11 @@ import backend.input.MovementFromInputs;
 
 public class UpMovementPressed extends AbstractAction
 {
+	/**
+	 * Pre: Is called via a keypress of the associated button
+	 * During: Set the UpPressed boolean to true
+	 * Post: 
+	 */
 	@Override
 	public void actionPerformed( ActionEvent tf ) {
 		MovementFromInputs.UpPressed = true;

@@ -14,6 +14,12 @@ import backend.input.MovementFromInputs;
 
 public class RightMovementReleased extends AbstractAction
 {
+	/**
+	 * Pre: Is called via a keypress of the associated button
+	 * During: Set the RightPressed boolean to false
+	 * Post: 
+	 */
+	@Override
 	public void actionPerformed( ActionEvent tf )
 	{
 		MovementFromInputs.RightPressed = false;

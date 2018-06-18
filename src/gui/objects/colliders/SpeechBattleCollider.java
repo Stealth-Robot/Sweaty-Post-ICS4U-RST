@@ -4,7 +4,7 @@ import PresentationClasses.Villain;
 import backend.input.MovementFromInputs;
 import dialog.DialogCreator;
 import gui.objects.Rectangle;
-import wildWest.WildWest;
+import minigames.WildWest;
 
 public class SpeechBattleCollider extends InteractableColliderNoConstraint {
 	public Villain villain;

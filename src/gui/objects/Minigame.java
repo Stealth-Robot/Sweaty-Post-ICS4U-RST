@@ -6,6 +6,7 @@
  */
 package gui.objects;
 
+//This is an interface
 public interface Minigame {
 	public void start();
 }
