@@ -13,6 +13,10 @@ import gui.DrawImageOnCanvas;
 import gui.objects.Rectangle;
 import images.ImageData;
 
+/**
+ * Very important class, runs the backend for each scene
+ *
+ */
 public abstract class Scene implements IScene {
 	public ArrayList<ImageData> environment;
 	public ArrayList<ImageData> postEnvironment;
@@ -26,6 +30,11 @@ public abstract class Scene implements IScene {
 		this.createEnvironment();
 		this.createBattleColliders();
 	}
+	/*
+	 * Initializes the scene
+	 * pre:nothing
+	 * post:scene initialized
+	 */
 	public void initialize() {
 		
 		sceneColliders = new ArrayList<Rectangle>();
@@ -34,11 +43,21 @@ public abstract class Scene implements IScene {
 		this.createColliders();
 		DrawImageOnCanvas.currentScene = this;
 	}
+	/*
+	 * Renders the environment
+	 * Pre:nothign rendered
+	 * post:environment rendered
+	 */
 	public void render(Graphics g) {
 		for(ImageData i : environment) {
 			g.drawImage(i.getImage(),i.getxPos(), i.getyPos(), null);
 		}
 	}
+	/*
+	 * Renders the players,
+	 * Pre:environment rendered
+	 * Post:everything rendered
+	 */
 	public void postRender(Graphics g) {
 		for(ImageData i : postEnvironment) {
 			g.drawImage(i.getImage(),i.getxPos(),i.getyPos(),null);

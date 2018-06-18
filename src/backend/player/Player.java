@@ -48,7 +48,7 @@ public class Player extends Collider {
 		//System.out.println(s);
 		return s;
 	}
-	
+
 	/**
 	 * Pre: Gets a string
 	 * During: Messes up the string based on the drunkeness of the player
@@ -58,18 +58,18 @@ public class Player extends Collider {
 	 */
 	public String[] say(String string[]) {
 		for(int q = 0; q < string.length; q++) {
-		char[] newSentence = new char[string[q].toCharArray().length];
-		for(int i = 0; i < string[q].toCharArray().length; i++) {
-			if(Math.random() * 50 < drunkness) {
-				newSentence[i] = (char)(new Random().nextInt(26) + 'a');
+			char[] newSentence = new char[string[q].toCharArray().length];
+			for(int i = 0; i < string[q].toCharArray().length; i++) {
+				if(Math.random() * 50 < drunkness) {
+					newSentence[i] = (char)(new Random().nextInt(26) + 'a');
+				}
+				else {
+					newSentence[i] = string[q].toCharArray()[i];
+				}
 			}
-			else {
-				newSentence[i] = string[q].toCharArray()[i];
-			}
-		}
-		String s = new String(newSentence);
-		string[q] = s;
-		//System.out.println(s);
+			String s = new String(newSentence);
+			string[q] = s;
+			//System.out.println(s);
 		}
 		return string;
 	}
@@ -114,10 +114,10 @@ public class Player extends Collider {
 		else if(xAxis < 0 && yAxis < 0) {
 			return Movement.SOUTH_WEST;
 		}
-		
+
 		return Movement.NONE;
 	}
-	
+
 	//Everything below is used for the drunkness in the game
 	int tickCounter = 0;
 	int ticks = 100;
@@ -126,7 +126,7 @@ public class Player extends Collider {
 	int currentMovement = 0;
 	public Movement facingDir;
 	public boolean interacting = false;
-	
+
 	/**
 	 * Pre: Called once per tick
 	 * During: 	Updates the player's x/y coordinates based on the inputs getting pressed
@@ -143,7 +143,7 @@ public class Player extends Collider {
 		if(i > decay) {
 			i = 0;
 			if(drunkness > 0) {
-				System.out.println("Drunk decay");
+				//System.out.println("Drunk decay");
 				drunkness--;
 			}
 		}
@@ -190,21 +190,21 @@ public class Player extends Collider {
 		else if(drunkness >= 5) {
 			xAxis = -xAxis;
 			yAxis = -yAxis;
-	}
-	
-	//Get the interacted boolean
+		}
+
+		//Get the interacted boolean
 		interacting = Interact.interacted();
 		//Get the magnitude of the speed in the x/y direction (1 if moving in a straight line)
 		double magnitude = Math.sqrt(Math.pow(xAxis, 2) + Math.pow(yAxis, 2));
 		if(xAxis == 0 && yAxis == 0) {
 			magnitude = 1;
 		}
-	
+
 		//Move the player
 		magnitude /= SPEED;
 		position.x += xAxis / magnitude;
 		position.y += yAxis / magnitude;
-		
+
 		if(position.x < 0 || position.x > Display.SCREEN_WIDTH - Display.PIXEL_IMAGE_SIZE + 1) {
 			position.x -= xAxis / magnitude;
 		}
@@ -215,7 +215,7 @@ public class Player extends Collider {
 		Movement m = move(xAxis, yAxis);
 		for(Rectangle c : DrawImageOnCanvas.currentScene.sceneColliders) {
 			Collider.Collisions cc = c.collision(this, m);
-		//	System.out.println(cc);
+			//	System.out.println(cc);
 			if(cc != Collider.Collisions.NONE && cc != Collider.Collisions.ANY) {
 				if(cc == Collider.Collisions.NORTH) {
 					position.y -= yAxis / magnitude;

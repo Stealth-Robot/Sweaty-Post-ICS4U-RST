@@ -27,14 +27,21 @@ private static Draw canvas;
         initCanvas();
     }
 
+    /*
+     * initializes the canvas
+     * Pre: canvas is not initialized
+     * Post: is initialized
+     */
     private void initCanvas() {
     	
+    	//makes the jframe
     	  mainFrame = new JFrame("Sweaty Post");
 		  mainFrame.setVisible(true);
 		  mainFrame.setSize(SCREEN_WIDTH,SCREEN_HEIGHT);
 		  mainFrame.setResizable(false);
 		  mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		  // makes the canvas
 		  canvas = new Draw();
 	        canvas.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
 	        canvas.setMaximumSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -55,6 +62,11 @@ private static Draw canvas;
 	       mainFrame.setCursor (c);
     }
 
+    /*
+     * gets the canvas and returns it
+     * pre:nothing
+     * post:canvas returned
+     */
     public JPanel getCanvas() {
 
         if(canvas == null)

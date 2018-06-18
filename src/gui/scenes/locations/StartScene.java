@@ -28,6 +28,9 @@ public class StartScene extends Scene {
 		//System.out.print(identifier + ",");
 	}
 
+	/*
+	 * Creates the environment for the start scene
+	 */
 	@Override
 	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");

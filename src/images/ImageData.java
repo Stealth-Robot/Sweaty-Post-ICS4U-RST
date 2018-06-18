@@ -12,6 +12,10 @@ import java.awt.image.BufferedImage;
 
 import gui.Display;
 
+/**
+ * Pre: none
+ * Post: alters the image as required
+ */
 public class ImageData {
 
 	private Image image;

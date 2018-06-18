@@ -56,12 +56,22 @@ boolean first = true;
 	}
 
 	public Player.Movement currentOrientation = Player.Movement.NONE;
+	/*
+	 * Renders the graphics.
+	 * Pre: graphics object
+	 * Post: tick rendered
+	 */
 	public void render(Graphics g) {
 		currentScene.render(g);
 		currentScene.postRender(g);
 		drawPlayer(g);
 	}
 
+	/*
+	 * Draws the player
+	 * pre:graphics object
+	 * post:plaYer is drawn to screen
+	 */
 	public void drawPlayer(Graphics g) {
 		//Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
 		//player.updateCharacter(move.x, move.y);
@@ -82,6 +92,11 @@ boolean first = true;
 		}
 	}
 
+	/*
+	 * Tick method
+	 * Pre:tick has not been processed
+	 * Post:everything but graphics processed
+	 */
 	private void tick() {
 		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
 		Player.Movement m = player.updateCharacter(move.x, move.y);
@@ -115,6 +130,11 @@ boolean first = true;
 		}
 	}
 
+	/*
+	 * Initializes the game
+	 * Pre: nothing
+	 * Post: game screen created
+	 */
 	public void init() {
 		//System.out.println("INITIALIZE");
 		new LoadingScene(0).initialize();
