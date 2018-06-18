@@ -79,16 +79,19 @@ public class GunfightScene extends Scene {
 	        	addCollider(new Collider(RectangleCreator.colliderRectangle(4,3)));
 	        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),3,3));
 		        }
+			testImage = ImageLoader.loadImage("src/images/sprites/EneLGreyGold.png");
 		        if(Main.Wyatt.ready) {
 		        	postEnvironment.add(new ImageData(testImage,5,5));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
 		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),4,5));
 		        }
+		        testImage = ImageLoader.loadImage("src/images/sprites/EneGoldLBlue.png");
 		        if(Main.Morgan.ready) {
 		        	postEnvironment.add(new ImageData(testImage,7,2));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(7,2)));
 		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),6,2));
 		        }
+		        testImage = ImageLoader.loadImage("src/images/sprites/EneLGoldGold.png");
 		        if(Main.Doc_Holliday.ready) {
 		        	postEnvironment.add(new ImageData(testImage,6,0));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(6,0)));
