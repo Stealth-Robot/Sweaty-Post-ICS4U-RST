@@ -145,7 +145,7 @@ public class BarScene extends Scene {
 			addCollider(new HotelCollider(RectangleCreator.colliderRectangle(4, 4)));
 		}
 	       if(identifier==10) {
-		        testImage = ImageLoader.loadImage("src/images/sprites/EnemyGreyBlue.png");
+		        testImage = ImageLoader.loadImage("src/images/sprites/EneGreyBlue.png");
 		        if(Main.Beach_Girl.ready) {
 		        	postEnvironment.add(new ImageData(testImage,8,0));
 		        	addCollider(new Collider(RectangleCreator.colliderRectangle(8,0)));
