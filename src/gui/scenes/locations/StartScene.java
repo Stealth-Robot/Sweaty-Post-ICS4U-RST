@@ -109,7 +109,7 @@ public class StartScene extends Scene {
         	
         	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractUp.png"),2,4));
         }
-		testImage = ImageLoader.loadImage("src/images/sprites/EneGoldLBlue.png");
+		testImage = ImageLoader.loadImage("src/images/sprites/EneGoldLBluu.png");
         if(Main.Sneaky.ready) {
         	postEnvironment.add(new ImageData(testImage,5,5));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
@@ -123,7 +123,7 @@ public class StartScene extends Scene {
         	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),7,3));
         }
         //testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
-        testImage = ImageLoader.loadImage("src/images/sprites/EneLGreyGold.png");
+        testImage = ImageLoader.loadImage("src/images/sprites/EneLGreyGoll.png");
         if(Main.Snitchy.ready) {
         	postEnvironment.add(new ImageData(testImage,4,0));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(4,0)));
