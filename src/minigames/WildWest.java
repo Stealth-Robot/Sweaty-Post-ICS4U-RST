@@ -4,7 +4,7 @@
  * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
  * June 2018
  */
-package wildWest;
+package minigames;
 
 import java.awt.Image;
 import java.awt.event.ActionEvent;

@@ -14,6 +14,11 @@ import backend.input.MovementFromInputs;
 
 public class DownMovementPressed extends AbstractAction
 {
+	/**
+	 * Pre: Is called via a keypress of the associated button
+	 * During: Set the DownPressed boolean to true
+	 * Post: 
+	 */
 	@Override
 	public void actionPerformed( ActionEvent tf )
 	{

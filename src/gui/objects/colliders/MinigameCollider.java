@@ -8,7 +8,7 @@ package gui.objects.colliders;
 
 import gui.objects.Minigame;
 import gui.objects.Rectangle;
-import wildWest.WildWest;
+import minigames.WildWest;
 
 public class MinigameCollider extends InteractableCollider {
 	private Minigame minigame;

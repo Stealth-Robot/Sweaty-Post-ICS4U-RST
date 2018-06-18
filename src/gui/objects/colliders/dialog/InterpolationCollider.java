@@ -7,7 +7,7 @@ import dialog.DialogCreator;
 import gui.objects.Rectangle;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SpeechCollider;
-import wildWest.Searches;
+import minigames.Searches;
 
 public class InterpolationCollider extends SpeechCollider {
 

@@ -14,6 +14,12 @@ import backend.input.Interact;
 
 public class InteractButtonPressed extends AbstractAction
 {
+	/**
+	 * Pre: Is called via a keypress of the associated button
+	 * During: Set the InteractPressed boolean to true
+	 * Post: 
+	 */
+	@Override
 	public void actionPerformed( ActionEvent tf )
 	{
 		Interact.setPressed(true);

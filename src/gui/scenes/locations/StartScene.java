@@ -101,24 +101,29 @@ public class StartScene extends Scene {
 	public void createColliders() {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.saloonScene, new Vector2(1,2), Player.Movement.EAST,Player.Movement.EAST));
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.railwayScene, new Vector2(7,2), Player.Movement.WEST,Player.Movement.WEST));
-		Image testImage = ImageLoader.loadImage("src/images/sprites/EnemyDown.png");
+		Image testImage = ImageLoader.loadImage("src/images/sprites/EneGoldBlue.png");
 		if(Main.Slimy.ready) {
         	postEnvironment.add(new ImageData(testImage,2,5));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(2,5)));
+        	
+        	
         	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractUp.png"),2,4));
         }
+		testImage = ImageLoader.loadImage("src/images/sprites/EneGoldLBlue.png");
         if(Main.Sneaky.ready) {
         	postEnvironment.add(new ImageData(testImage,5,5));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
         	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractUp.png"),5,4));
         }
-        testImage = ImageLoader.loadImage("src/images/sprites/EnemyLeft.png");
+        testImage = ImageLoader.loadImage("src/images/sprites/EneGreyBlue.png");
+       // testImage = ImageLoader.loadImage("src/images/sprites/EnemyLeft.png");
         if(Main.Shifty.ready) {
         	postEnvironment.add(new ImageData(testImage,8,3));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(8,3)));
         	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),7,3));
         }
-        testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
+        //testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
+        testImage = ImageLoader.loadImage("src/images/sprites/EneLGreyGold.png");
         if(Main.Snitchy.ready) {
         	postEnvironment.add(new ImageData(testImage,4,0));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(4,0)));

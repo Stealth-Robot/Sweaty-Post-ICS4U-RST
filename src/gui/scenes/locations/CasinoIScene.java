@@ -21,7 +21,7 @@ import gui.objects.colliders.dialog.InterpolationCollider;
 import gui.objects.colliders.dialog.RPSCollider;
 import gui.scenes.Scene;
 import images.ImageData;
-import wildWest.Clacker;
+import minigames.Clacker;
 
 public class CasinoIScene extends Scene {
 
