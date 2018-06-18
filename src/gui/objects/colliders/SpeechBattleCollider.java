@@ -20,8 +20,7 @@ public class SpeechBattleCollider extends InteractableColliderNoConstraint {
 boolean first = true;
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
-		if(first && MovementFromInputs.RightPressed == false && MovementFromInputs.LeftPressed == false && 
-				MovementFromInputs.UpPressed == false && MovementFromInputs.DownPressed == false) {
+		if(first) {
 			first = false;
 			DialogCreator.createDialog(villain.name,text,null,okMessage);
 			new WildWest(villain);
