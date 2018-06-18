@@ -29,6 +29,10 @@ public class JailScene extends Scene {
 		this.identifier = identifier;
 	}
 
+	/**
+	 * Pre: none
+	 * Post: Creates the enviornment for the scene
+	 */
 	@Override
 	public void createEnvironment() {
 		Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
@@ -69,6 +73,11 @@ public class JailScene extends Scene {
 
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createColliders() {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
@@ -83,6 +92,11 @@ public class JailScene extends Scene {
 		addCollider(new JailCollider(RectangleCreator.colliderRectangle(4, 5)));
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createBattleColliders() {
 		// TODO Auto-generated method stub

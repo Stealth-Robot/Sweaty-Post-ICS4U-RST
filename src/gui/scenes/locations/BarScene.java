@@ -31,6 +31,11 @@ public class BarScene extends Scene {
 		//System.out.print(identifier + ",");
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the enviornment for the scene
+	 */
 	@Override
 	public void createEnvironment() {
 		Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
@@ -96,6 +101,11 @@ public class BarScene extends Scene {
 		}
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createColliders() {
 		Image testImage = ImageLoader.loadImage("src/images/sprites/Enemy.png");
@@ -145,6 +155,11 @@ public class BarScene extends Scene {
 		
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createBattleColliders() {
 		if(identifier == 1) {

@@ -22,6 +22,11 @@ public class EndScene extends Scene {
 		System.out.print(identifier + ",");
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the enviornments for the scene
+	 */
 	@Override
 	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
@@ -84,12 +89,22 @@ public class EndScene extends Scene {
 		
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createColliders() {
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(8, 3),SceneMaster.saloonIScene));
 		addCollider(new SceneChangeCollider(RectangleCreator.colliderRectangle(0, 3),SceneMaster.railwayScene));
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createBattleColliders() {
 		// TODO Auto-generated method stub

@@ -28,6 +28,11 @@ public class JailCellScene extends Scene {
 		//System.out.print(identifier + ",");
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the envornment for the scene
+	 */
 	@Override
 	public void createEnvironment() {
 		Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
@@ -46,6 +51,11 @@ public class JailCellScene extends Scene {
 		environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/insidejail/jailExit.png"), 2, 1));
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createColliders() {
     	addCollider(new Collider(RectangleCreator.colliderRectangle(1,0)));
@@ -90,6 +100,11 @@ public class JailCellScene extends Scene {
 	       }
 	}
 
+
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the scene
+	 */
 	@Override
 	public void createBattleColliders() {
 		if(identifier==17)

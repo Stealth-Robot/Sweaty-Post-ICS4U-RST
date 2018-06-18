@@ -28,8 +28,8 @@ public class StartScene extends Scene {
 		//System.out.print(identifier + ",");
 	}
 
-	/*
-	 * Creates the environment for the start scene
+	/**
+	 * Post: Creates the environment for the start scene
 	 */
 	@Override
 	public void createEnvironment() {
@@ -93,6 +93,10 @@ public class StartScene extends Scene {
 		
 	}
 
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the start scene
+	 */
 	@Override
 	public void createColliders() {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.saloonScene, new Vector2(1,2), Player.Movement.EAST,Player.Movement.EAST));
@@ -122,6 +126,10 @@ public class StartScene extends Scene {
         }
 	}
 
+	/**
+	 * Pre: none
+	 * Post: Creates the battle colliders for the start scene
+	 */
 	@Override
 	public void createBattleColliders() {
 		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(2, 4), Main.Slimy,"Im so slimy and evil and dispicable","Are you Gru from Despicable Me?"));

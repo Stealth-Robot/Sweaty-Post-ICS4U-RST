@@ -12,6 +12,11 @@ public class SceneMaster {
 	public static Scene startScene, saloonScene, hotelScene, bankScene, gunfightScene, jailScene, railwayScene,
 	saloonIScene, casinoScene, hotelIScene, bankIScene, gunfightIScene, jailIScene,railwayIScene, endScene, 
 	 hotelRoomScene, jailCellScene1, jailCellScene2, jailCellScene3;
+
+	/**
+	 * Pre: none
+	 * Post: Calls the scenes
+	 */
 	public static void createScenes() {
 		///System.out.print("createScenes()");
 

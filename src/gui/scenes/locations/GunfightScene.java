@@ -25,11 +25,19 @@ import main.Main;
 
 public class GunfightScene extends Scene {
 
+	/**
+	 * Pre: none
+	 * Post: constructed
+	 */
 	public GunfightScene(int identifier) {
 		super(identifier);
 		//System.out.print(identifier + ",");
 	}
 
+	/**
+	 * Pre: none
+	 * Post: Creates the enviornment for the gunfight scene
+	 */
 	@Override
 	public void createEnvironment() {
 		 Image testImage = ImageLoader.loadImage("src/images/sprites/environments/desert/Desert.png");
@@ -70,6 +78,10 @@ public class GunfightScene extends Scene {
 	       
 	}
 
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the gunfight scene
+	 */
 	@Override
 	public void createColliders() {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.endScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
@@ -96,6 +108,10 @@ public class GunfightScene extends Scene {
 		        }
 	}
 
+	/**
+	 * Pre: none
+	 * Post: Creates the colliders for the start scene
+	 */
 	@Override
 	public void createBattleColliders() {
 		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(3, 3), Main.Marshall_Virgil,"I come to kill sheriffs and innocents! I am the evilest bi of them all! I AM THE MARSHALL","I will be the new Marshall."));
