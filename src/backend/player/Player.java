@@ -122,7 +122,7 @@ public class Player extends Collider {
 	int tickCounter = 0;
 	int ticks = 100;
 	int i = 0;
-	int decay = 5000;
+	int decay = 2500;
 	int currentMovement = 0;
 	public Movement facingDir;
 	public boolean interacting = false;
