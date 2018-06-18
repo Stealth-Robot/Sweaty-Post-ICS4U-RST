@@ -19,9 +19,11 @@ public class RailwayCollider extends SpeechCollider {
 	 */
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
+		
 		if(first) {
-			DialogCreator.createDialog("Railer","Took you long enough... For completing your first task heres 10 of my finest damsels ;)",null,"Sweet thanks mate");
+			
 			first = false;
+			DialogCreator.createDialog("Railer","Took you long enough... For completing your first task heres 10 of my finest damsels ;)",null,"Sweet thanks mate");
 			Main.game.player.damsels+=10;
 		}
 		else {

@@ -109,7 +109,6 @@ public class BarScene extends Scene {
 		if (identifier == 1) {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.railwayScene, new Vector2(4, 0.5), Player.Movement.NORTH, Player.Movement.SOUTH));
-			addCollider(new RailwayCollider(RectangleCreator.colliderRectangle(4, 4)));
 		}
 			
 		if (identifier == 4) {
