@@ -197,6 +197,8 @@ public class WildWest implements ActionListener, Cloneable
 				dodge.setEnabled(false);
 				Main.paused = false;
 				if (win) {
+					URL grave = getClass().getResource("../images/sprites/enemies/Grave.png");
+					enemySprite.setIcon(new ImageIcon(new ImageIcon(grave).getImage().getScaledInstance((new ImageIcon(grave).getIconWidth()) * ENEMYRATIO, (new ImageIcon(grave).getIconHeight()) * ENEMYRATIO, Image.SCALE_DEFAULT)));
 					logText.enqueue(Main.game.player.say(cVil.name + " has died to your well aimed shot. You have gained his " + cVil.damselNum + " damsels!"));
 					Main.game.player.damsels += cVil.damselNum;
 					cVil.damselNum = 0;
