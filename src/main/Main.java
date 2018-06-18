@@ -8,12 +8,10 @@
 package main;
 
 import java.util.ArrayList;
-
 import PresentationClasses.Villain;
 import PresentationClasses.WesternTown;
 import dialog.DialogCreator;
 import gui.DrawImageOnCanvas;
-import wildWest.WildWest;
 
 //update
 public class Main {
@@ -26,8 +24,8 @@ public class Main {
 	public static void main(String[] args) {
 		villianSetup();
 
-		game = new DrawImageOnCanvas();
-		DialogCreator.createDialog("Totorial", intro(), 0);
+		game = new DrawImageOnCanvas(); //this runs the game
+		DialogCreator.createDialog("Tutorial", intro(), 0);
 	}
 
 	/**
@@ -71,6 +69,10 @@ public class Main {
 		Beach_Girl.villainSetup     ("Beach Girl",      "Bea",    "ch",    "Girl",   "Female", "Surfer Boi",     "Beach Cocktail", 20, true);
 	}
 
+	/**
+	 * pre: none
+	 * post: instructions are set
+	 */
 	public static String intro() {
 		return("Welcome to the town of Sweaty Post! The goal of the game is to defeat the 8 main villians and collect as many damsels as "
 				+ "possible \nbefore you do so. Damsels are your score, everytime you defeat a villian you get damsels. You can check "
@@ -79,8 +81,8 @@ public class Main {
 				+ "newfound knowledge with the Station Master of the train Station. He will \nreward you with damsels! \n\nWhen you "
 				+ "fight an enemy it starts a game of wild west. The rules of the game are simple: shoot your opponent and don't get "
 				+ "shot.\nYou have three choices each turn (Shoot, Reload, or Dodge) \nShoot - if you have bullets, you shoot the enemy"
-				+ " (if he blocks or also shoots nothing hallens) \nReload - you add one bullet to your revolver \nDodge - you block "
-				+ "any bollets shot at you\n\nYour goal is to clear out the Dalton Bros and the Earps. To do this you must battle all "
+				+ " (if he blocks/shoots or you have no bullets, nothing happens) \nReload - you add one bullet to your revolver \nDodge - you block "
+				+ "any bullets shot at you\n\nYour goal is to clear out the Dalton Bros and the Earps. To do this you must battle all "
 				+ "eight of them. Once you have battled all eight \nyou will have won the game and you can be happy. There are "
 				+ "also 4 bonus charictors which give more damsels than the normal \nenemies. Killing them is a great way to boost your "
 				+ "score!\n\nThere are three groups of enemies:\nThe Daltons (Slimy, Sneaky, Shifty, Snitchy): You meet these guys not "
@@ -88,11 +90,11 @@ public class Main {
 				+ "mean and insulting but not very bright. You must battle these four if you \n          want to win the game.\nThe Earps: ("
 				+ "Marshall Virgil, Wyatt, Morgan, Doc Holliday): They just escaped from the jail. They are busy fleeing and you can "
 				+ "catch \n          them as they run away in the very last scene. They are as smart as they are evil... although not very "
-				+ "good at playig wild wild \n          west honestly.\nThe Bonus Bois (Burrito Boi, Bepsi Boi, Surfer Boi, Beach Girl): These"
-				+ "shifty and weird guys and gals are just in town to make \n          trouble. The mayor has asked you to deal with them if you "
+				+ "good at playig wild wild \n          west honestly. You must battle these four if you want to beat the game!\nThe Bonus Bois (Burrito Boi, Bepsi Boi, Surfer Boi, Beach Girl): These"
+				+ " shifty and weird guys and gals are just in town to make \n          trouble. The mayor has asked you to deal with them if you "
 				+ "have time after beating the Daltons or the Earps. Unfortunatly once \n          you beat the Daltons and the Earps, you have to "
 				+ "quickly run off to Stinky Foot, the neighboring town to deal with more Baddies. \n         Therefore, I suggest you fight the "
-				+ "Bonus Bois before beating the last of the core 8 baddies in order to have time left!\n\nGood Luck young Adventurer and dont "
+				+ "Bonus Bois before battling the last of the core 8 baddies in order to have time left!\n\nGood Luck young Adventurer and dont "
 				+ "forget: If you are havng trouble, try being better at the game!");
 	}
 }

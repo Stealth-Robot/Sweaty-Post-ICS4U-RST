@@ -14,7 +14,7 @@ public class LoadingScene extends Scene {
 
 	public LoadingScene(int identifier) {
 		super(identifier);
-		System.out.print(identifier + ",");
+		//System.out.print(identifier + ",");
 	}
 
 	@Override

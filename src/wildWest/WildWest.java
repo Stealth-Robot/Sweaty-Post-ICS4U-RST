@@ -73,7 +73,7 @@ public class WildWest implements ActionListener, Cloneable
 		reload = new JButton();
 		shoot = new JButton();
 		jScrollPane1.setViewportView(jTextArea1);
-		System.out.println("../images/sprites/enemies/" + villain.path + ".png");
+		//System.out.println("../images/sprites/enemies/" + villain.path + ".png");
 		URL enemySpriteU = getClass().getResource("../images/sprites/enemies/" + villain.path + ".png");
 		enemySprite.setIcon(new ImageIcon(new ImageIcon(enemySpriteU).getImage().getScaledInstance((new ImageIcon(enemySpriteU).getIconWidth()) * ENEMYRATIO, (new ImageIcon(enemySpriteU).getIconHeight()) * ENEMYRATIO, Image.SCALE_DEFAULT)));
 		eAmmo.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("../images/sprites/wildWest/AmmoEmpty.png")).getImage().getScaledInstance(AMMOSIZE, AMMOSIZE, Image.SCALE_DEFAULT)));
