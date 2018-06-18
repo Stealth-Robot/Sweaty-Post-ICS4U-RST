@@ -148,8 +148,8 @@ public class WildWest implements ActionListener, Cloneable
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
 		frame.pack(); // Sizes and displays the frame
 		frame.setVisible(true); //lets the program know that the frame is visible as opposed to invisible
-		logText.enqueue(Main.game.player.say(cVil.name + " has arived riding his horse, " + cVil.horseName));
-		logText.enqueue(Main.game.player.say(cVil.name + " plans to drink some delicous " + cVil.whiskeyPreference + " after he kills you"));
+		logText.enqueue(Main.game.player.say(cVil.name + " has arived riding " + cVil.horseName));
+		logText.enqueue(Main.game.player.say(cVil.name + " plans to drink some delicous " + cVil.whiskeyPreference + " after they kill you"));
 		logText.enqueue(Main.game.player.say(""));
 
 	}

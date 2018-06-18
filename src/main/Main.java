@@ -15,7 +15,7 @@ import wildWest.WildWest;
 
 //update
 public class Main {
-	public static Villain Slimy,Sneaky,Shifty,Snitchy,Marshall_Virgil,Wyatt,Morgan,Doc_Holliday,tutorial;
+	public static Villain Slimy,Sneaky,Shifty,Snitchy,Marshall_Virgil,Wyatt,Morgan,Doc_Holliday,tutorial,Burrito_Boi,Bepsi_Boi,Surfer_Boi,Beach_Girl;
 	public static boolean paused = false;
 	public static int i = 0;
 
@@ -26,7 +26,7 @@ public class Main {
 		System.out.println(tutorial);
 
 		game = new DrawImageOnCanvas();
-		new WildWest(Slimy);
+		new WildWest(tutorial);
 	}
 
 	/**
@@ -49,20 +49,24 @@ public class Main {
 		Wyatt = new Villain("Wyatt", true);
 		Morgan = new Villain("Morgan", true);
 		Doc_Holliday = new Villain("Doc Holliday", true);
+	/* Bonus Bois */ 
+		Burrito_Boi = new Villain("Burrito Boi", true);
+		Bepsi_Boi = new Villain("Bepsi Boi", true);
+		Surfer_Boi = new Villain("Surfer Boi", true);
+		Beach_Girl = new Villain("Beach Girl", false);
 
-		tutorial.villainSetup       ("Bank Robber",     "Gold",  "Red",   "Blue", "Male", "Beer Gut",   "Jack Daniels");
-		Slimy.villainSetup          ("Slimy",           "Gold",  "Red",   "Blue", "Male", "Beer Gut",   "Jack Daniels");
-		Sneaky.villainSetup         ("Sneaky",          "Gold",  "brown", "Blue", "Male", "Shadow",     "Beer");
-		Shifty.villainSetup         ("Shifty",          "brown", "none",  "Blue", "Male", "Bookie",     "Whiskey");
-		Snitchy.villainSetup        ("Snitchy",         "sandy", "red",   "Blue", "Male", "buki",       "Tequila");
-		Marshall_Virgil.villainSetup("Marshall Virgil", "black", "brown", "Blue", "Male", "ja",         "Wine");
-		Wyatt.villainSetup          ("Wyatt",           "Gold",  "none",  "Blue", "Male", "Death Mere", "Water");
-		Morgan.villainSetup         ("Morgan",          "Brown", "red",   "Blue", "Male", "Horsearino", "Mixed Drinks");
-		Doc_Holliday.villainSetup   ("Doc Holliday",    "sandy", "brown", "Blue", "Male", "Beer Hater", "Jello Shots");
-		Human mary = new Human("Mary", false);
-		mary.sex = "female";
-		mary.horseName = "Midnight";
-		mary.whiskeyPreference = "Straight";
-		mary.name = "Mary";
+		tutorial.villainSetup       ("Bank Robber",     "Yellow",  "None",   "Blue", "Male",   "Beer Gut",       "Jack Daniels");
+		Slimy.villainSetup          ("Slimy",           "Yellow",  "None",   "Blue", "Male",   "Beer Gut",       "Jack Daniels");
+		Sneaky.villainSetup         ("Sneaky",          "Gold","None", "Navy", "Male",   "Shadow",         "Beer");
+		Shifty.villainSetup         ("Shifty",          "Grey", "None",  "Yellow", "Male",   "Bookie",         "Whiskey");
+		Snitchy.villainSetup        ("Snitchy",         "Silver", "None",   "Green", "Male",   "buki",           "Tequila");
+		Marshall_Virgil.villainSetup("Marshall Virgil", "black", "brown", "Blue", "Male",   "ja",             "Wine");
+		Wyatt.villainSetup          ("Wyatt",           "Gold",  "none",  "Blue", "Male",   "Death Mere",     "Water");
+		Morgan.villainSetup         ("Morgan",          "Brown", "red",   "Blue", "Male",   "Horsearino",     "Mixed Drinks");
+		Doc_Holliday.villainSetup   ("Doc Holliday",    "sandy", "brown", "Blue", "Male",   "Beer Hater",     "Jello Shots");
+		Burrito_Boi.villainSetup    ("Burrito Boi",     "Burr",  "ito",   "Boi",  "Male",   "Condament King", "Tomato Juice");
+		Bepsi_Boi.villainSetup      ("Bepsi Boi",       "Bep",   "si",    "Boi",  "Male",   "Bottle Truck",   "Diet Coke");
+		Surfer_Boi.villainSetup     ("Surfer Boi",      "Surf",  "er",    "Boi",  "Male",   "Surf Board",     "Salt Water");
+		Beach_Girl.villainSetup     ("Beach Girl",      "Bea",   "ch",    "Boi",  "Female", "Surfer Boi",     "Beach Cocktail");
 	}
 }
