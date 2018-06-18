@@ -16,6 +16,7 @@ import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.objects.colliders.SpeechCollider;
 import gui.objects.colliders.dialog.BartenderCollider;
 import gui.objects.colliders.dialog.HotelCollider;
+import gui.objects.colliders.dialog.JailCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -79,7 +80,7 @@ public class JailScene extends Scene {
 				SceneMaster.jailCellScene2, new Vector2(2, 2), Player.Movement.NORTH, Player.Movement.NORTH));
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(5, 5.95),
 				SceneMaster.jailCellScene3, new Vector2(2, 2), Player.Movement.NORTH, Player.Movement.NORTH));
-		addCollider(new HotelCollider(RectangleCreator.colliderRectangle(4, 5)));
+		addCollider(new JailCollider(RectangleCreator.colliderRectangle(4, 5)));
 	}
 
 	@Override

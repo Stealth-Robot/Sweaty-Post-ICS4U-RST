@@ -7,6 +7,8 @@
  */
 package main;
 
+import java.util.ArrayList;
+
 import PresentationClasses.Villain;
 import PresentationClasses.WesternTown;
 import dialog.DialogCreator;
@@ -20,7 +22,7 @@ public class Main {
 	public static int i = 0;
 	public static int gameProgress = 0;
 	public static DrawImageOnCanvas game;
-
+	public static Villain[] enemies;
 	public static void main(String[] args) {
 		villianSetup();
 
@@ -54,7 +56,7 @@ public class Main {
 		Bepsi_Boi = new Villain("Bepsi Boi", true);
 		Surfer_Boi = new Villain("Surfer Boi", true);
 		Beach_Girl = new Villain("Beach Girl", false);
-
+		enemies = new Villain[] {Slimy,Sneaky,Shifty,Snitchy,Marshall_Virgil,Wyatt,Morgan,Doc_Holliday,Burrito_Boi,Bepsi_Boi,Surfer_Boi,Beach_Girl};
 		tutorial.villainSetup       ("Bank Robber",     "Yellow", "None",  "Blue",   "Male",   "Beer Gut",       "Jack Daniels",    1,false);
 		Slimy.villainSetup          ("Slimy",           "Yellow", "None",  "Blue",   "Male",   "Beer Gut",       "Jack Daniels",   10,false);
 		Sneaky.villainSetup         ("Sneaky",          "Silver", "Red",   "Navy",   "Male",   "Shadow",         "Beer",           16,false);

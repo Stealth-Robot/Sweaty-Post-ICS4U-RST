@@ -17,6 +17,7 @@ import gui.objects.colliders.SpeechCollider;
 import gui.objects.colliders.dialog.BankCollider;
 import gui.objects.colliders.dialog.BartenderCollider;
 import gui.objects.colliders.dialog.HotelCollider;
+import gui.objects.colliders.dialog.JailCollider;
 import gui.objects.colliders.dialog.RailwayCollider;
 import gui.scenes.Scene;
 import images.ImageData;
