@@ -16,6 +16,7 @@ public class Villain extends Human {
 	public int drunkenness, damselNum;
 	ArrayList<Human> Damsels;
 	public String path = "";
+	public boolean isDlc = false;
 	public boolean ready = true;
 
 	/**
@@ -58,7 +59,7 @@ public class Villain extends Human {
  * pre: villain is not set up
  * post: variables are assigned to villain
  */
-	public void villainSetup(String name, String hatColor, String mustacheColor, String look, String sex, String horseName, String whiskyPreference, int damsels) {
+	public void villainSetup(String name, String hatColor, String mustacheColor, String look, String sex, String horseName, String whiskyPreference, int damsels, boolean isDlc) {
 		this.hatColor = hatColor; 
 		this.mustacheColor = mustacheColor; 
 		this.sex = sex; 
@@ -66,5 +67,6 @@ public class Villain extends Human {
 		this.whiskeyPreference = whiskyPreference; 
 		path = hatColor + mustacheColor + look;
 		this.damselNum = damsels;
+		this.isDlc = isDlc;
 	}
 }

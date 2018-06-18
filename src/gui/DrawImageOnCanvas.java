@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 import backend.input.Interact;
 import backend.input.MovementFromInputs;
 import backend.player.Player;
+import dialog.DialogCreator;
 import gui.scenes.Scene;
 import gui.scenes.locations.BarScene;
 import gui.scenes.locations.CasinoIScene;
@@ -39,11 +40,16 @@ public class DrawImageOnCanvas {
 		System.out.println("init");
 		init();
 	}
-
+boolean first = true;
 	public void run(Graphics g) {
 		//System.err.println("run..." + running);
 		if(!Main.paused) {
 			tick();
+		}
+		if(Main.gameProgress >= 8 && first) {
+			first = false;
+			DialogCreator.createDialog("God", "And on that day you did it. You won. \n You have killed everyone, I hope you're proud of yourself.\n You ended up with " + Main.game.player.damsels + " damsels, not too shabby but could be better.\n",null,"Where is the credits scene?");
+			System.exit(0);
 		}
 		render(g);
 		//stop();

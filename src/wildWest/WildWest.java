@@ -220,10 +220,15 @@ public class WildWest implements ActionListener, Cloneable
 		}
 		if (command.equals("Continue")) {
 			frame.dispose();
+			if(!cVil.isDlc) {
+				Main.gameProgress++;
+			}
+			
 			if(loss) {
 				DialogCreator.createDialog("Hotel Bro","You died dude... We brought u to the hotel so u could live again :) \n(the person that killed you ran away...)",null,"Wait what I didnt die then");
 			}
 		}
+		Main.game.currentScene.initialize();
 		updateLog();
 	}
 
