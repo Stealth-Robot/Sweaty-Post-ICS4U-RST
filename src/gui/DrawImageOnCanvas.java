@@ -112,13 +112,12 @@ public class DrawImageOnCanvas {
 		player = new Player(Display.PIXEL_IMAGE_SIZE - 1,Display.PIXEL_IMAGE_SIZE - 1,new Vector2(0,0));
 		playerImage.createRotationImages();
 		SceneMaster.createScenes();
-		SceneMaster.startScene.initialize();
+		SceneMaster.railwayIScene.initialize();
 	}
 
 	public synchronized void start() {
 		if (running) return;
 		running = true;
-
 	}
 
 	public synchronized void stop() {
@@ -128,10 +127,7 @@ public class DrawImageOnCanvas {
 		try {
 			t.join();
 		} catch (InterruptedException e) {
-
 			e.printStackTrace();
 		}
-
 	}
-
 }
