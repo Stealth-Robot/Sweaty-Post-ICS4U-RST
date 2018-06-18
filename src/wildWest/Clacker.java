@@ -60,6 +60,11 @@ public class Clacker implements ActionListener, Minigame
 		rolls = 0;
 	}
 
+	/**
+	 * Start method, starts it
+	 * pre: clacker has not run
+	 * post: clacker has finished
+	 */
 	@Override
 	public void start() {
 		frame = new JFrame("Clacker");

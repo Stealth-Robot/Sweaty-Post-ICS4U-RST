@@ -7,6 +7,7 @@
 package gui.scenes;
 
 public interface IScene {
+	//forces these methods to be implemented in scenes
 	public void createEnvironment();
 	public void createColliders();
 	public void createBattleColliders();

@@ -28,6 +28,12 @@ public class Draw extends JPanel {
 	}
 	private long startTime;
 	private long currentTime;
+	/*
+	 * (non-Javadoc)
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 * Pre: graphics object, automatically called
+	 * Post: the whole screen has been painted and tick has been called
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
