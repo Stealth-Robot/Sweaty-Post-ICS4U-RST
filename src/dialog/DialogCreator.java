@@ -35,15 +35,20 @@ public class DialogCreator {
 	 * are created
 	 */
 	public static int createDialog(String title, String text, ImageIcon image, String... buttons) {
-		MovementFromInputs.RightPressed = false;
-		MovementFromInputs.LeftPressed = false;
-		MovementFromInputs.UpPressed = false;
-		MovementFromInputs.DownPressed = false;	
-		buttons = Main.game.player.say(buttons);
-		Main.paused = true;
-		int returnValue = JOptionPane.showOptionDialog(Display.mainFrame, Main.game.player.say(text),  Main.game.player.say(title),
-				JOptionPane.NO_OPTION,-1,image,buttons , buttons[0]);
-		Main.paused = false;
+		int returnValue = -1;
+		if(MovementFromInputs.RightPressed == false && MovementFromInputs.LeftPressed == false && 
+				MovementFromInputs.UpPressed == false && MovementFromInputs.DownPressed == false) {
+
+			MovementFromInputs.RightPressed = false;
+			MovementFromInputs.LeftPressed = false;
+			MovementFromInputs.UpPressed = false;
+			MovementFromInputs.DownPressed = false;	
+			buttons = Main.game.player.say(buttons);
+			Main.paused = true;
+			returnValue = JOptionPane.showOptionDialog(Display.mainFrame, Main.game.player.say(text),  Main.game.player.say(title),
+					JOptionPane.NO_OPTION,-1,image,buttons , buttons[0]);
+			Main.paused = false;
+		}
 		return returnValue;
 	}
 
