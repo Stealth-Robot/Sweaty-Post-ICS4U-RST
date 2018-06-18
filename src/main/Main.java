@@ -69,7 +69,7 @@ public class Main {
 		Burrito_Boi.villainSetup    ("Burrito Boi",     "Burr",   "ito",   "Boi",    "Male",   "Condament King", "Tomato Juice",   20,true);
 		Bepsi_Boi.villainSetup      ("Bepsi Boi",       "Bep",    "si",    "Boi",    "Male",   "Bottle Truck",   "Diet Coke",      20,true);
 		Surfer_Boi.villainSetup     ("Surfer Boi",      "Surf",   "er",    "Boi",    "Male",   "Surf Board",     "Salt Water",     20,true);
-		Beach_Girl.villainSetup     ("Beach Girl",      "Bea",    "ch",    "Boi",    "Female", "Surfer Boi",     "Beach Cocktail", 20,true);
+		Beach_Girl.villainSetup     ("Beach Girl",      "Bea",    "ch",    "Girl",   "Female", "Surfer Boi",     "Beach Cocktail", 20,true);
 	}
 
 	public static String intro() {

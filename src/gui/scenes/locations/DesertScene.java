@@ -14,8 +14,10 @@ import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.SpeechBattleCollider;
 import gui.scenes.Scene;
 import images.ImageData;
+import main.Main;
 
 public class DesertScene extends Scene {
 
@@ -112,6 +114,7 @@ public class DesertScene extends Scene {
 
 	@Override
 	public void createColliders() {
+		Image testImage = ImageLoader.loadImage("src/images/sprites/Enemy.png");
 		addCollider(new Collider(RectangleCreator.colliderRectangle(7,4)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(7,5)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(3,5)));
@@ -144,12 +147,30 @@ public class DesertScene extends Scene {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.gunfightScene, new Vector2(1,2), Player.Movement.EAST, Player.Movement.EAST));
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(6, 3.95),SceneMaster.casinoScene, new Vector2(1,1), Player.Movement.NORTH, Player.Movement.NORTH));
 		}
+	       if(identifier==5) {
+		        testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
+		        if(Main.Burrito_Boi.ready) {
+		        	postEnvironment.add(new ImageData(testImage,0,0));
+		        	addCollider(new Collider(RectangleCreator.colliderRectangle(0,0)));
+		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractDown.png"),0,1));
+		        }
+	       }
+	       if(identifier==11) {
+		        testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
+		        if(Main.Bepsi_Boi.ready) {
+		        	postEnvironment.add(new ImageData(testImage,0,0));
+		        	addCollider(new Collider(RectangleCreator.colliderRectangle(0,0)));
+		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractDown.png"),0,1));
+		        }
+	       }
 	}
 
 	@Override
 	public void createBattleColliders() {
-		// TODO Auto-generated method stub
-		
+		if(identifier==5)
+			addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Burrito_Boi,"Hungry? I know you are, BUT JUST CAUSE IM A BURRITO DOSENT MEAN YOU CAN EAT ME!!!","... You know what? Im hungry for justice"));
+		if(identifier==11)
+			addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Bepsi_Boi,"Thirsty? I know you are, BUT JUST CAUSE IM A SODA POP DOSENT MEAN YOU CAN DRINK ME!!!","... Deja Vu! Im thirsty for justice"));
 	}
 
 }

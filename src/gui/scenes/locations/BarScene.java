@@ -13,6 +13,7 @@ import gui.DrawImageOnCanvas.ImageLoader;
 import gui.objects.RectangleCreator;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.SpeechBattleCollider;
 import gui.objects.colliders.SpeechCollider;
 import gui.objects.colliders.dialog.BankCollider;
 import gui.objects.colliders.dialog.BartenderCollider;
@@ -21,6 +22,7 @@ import gui.objects.colliders.dialog.JailCollider;
 import gui.objects.colliders.dialog.RailwayCollider;
 import gui.scenes.Scene;
 import images.ImageData;
+import main.Main;
 
 public class BarScene extends Scene {
 
@@ -96,6 +98,7 @@ public class BarScene extends Scene {
 
 	@Override
 	public void createColliders() {
+		Image testImage = ImageLoader.loadImage("src/images/sprites/Enemy.png");
 		addCollider(new Collider(RectangleCreator.colliderRectangle(0, 5)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(1, 5)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(2, 5)));
@@ -131,6 +134,14 @@ public class BarScene extends Scene {
 					SceneMaster.hotelScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
 			addCollider(new HotelCollider(RectangleCreator.colliderRectangle(4, 4)));
 		}
+	       if(identifier==10) {
+		        testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
+		        if(Main.Beach_Girl.ready) {
+		        	postEnvironment.add(new ImageData(testImage,8,0));
+		        	addCollider(new Collider(RectangleCreator.colliderRectangle(8,0)));
+		        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/FloorInteract.png"),8,1));
+		        }
+	       }
 		
 	}
 
@@ -139,5 +150,7 @@ public class BarScene extends Scene {
 		if(identifier == 1) {
 			addBattleCollider(new RailwayCollider(RectangleCreator.colliderRectangle(4, 4)));
 		}
+		if(identifier==10)
+			addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(8, 1), Main.Beach_Girl,"Hey handsome ;) wanna wrastle?","HEY! Don't touch that!"));
 	}
 }

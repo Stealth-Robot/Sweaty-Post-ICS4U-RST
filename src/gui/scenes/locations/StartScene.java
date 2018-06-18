@@ -98,20 +98,24 @@ public class StartScene extends Scene {
 		if(Main.Slimy.ready) {
         	postEnvironment.add(new ImageData(testImage,2,5));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(2,5)));
+        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractUp.png"),2,4));
         }
         if(Main.Sneaky.ready) {
         	postEnvironment.add(new ImageData(testImage,5,5));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
+        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractUp.png"),5,4));
         }
         testImage = ImageLoader.loadImage("src/images/sprites/EnemyLeft.png");
         if(Main.Shifty.ready) {
         	postEnvironment.add(new ImageData(testImage,8,3));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(8,3)));
+        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractRight.png"),7,3));
         }
         testImage = ImageLoader.loadImage("src/images/sprites/EnemyUp.png");
         if(Main.Snitchy.ready) {
         	postEnvironment.add(new ImageData(testImage,4,0));
         	addCollider(new Collider(RectangleCreator.colliderRectangle(4,0)));
+        	postEnvironment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/DesertInteractDown.png"),4,1));
         }
 	}
 
