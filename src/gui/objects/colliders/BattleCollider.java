@@ -8,13 +8,14 @@ package gui.objects.colliders;
 
 import PresentationClasses.Villain;
 import gui.Vector2;
+import gui.objects.Rectangle;
 import wildWest.WildWest;
 
 public class BattleCollider extends InteractiveCollider {
 	public Villain villain;
 	
-	public BattleCollider(int length, int width, Vector2 position, Villain villain) {
-		super(length, width, position);
+	public BattleCollider(Rectangle r, Villain villain) {
+		super(r);
 		this.villain = villain;
 	}
 	

@@ -78,7 +78,7 @@ public class GunfightScene extends Scene {
 
 	@Override
 	public void createBattleColliders() {
-		addBattleCollider(new BattleCollider(1, 1, new Vector2(0,0), Main.Slimy));
+		addBattleCollider(new BattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Slimy));
 	}
 
 }
