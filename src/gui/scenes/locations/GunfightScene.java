@@ -66,20 +66,46 @@ public class GunfightScene extends Scene {
 	        	}
 	        }
 	        testImage = ImageLoader.loadImage("src/images/sprites/Enemy.png");
-	        environment.add(new ImageData(testImage,7,3));
-		
+	      
+	       
 	}
 
 	@Override
 	public void createColliders() {
-		addCollider(new Collider(RectangleCreator.colliderRectangle(7,3)));
-		
+		 if(Main.Marshall_Virgil.ready) {
+		addCollider(new Collider(RectangleCreator.colliderRectangle(4,3)));
+		 }
+	     if(Main.Wyatt.ready) {
+		addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
+	     }
+	     if(Main.Morgan.ready) {
+		addCollider(new Collider(RectangleCreator.colliderRectangle(7,2)));
+	     }
+	     if(Main.Doc_Holliday.ready) {
+		addCollider(new Collider(RectangleCreator.colliderRectangle(6,0)));
+	     }
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.endScene, new Vector2(7,2), Player.Movement.WEST, Player.Movement.WEST));
+		Image testImage = ImageLoader.loadImage("src/images/sprites/Enemy.png");
+			if(Main.Marshall_Virgil.ready) {
+		        	postEnvironment.add(new ImageData(testImage,4,3));
+		        }
+		        if(Main.Wyatt.ready) {
+		        	postEnvironment.add(new ImageData(testImage,5,5));
+		        }
+		        if(Main.Morgan.ready) {
+		        	postEnvironment.add(new ImageData(testImage,7,2));
+		        }
+		        if(Main.Doc_Holliday.ready) {
+		        	postEnvironment.add(new ImageData(testImage,6,0));
+		        }
 	}
 
 	@Override
 	public void createBattleColliders() {
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Slimy,"Oof Oof Oof here comes dat boi"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(3, 3), Main.Marshall_Virgil,"Oof Oof Oof here comes dat boi","K lol"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(4, 5), Main.Wyatt,"Oof Oof Oof here comes dat boi","K lol"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(6, 2), Main.Morgan,"Oof Oof Oof here comes dat boi","K lol"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(5, 0), Main.Doc_Holliday,"Oof Oof Oof here comes dat boi","K lol"));
 	}
 
 }

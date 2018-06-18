@@ -12,11 +12,14 @@ import backend.player.Player;
 import gui.DrawImageOnCanvas.ImageLoader;
 import gui.Vector2;
 import gui.objects.RectangleCreator;
+import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.SpeechBattleCollider;
 import gui.objects.colliders.SpeechCollider;
 import gui.scenes.Scene;
 import images.ImageData;
+import main.Main;
 
 public class StartScene extends Scene {
 
@@ -89,14 +92,24 @@ public class StartScene extends Scene {
 
 	@Override
 	public void createColliders() {
+		/*if(Main.Marshall_Virgil.ready) {
+			addCollider(new Collider(RectangleCreator.colliderRectangle(4,3)));
+		}
+		addCollider(new Collider(RectangleCreator.colliderRectangle(5,5)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(7,2)));
+		addCollider(new Collider(RectangleCreator.colliderRectangle(6,0)));*/
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(8.95, 2),SceneMaster.saloonScene, new Vector2(1,2), Player.Movement.EAST,Player.Movement.EAST));
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(-0.95, 2),SceneMaster.railwayScene, new Vector2(7,2), Player.Movement.WEST,Player.Movement.WEST));
 	}
 
 	@Override
 	public void createBattleColliders() {
-		// TODO Auto-generated method stub
-		
+		/*if(Main.Marshall_Virgil.ready) {
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(3, 3), Main.Marshall_Virgil,"Oof Oof Oof here comes dat boi","K lol"));
+		}
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(4, 5), Main.Wyatt,"Oof Oof Oof here comes dat boi","K lol"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(6, 2), Main.Morgan,"Oof Oof Oof here comes dat boi","K lol"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(5, 0), Main.Doc_Holliday,"Oof Oof Oof here comes dat boi","K lol"));*/
 	}
 
 }

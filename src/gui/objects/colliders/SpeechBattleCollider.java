@@ -5,13 +5,15 @@ import dialog.DialogCreator;
 import gui.objects.Rectangle;
 import wildWest.WildWest;
 
-public class SpeechBattleCollider extends InteractiveCollider {
+public class SpeechBattleCollider extends InteractableColliderNoConstraint {
 	public Villain villain;
 	public String text;
-	public SpeechBattleCollider(Rectangle r, Villain villain,String text) {
+	public String okMessage;
+	public SpeechBattleCollider(Rectangle r, Villain villain,String text, String okMessage) {
 		super(r);
 		this.villain = villain;
 		this.text = text;
+		this.okMessage = okMessage;
 	}
 	
 boolean first = true;
@@ -19,7 +21,7 @@ boolean first = true;
 	public void onCollision(Collider collision, Collisions direction) {
 		if(first) {
 			first = false;
-			DialogCreator.createDialog(villain.name,text,null,"Beyblade, Let it RIP!");
+			DialogCreator.createDialog(villain.name,text,null,okMessage);
 			new WildWest(villain);
 		}
 	}

@@ -16,6 +16,7 @@ public class Villain extends Human {
 	public int drunkenness, damselNum;
 	ArrayList<Human> Damsels;
 	public String path = "";
+	public boolean ready = true;
 
 	/**
 	 * pre: none

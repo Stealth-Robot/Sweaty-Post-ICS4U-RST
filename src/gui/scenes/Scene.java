@@ -15,6 +15,7 @@ import images.ImageData;
 
 public abstract class Scene implements IScene {
 	public ArrayList<ImageData> environment;
+	public ArrayList<ImageData> postEnvironment;
 	public ArrayList<Rectangle> sceneColliders;
 	public ArrayList<Rectangle> battleColliders;
 	protected int identifier;
@@ -28,6 +29,7 @@ public abstract class Scene implements IScene {
 	public void initialize() {
 		
 		sceneColliders = new ArrayList<Rectangle>();
+		postEnvironment = new ArrayList<ImageData>();
 		sceneColliders.addAll(battleColliders);
 		this.createColliders();
 		DrawImageOnCanvas.currentScene = this;
@@ -37,7 +39,12 @@ public abstract class Scene implements IScene {
 			g.drawImage(i.getImage(),i.getxPos(), i.getyPos(), null);
 		}
 	}
-	public void add(ImageData i) {
+	public void postRender(Graphics g) {
+		for(ImageData i : postEnvironment) {
+			g.drawImage(i.getImage(),i.getxPos(),i.getyPos(),null);
+		}
+	}
+	public void add(ImageData i) { 
 		environment.add(i);
 	}
 	public void addCollider(Rectangle r) {
