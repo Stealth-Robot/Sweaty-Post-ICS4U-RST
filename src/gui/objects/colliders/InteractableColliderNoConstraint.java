@@ -7,6 +7,7 @@
 package gui.objects.colliders;
 
 import backend.input.Interact;
+import backend.input.MovementFromInputs;
 import backend.player.Player;
 import gui.Display;
 import gui.Vector2;
@@ -39,6 +40,11 @@ abstract class InteractableColliderNoConstraint extends InteractiveCollider {
 	public Collisions collision(Collider player, Player.Movement direction) {
 		Collisions c = Collisions.NONE;
 		if(Main.game.player.interacting) {
+			MovementFromInputs.RightPressed = false;
+			MovementFromInputs.LeftPressed = false;
+			MovementFromInputs.UpPressed = false;
+			MovementFromInputs.DownPressed = false;	
+			Interact.setPressed(false);
 			c = super.collision(player, direction);
 		}
 		return c;

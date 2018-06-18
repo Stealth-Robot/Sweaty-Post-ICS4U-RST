@@ -13,7 +13,11 @@ import PresentationClasses.WesternTown;
 import dialog.DialogCreator;
 import gui.DrawImageOnCanvas;
 
-//update
+/*
+ * Pre:None
+ * During: Do The Thing
+ * Post:None
+ */
 public class Main {
 	public static Villain Slimy,Sneaky,Shifty,Snitchy,Marshall_Virgil,Wyatt,Morgan,Doc_Holliday,tutorial,Burrito_Boi,Bepsi_Boi,Surfer_Boi,Beach_Girl;
 	public static boolean paused = false;
