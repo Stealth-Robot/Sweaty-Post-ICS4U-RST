@@ -1,7 +1,13 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deftab709{\fonttbl{\f0\froman\fprq2\fcharset0 Calibri;}{\f1\froman\fprq2\fcharset0 Liberation Serif;}}
 {\colortbl ;\red0\green0\blue0;}
 {\*\generator Riched20 10.0.17134}\viewkind4\uc1 
-\pard\hyphpar0\widctlpar\sa200\sl276\slmult1\qc\cf1\kerning1\ul\b\f0\fs36\lang9 RST CASE STUDY\ulnone\b0\f1\fs24\lang4105\par
+\pard\hyphpar0\widctlpar\sa200\sl240\slmult1\qc\cf1\kerning1\f0\fs28\lang9 Connor Adams, Grayden Hibbert, Mathew Edwads, Marcus Kubulius\par
+ICS4U\par
+Shootout at Sweatypost\par
+June 18, 2018\par
+Game of Sweatypost\ul\b\fs36\par
+
+\pard\hyphpar0\widctlpar\sa200\sl276\slmult1\qc RST CASE STUDY\ulnone\b0\f1\fs24\lang4105\par
 \ul\f0\fs36\lang9\par
 
 \pard\hyphpar0\widctlpar\sa200\sl276\slmult1\ulnone\b Specification:\b0\f1\fs24\lang4105\par
@@ -65,7 +71,8 @@
 \par
 \b\f0\fs36\lang9 Testing and Debugging\b0\f1\fs24\lang4105\par
 \f0\fs22\lang9\tab There was much testing and debugging to do in this game, as we had to manually create and test each and every component in the game, it was built from scratch. There were many during-code development issues, such as java.awt.graphics paint layers not overlapping, but they were fixed quickly enough with minimal struggles. The bigger issues were with recurring problems such as needing to double click the interact button to talk, and movement continuing to respond even after a dialog box opened. Movement and interaction were fixed. The issues that caused the bug were that when the dialog box or any other screen opened up, the game would not register the keybindings anymore and would never deactive the bindings, which essentially means that you would have to press the keybinding and release the keybinding to call the keybinding.release function and stop the player from moving. \par
-\tab Another issue that we were having was letting marcus thouch the code at all. Anything that he worked on broke and Connor or Grayden or Matt needed to go in a fix it. For example, he modified all of the dialog boxes to make the player have to not move in order to activate the colliders. This was a poor game design choice (and is one of the reasons that he didn't do the algorythm)\par
-\tab One problem that occured is that we set the drunkness to decay every 10 seconds. We did not set a floor limit of 0 so it could go infinitly down therin negating drunkness.Another problem was that when we set up villians we created a log. The log would delete its contents each update because when we passed a reference to the previous queue it would create a pointer instead of a new queue and that would delete all elements in the queue. This was fixed by passing each individual permater of the queue instead of the entire queue.\f1\fs24\lang4105\par
+\tab Another issue that we were having was letting marcus thouch the code at all. Anything that he worked on broke and Connor or Grayden or Matt needed to go in a fix it. For example, he modified all of the dialog boxes to make the player have to not move in order to activate the colliders. This was a poor game design choice (and is one of the reasons that he didn't do the algorythm), Connor and Grayden needed to go in a revert all of the changes that Marcus had made.\par
+\tab One problem that occured is that we set the drunkness to decay every 10 seconds. We did not set a floor limit of 0 so it could go infinitly down therin negating drunkness.Another problem was that when we set up villians we created a log. The log would delete its contents each update because when we passed a reference to the previous queue it would create a pointer instead of a new queue and that would delete all elements in the queue. This was fixed by passing each individual permater of the queue instead of the entire queue.\par
+\tab The final and evilest issue that was encountered was encountered by Grayden the brave. He did not like group layout or any other pre-made layout that Java supplies and wanted the wild wild west game to look magnificent. He decided to use group layout and he spent 3 days working on getting group layout to work. It was working entirely except for the log and Grayden went in a fixed all of the issues in 30 minutes becaues Grayden is a super powerful god among programmers (and found an ide that automatically made the grouplayout and then he pasted the new code from the new ide into the eclipse code and it worked)\f1\fs24\lang4105\par
 }
  
