@@ -15,6 +15,7 @@ import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.objects.colliders.SpeechCollider;
 import gui.objects.colliders.dialog.BartenderCollider;
+import gui.objects.colliders.dialog.HotelCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
@@ -60,16 +61,25 @@ public class JailScene extends Scene {
 		}
 		environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/NPCMale.png"), 4, 5));
 
-		if (identifier == 8) {
 			environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/BarExitUp.png"), 1, 5));
 			environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/BarExitUp.png"), 3, 5));
 			environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/BarExitUp.png"), 5, 5));
-		}
+			environment.add(new ImageData(ImageLoader.loadImage("src/images/sprites/interactables/BarExit.png"), 4, 0));
+
 	}
 
 	@Override
 	public void createColliders() {
-		addCollider(new Collider(RectangleCreator.colliderRectangle(0, 0)));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
+				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
+		
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
+				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
+				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
+				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
+		addCollider(new HotelCollider(RectangleCreator.colliderRectangle(4, 5)));
 	}
 
 	@Override
