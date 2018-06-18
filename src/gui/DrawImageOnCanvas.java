@@ -52,6 +52,7 @@ public class DrawImageOnCanvas {
 	public Player.Movement currentOrientation = Player.Movement.NONE;
 	public void render(Graphics g) {
 		currentScene.render(g);
+		currentScene.postRender(g);
 		drawPlayer(g);
 	}
 

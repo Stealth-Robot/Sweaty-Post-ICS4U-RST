@@ -31,8 +31,10 @@ public class DialogCreator {
 	 */
 	public static int createDialog(String title, String text, ImageIcon image, String... buttons) {
 		buttons = Main.game.player.say(buttons);
+		Main.paused = true;
 		int returnValue = JOptionPane.showOptionDialog(Display.mainFrame, Main.game.player.say(text),  Main.game.player.say(title),
 		        JOptionPane.NO_OPTION,-1,image,buttons , buttons[0]);
+		Main.paused = false;
 		return returnValue;
 	}
 

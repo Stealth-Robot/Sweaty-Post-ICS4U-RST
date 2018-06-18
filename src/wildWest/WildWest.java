@@ -45,6 +45,7 @@ public class WildWest implements ActionListener, Cloneable
 
 	public WildWest(Villain villain) 
 	{
+		villain.ready = false;
 		Main.paused = true;
 		setCVil(villain);
 		win = false;
@@ -220,7 +221,7 @@ public class WildWest implements ActionListener, Cloneable
 		if (command.equals("Continue")) {
 			frame.dispose();
 			if(loss) {
-				DialogCreator.createDialog("Hotel Bro","You died dude... We brought u to the hotel so u could live again :)",null,"Wait what I didnt die then");
+				DialogCreator.createDialog("Hotel Bro","You died dude... We brought u to the hotel so u could live again :) \n(the person that killed you ran away...)",null,"Wait what I didnt die then");
 			}
 		}
 		updateLog();
