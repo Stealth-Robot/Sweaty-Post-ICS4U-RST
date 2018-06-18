@@ -7,7 +7,6 @@
  */
 package main;
 
-import PresentationClasses.Human;
 import PresentationClasses.Villain;
 import PresentationClasses.WesternTown;
 import gui.DrawImageOnCanvas;
