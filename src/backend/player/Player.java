@@ -20,7 +20,7 @@ import main.Main;
 public class Player extends Collider {
 	
 	public Vector2 position;
-	public static final double SPEED = 1;
+	public static final double SPEED = 2;
 	public int drunkness = 0;
 	public int damsels = 1;
 	public enum Movement {

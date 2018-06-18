@@ -21,6 +21,7 @@ import javax.swing.JTextArea;
 import PresentationClasses.Villain;
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
+import gui.scenes.locations.SceneMaster;
 import main.Main;
 
 public class WildWest implements ActionListener, Cloneable
@@ -43,6 +44,7 @@ public class WildWest implements ActionListener, Cloneable
 
 	public WildWest(Villain villain) 
 	{
+		Main.paused = true;
 		setCVil(villain);
 		win = false;
 		loss = false;
@@ -191,8 +193,11 @@ public class WildWest implements ActionListener, Cloneable
 			if (loss || win) {
 				shoot.setEnabled(false);
 				dodge.setEnabled(false);
+				Main.paused = false;
 				if (win) {
 					logText.enqueue(Main.game.player.say(cVil.name + " has died to your well aimed shot"));
+					Main.game.player.damsels += cVil.damselNum;
+					cVil.damselNum = 0;
 					shoot.setText(Main.game.player.say("You Win"));
 					dodge.setText(Main.game.player.say("You Win"));
 					reload.setText(Main.game.player.say("Continue"));
@@ -204,6 +209,9 @@ public class WildWest implements ActionListener, Cloneable
 					dodge.setText(Main.game.player.say("You Lose"));
 					reload.setText(Main.game.player.say("Continue"));
 					reload.setActionCommand("Continue");
+					cVil.damselNum += Main.game.player.damsels;
+					Main.game.player.damsels = 0;
+					SceneMaster.hotelIScene.initialize();
 				} 
 			}
 		}
@@ -248,7 +256,7 @@ public class WildWest implements ActionListener, Cloneable
 		}
 	}
 
-	public static void main(String[] args) // Methods that create and show a GUI should be run from an event-dispatching thread
+	/*public static void main(String[] args) // Methods that create and show a GUI should be run from an event-dispatching thread
 	{
 		javax.swing.SwingUtilities.invokeLater(new Runnable() 
 		{
@@ -257,7 +265,7 @@ public class WildWest implements ActionListener, Cloneable
 				runGUI();
 			}
 		});
-	}
+	}*/
 
 	public Villain getCVill() {
 		return cVil;
