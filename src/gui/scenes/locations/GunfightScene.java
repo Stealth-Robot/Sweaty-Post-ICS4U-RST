@@ -102,10 +102,10 @@ public class GunfightScene extends Scene {
 
 	@Override
 	public void createBattleColliders() {
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(3, 3), Main.Marshall_Virgil,"Oof Oof Oof here comes dat boi","K lol"));
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(4, 5), Main.Wyatt,"Oof Oof Oof here comes dat boi","K lol"));
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(6, 2), Main.Morgan,"Oof Oof Oof here comes dat boi","K lol"));
-		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(5, 0), Main.Doc_Holliday,"Oof Oof Oof here comes dat boi","K lol"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(3, 3), Main.Marshall_Virgil,"I come to kill sheriffs and innocents! I am the evilest bi of them all! I AM THE MARSHALL","I will be the new Marshall."));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(4, 5), Main.Wyatt,"I am the famousest bad guy of them all. You will die to me like so many others have!","I will take your fame for myself!"));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(6, 2), Main.Morgan,"Man or Woman? You decide","Uhhh..."));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(5, 0), Main.Doc_Holliday,"I Doc Holiday! I will heal you to death","Wait... How will you kill me by healing me?"));
 	}
 
 }
