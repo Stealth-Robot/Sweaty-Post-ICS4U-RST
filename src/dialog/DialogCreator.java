@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
+import backend.input.MovementFromInputs;
 import gui.Display;
 import gui.DrawImageOnCanvas.ImageLoader;
 import main.Main;
@@ -17,6 +18,10 @@ import main.Main;
 public class DialogCreator {
 
 	public static void createDialog(String title, String text, int option) {
+		MovementFromInputs.RightPressed = false;
+		MovementFromInputs.LeftPressed = false;
+		MovementFromInputs.UpPressed = false;
+		MovementFromInputs.DownPressed = false;	
 		JOptionPane.showMessageDialog(Display.mainFrame, text,title,option);
 	}
 	/**
@@ -30,10 +35,14 @@ public class DialogCreator {
 	 * are created
 	 */
 	public static int createDialog(String title, String text, ImageIcon image, String... buttons) {
+		MovementFromInputs.RightPressed = false;
+		MovementFromInputs.LeftPressed = false;
+		MovementFromInputs.UpPressed = false;
+		MovementFromInputs.DownPressed = false;	
 		buttons = Main.game.player.say(buttons);
 		Main.paused = true;
 		int returnValue = JOptionPane.showOptionDialog(Display.mainFrame, Main.game.player.say(text),  Main.game.player.say(title),
-		        JOptionPane.NO_OPTION,-1,image,buttons , buttons[0]);
+				JOptionPane.NO_OPTION,-1,image,buttons , buttons[0]);
 		Main.paused = false;
 		return returnValue;
 	}

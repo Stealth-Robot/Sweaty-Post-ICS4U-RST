@@ -6,6 +6,7 @@
  */
 package gui.objects.colliders;
 
+import backend.input.Interact;
 import backend.player.Player;
 import gui.Vector2;
 import gui.objects.Rectangle;
@@ -30,6 +31,7 @@ abstract class InteractableCollider extends InteractiveCollider implements Colli
 	public Collisions collision(Collider player, Player.Movement direction) {
 		Collisions c = Collisions.NONE;
 		if(Main.game.player.interacting && interacted(player,direction)) {
+			Interact.setPressed(false);
 			c = super.collision(player, direction);
 		}
 		return c;
