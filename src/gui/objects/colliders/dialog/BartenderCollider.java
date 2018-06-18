@@ -29,13 +29,20 @@ public class BartenderCollider extends SpeechCollider {
 	public void onCollision(Collider collision, Collisions direction) {
 		int i;
 		do {
-			i = DialogCreator.createDialog("Bartender","Hi, wazzup fam",null,"How drunk am I?","give me more drincc","Exit");
+			i = DialogCreator.createDialog("Bartender","Hi, wazzup fam",null,"How drunk am I?","give me more drincc (1 Damsel)","Exit");
 			if(i == 0) {
 				DialogCreator.createDialog("Bartender", "You are " + Main.game.player.drunkness + " drunk.",null, "Ok");
 			}
 			if(i == 1) {
-				Main.game.player.drunkness++;
-				DialogCreator.createDialog("Bartender", "Have a nice sipp",null, "Ok");
+				if(Main.game.player.damsels > 0) {
+					Main.game.player.drunkness++;
+					Main.game.player.damsels--;
+					DialogCreator.createDialog("Bartender", "Have a nice sipp",null, "Ok");
+				}
+				else {
+					DialogCreator.createDialog("Bartender", "You have no damsels :(",null, "Oh...");
+				}
+				
 			}
 		} while(i != 2 && i != -1);
 	}

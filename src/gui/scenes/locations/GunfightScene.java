@@ -18,6 +18,7 @@ import gui.objects.colliders.BattleCollider;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.SpeechBattleCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 import main.Main;
@@ -80,7 +81,7 @@ public class GunfightScene extends Scene {
 
 	@Override
 	public void createBattleColliders() {
-		addBattleCollider(new BattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Slimy));
+		addBattleCollider(new SpeechBattleCollider(RectangleCreator.colliderRectangle(0, 0), Main.Slimy,"Oof Oof Oof here comes dat boi"));
 	}
 
 }

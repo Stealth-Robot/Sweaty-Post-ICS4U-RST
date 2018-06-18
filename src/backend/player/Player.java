@@ -44,7 +44,7 @@ public class Player extends Collider {
 		for(int q = 0; q < words.length; q++) {
 		char[] newSentence = new char[words[q].toCharArray().length];
 		for(int i = 0; i < words[q].toCharArray().length; i++) {
-			if(Math.random() * 100.0 < drunkness) {
+			if(Math.random() * 50 < drunkness) {
 				newSentence[i] = (char)(new Random().nextInt(26) + 'a');
 			}
 			else {
@@ -98,17 +98,22 @@ public class Player extends Collider {
 	int tickCounter = 0;
 	int ticks = 100;
 	int i = 0;
-	int decay = 1000;
+	int decay = 5000;
 	int currentMovement = 0;
 	public Movement facingDir;
 	public boolean interacting = false;
 	public Movement updateCharacter(double xAxis, double yAxis) {
-		i++;
+		if(drunkness > 0) {
+			i++;
+		}
 		if(i > decay) {
 			i = 0;
-			drunkness--;
+			if(drunkness > 0) {
+				System.out.println("Drunk decay");
+				drunkness--;
+			}
 		}
-		if(drunkness >= 100) {
+		if(drunkness >= 20) {
 			tickCounter++;
 			if(tickCounter > ticks) {
 				currentMovement = ThreadLocalRandom.current().nextInt(0, 3 + 1);
@@ -133,17 +138,17 @@ public class Player extends Collider {
 				break;
 			}
 		}
-		else if(drunkness >= 75) {
+		else if(drunkness >= 15) {
 			double temp = xAxis;
 			xAxis = -yAxis;
 			yAxis = -temp;
 		}
-		else if(drunkness >= 50) {
+		else if(drunkness >= 10) {
 			double temp = xAxis;
 			xAxis = yAxis;
 			yAxis = temp;
 		}
-		else if(drunkness >= 25) {
+		else if(drunkness >= 5) {
 			xAxis = -xAxis;
 			yAxis = -yAxis;
 	}
