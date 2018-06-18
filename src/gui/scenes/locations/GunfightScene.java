@@ -59,8 +59,6 @@ public class GunfightScene extends Scene {
 		    		        }
 		        		break;
 			        }
-			        if(x==7&&y==3)
-			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeLeft.png");
 			        if(x==0&&y==2)
 			        	testImage = ImageLoader.loadImage("src/images/sprites/interactables/DesertChangeLeft.png");
 			        environment.add(new ImageData(testImage,x,y));
