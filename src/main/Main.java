@@ -55,18 +55,18 @@ public class Main {
 		Surfer_Boi = new Villain("Surfer Boi", true);
 		Beach_Girl = new Villain("Beach Girl", false);
 
-		tutorial.villainSetup       ("Bank Robber",     "Yellow",  "None",   "Blue", "Male",   "Beer Gut",       "Jack Daniels");
-		Slimy.villainSetup          ("Slimy",           "Yellow",  "None",   "Blue", "Male",   "Beer Gut",       "Jack Daniels");
-		Sneaky.villainSetup         ("Sneaky",          "Gold","None", "Navy", "Male",   "Shadow",         "Beer");
-		Shifty.villainSetup         ("Shifty",          "Grey", "None",  "Yellow", "Male",   "Bookie",         "Whiskey");
-		Snitchy.villainSetup        ("Snitchy",         "Silver", "None",   "Green", "Male",   "buki",           "Tequila");
-		Marshall_Virgil.villainSetup("Marshall Virgil", "black", "brown", "Blue", "Male",   "ja",             "Wine");
-		Wyatt.villainSetup          ("Wyatt",           "Gold",  "none",  "Blue", "Male",   "Death Mere",     "Water");
-		Morgan.villainSetup         ("Morgan",          "Brown", "red",   "Blue", "Male",   "Horsearino",     "Mixed Drinks");
-		Doc_Holliday.villainSetup   ("Doc Holliday",    "sandy", "brown", "Blue", "Male",   "Beer Hater",     "Jello Shots");
-		Burrito_Boi.villainSetup    ("Burrito Boi",     "Burr",  "ito",   "Boi",  "Male",   "Condament King", "Tomato Juice");
-		Bepsi_Boi.villainSetup      ("Bepsi Boi",       "Bep",   "si",    "Boi",  "Male",   "Bottle Truck",   "Diet Coke");
-		Surfer_Boi.villainSetup     ("Surfer Boi",      "Surf",  "er",    "Boi",  "Male",   "Surf Board",     "Salt Water");
-		Beach_Girl.villainSetup     ("Beach Girl",      "Bea",   "ch",    "Boi",  "Female", "Surfer Boi",     "Beach Cocktail");
+		tutorial.villainSetup       ("Bank Robber",     "Yellow", "None",  "Blue",   "Male",   "Beer Gut",       "Jack Daniels");
+		Slimy.villainSetup          ("Slimy",           "Yellow", "None",  "Blue",   "Male",   "Beer Gut",       "Jack Daniels");
+		Sneaky.villainSetup         ("Sneaky",          "Silver", "Red",   "Navy",   "Male",   "Shadow",         "Beer");
+		Shifty.villainSetup         ("Shifty",          "Grey",   "None",  "Yellow", "Male",   "Bookie",         "Whiskey");
+		Snitchy.villainSetup        ("Snitchy",         "Grey",   "Brown", "Green",  "Male",   "buki",           "Tequila");
+		Marshall_Virgil.villainSetup("Marshall Virgil", "Gold",   "Red",   "Blue",   "Male",   "ja",             "Wine");
+		Wyatt.villainSetup          ("Wyatt",           "Gold",   "None",  "Navy",   "Male",   "Death Mere",     "Water");
+		Morgan.villainSetup         ("Morgan",          "Yellow", "Brown", "Yellow", "Male",   "Horsearino",     "Mixed Drinks");
+		Doc_Holliday.villainSetup   ("Doc Holliday",    "Silver", "None",  "Green",  "Male",   "Beer Hater",     "Jello Shots");
+		Burrito_Boi.villainSetup    ("Burrito Boi",     "Burr",   "ito",   "Boi",    "Male",   "Condament King", "Tomato Juice");
+		Bepsi_Boi.villainSetup      ("Bepsi Boi",       "Bep",    "si",    "Boi",    "Male",   "Bottle Truck",   "Diet Coke");
+		Surfer_Boi.villainSetup     ("Surfer Boi",      "Surf",   "er",    "Boi",    "Male",   "Surf Board",     "Salt Water");
+		Beach_Girl.villainSetup     ("Beach Girl",      "Bea",    "ch",    "Boi",    "Female", "Surfer Boi",     "Beach Cocktail");
 	}
 }
