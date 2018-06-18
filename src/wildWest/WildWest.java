@@ -44,7 +44,7 @@ public class WildWest implements ActionListener, Cloneable
 	//Initialize the ratio of the sizes of the sprites on WWW
 	private final int AMMOSIZE = 125;
 	private final int ENEMYRATIO = 5;
-	
+
 	//Boolean for flagging if the player won of lossed
 	boolean win,loss;
 
@@ -55,6 +55,7 @@ public class WildWest implements ActionListener, Cloneable
 	 */
 	public WildWest(Villain villain) 
 	{
+		//Get the villain from the villain class and pause the main game
 		villain.ready = false;
 		Main.paused = true;
 		setCVil(villain);
@@ -66,11 +67,11 @@ public class WildWest implements ActionListener, Cloneable
 		enemy = new BattleCharacter(6);
 		logText = new LogQueue(100);
 
-		
+
 		//Do all of the frame stuff
 		frame = new JFrame("Wild Wild West");	
 		contentPane = new JPanel();	
-		
+
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jScrollPane2 = new javax.swing.JScrollPane();
@@ -104,7 +105,7 @@ public class WildWest implements ActionListener, Cloneable
 		Button3.setText(Main.game.player.say("Dodge"));
 		Button3.addActionListener(this);
 		Button3.setActionCommand("dodge");
-		
+
 		frame.setResizable(false);
 
 		//Set up the text area
@@ -117,70 +118,69 @@ public class WildWest implements ActionListener, Cloneable
 
 		//Set up very complicated layout stuff so that the layout looks good
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(contentPane);
-        contentPane.setLayout(layout);
-        
-        //I Control The Horizontal
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(eAmmo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(enemySprite))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logIntro)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(pAmmo)
-                                .addGap(60, 60, 60)
-                                .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 1, Short.MAX_VALUE)))
-                .addGap(43, 43, 43))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
-        
-        //I Control The Vertical
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eAmmo)
-                    .addComponent(enemySprite))
-                .addGap(200, 200, 200)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pAmmo)
-                    .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addComponent(logIntro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        
+		contentPane.setLayout(layout);
+
+		//I Control The Horizontal
+		layout.setHorizontalGroup(
+				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup()
+						.addContainerGap()
+						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(layout.createSequentialGroup()
+										.addComponent(eAmmo)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(enemySprite))
+								.addGroup(layout.createSequentialGroup()
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(logIntro)
+												.addGroup(layout.createSequentialGroup()
+														.addComponent(pAmmo)
+														.addGap(60, 60, 60)
+														.addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addGap(18, 18, 18)
+														.addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+														.addGap(18, 18, 18)
+														.addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+										.addGap(0, 1, Short.MAX_VALUE)))
+						.addGap(43, 43, 43))
+				.addGroup(layout.createSequentialGroup()
+						.addGap(50, 50, 50)
+						.addComponent(jScrollPane1)
+						.addContainerGap())
+				);
+
+		//I Control The Vertical
+		layout.setVerticalGroup(
+				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup()
+						.addContainerGap()
+						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+								.addComponent(eAmmo)
+								.addComponent(enemySprite))
+						.addGap(200, 200, 200)
+						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+								.addComponent(pAmmo)
+								.addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addGap(22, 22, 22)
+						.addComponent(logIntro)
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				);
+
 		updateLog();
 
 		frame.setContentPane(contentPane); // Adds the content pane to the frame
 		frame.pack(); // Sizes and displays the frame
 		frame.setVisible(true); //lets the program know that the frame is visible as opposed to invisible
-		
+
 		//Add stuff to the log and update the log
 		logText.enqueue(Main.game.player.say(cVil.name + " has arived riding " + cVil.horseName));
 		logText.enqueue(Main.game.player.say(cVil.name + " plans to drink some delicous " + cVil.whiskeyPreference + " after they kill you"));
 		logText.enqueue(Main.game.player.say(""));
 		updateLog();
-		}
 	}
 
 	/*
@@ -190,18 +190,18 @@ public class WildWest implements ActionListener, Cloneable
 	 */
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		
+
 		//Do the actions for the enemy
 		int action = BattleAI.choice(player,enemy);
 		if (action == 1) logText.enqueue(Main.game.player.say(cVil.name + " has shot at you"));
 		if (action == 2) logText.enqueue(Main.game.player.say(cVil.name + " has reloaded their gun"));
 		if (action == 3) logText.enqueue(Main.game.player.say(cVil.name + " has attempted to dodge"));
 		enemy.actions(action);
-		
+
 		//Get the action from the player
 		String command = event.getActionCommand();
 		boolean turn = false;
-		
+
 		//Do the required stuff for the action chosen
 		if (command.equals("shoot")) {
 			player.actions(1);
@@ -226,11 +226,11 @@ public class WildWest implements ActionListener, Cloneable
 			//Do the tick action for each battlecharacter
 			win = player.tick(enemy);
 			loss = enemy.tick(player);
-			
+
 			//Reset the booleans for each battlecharacter
 			player.resetTurn();
 			enemy.resetTurn();	
-			
+
 			//Change the ammo sprite for the player and for the enemy
 			replaceImage();
 			if (loss || win) {
@@ -262,7 +262,7 @@ public class WildWest implements ActionListener, Cloneable
 					Main.game.player.damsels = 0;
 					//Move the player to the hotel
 					SceneMaster.hotelIScene.initialize();
-					
+
 				} 
 			}
 		}
@@ -272,7 +272,7 @@ public class WildWest implements ActionListener, Cloneable
 			if(!cVil.isDlc) {
 				Main.gameProgress++;
 			}
-			
+
 			if(loss) {
 				DialogCreator.createDialog("Hotel Bro","You died dude... We brought u to the hotel so u could live again :) \n(the person that killed you ran away...)",null,"Wait what I didnt die then");
 			}
