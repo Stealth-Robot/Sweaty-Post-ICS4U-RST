@@ -14,17 +14,17 @@ import gui.objects.RectangleCreator;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.objects.colliders.SpeechCollider;
+import gui.objects.colliders.dialog.BankCollider;
 import gui.objects.colliders.dialog.BartenderCollider;
+import gui.objects.colliders.dialog.RailwayCollider;
 import gui.scenes.Scene;
 import images.ImageData;
 
 public class BarScene extends Scene {
-	int identifier;
 
 	public BarScene(int identifier) {
 		super(identifier);
 		System.out.print(identifier + ",");
-		this.identifier = identifier;
 	}
 
 	@Override
@@ -105,17 +105,23 @@ public class BarScene extends Scene {
 		addCollider(new Collider(RectangleCreator.colliderRectangle(1, 2)));
 		addCollider(new Collider(RectangleCreator.dimensionalRectangle(0.95, 0.95, 3, 1)));
 		addCollider(new Collider(RectangleCreator.colliderRectangle(6, 2)));
-		if (identifier == 1)
+		if (identifier == 1) {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.railwayScene, new Vector2(4, 0.5), Player.Movement.NORTH, Player.Movement.SOUTH));
+			addCollider(new RailwayCollider(RectangleCreator.colliderRectangle(4, 4)));
+		}
+			
 		if (identifier == 4) {
 			addCollider(new BartenderCollider(RectangleCreator.colliderRectangle(4, 4)));
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.saloonScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
 		}
-		if (identifier == 6)
+		if (identifier == 6) {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.bankScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
+			addCollider(new BankCollider(RectangleCreator.colliderRectangle(4, 4)));
+		}
+			
 		if (identifier == 8)
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
@@ -126,7 +132,8 @@ public class BarScene extends Scene {
 
 	@Override
 	public void createBattleColliders() {
-		// TODO Auto-generated method stub
-		
+		if(identifier == 1) {
+			addBattleCollider(new RailwayCollider(RectangleCreator.colliderRectangle(4, 4)));
+		}
 	}
 }

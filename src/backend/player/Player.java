@@ -22,6 +22,7 @@ public class Player extends Collider {
 	public Vector2 position;
 	public static final double SPEED = 1;
 	public int drunkness = 0;
+	public int damsels = 1;
 	public enum Movement {
 		NONE, NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST;
 	}

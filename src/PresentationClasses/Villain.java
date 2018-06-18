@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Villain extends Human {
 	String hatColor, mustacheColor, look;
-	int drunkenness, damselNum;
+	public int drunkenness, damselNum;
 	ArrayList<Human> Damsels;
 	public String path = "";
 
@@ -38,7 +38,7 @@ public class Villain extends Human {
 	
 	/**
 	 * pre: none
-	 * post: eturns the drunkenness of the villain
+	 * post: returns the drunkenness of the villain
 	 */
 	public int returnDrunkenness() {
 		return drunkenness;

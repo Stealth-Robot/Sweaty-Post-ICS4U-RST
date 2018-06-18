@@ -15,6 +15,7 @@ import gui.objects.RectangleCreator;
 import gui.objects.colliders.Collider;
 import gui.objects.colliders.MinigameCollider;
 import gui.objects.colliders.SceneChangeColliderNoInteract;
+import gui.objects.colliders.dialog.InConstructionCollider;
 import gui.objects.colliders.dialog.InterpolationCollider;
 import gui.objects.colliders.dialog.RPSCollider;
 import gui.scenes.Scene;
@@ -115,6 +116,7 @@ public class CasinoIScene extends Scene {
 			addCollider(new MinigameCollider(RectangleCreator.colliderRectangle(7,5),new Clacker()));
 			addCollider(new RPSCollider(RectangleCreator.colliderRectangle(7, 2)));
 			addCollider(new InterpolationCollider(RectangleCreator.colliderRectangle(4, 5)));
+			addCollider(new InConstructionCollider(RectangleCreator.colliderRectangle(4, 2)));
 		}		
 	}
 
