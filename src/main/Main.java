@@ -1,9 +1,11 @@
 /*
  * Main.java
- * client code that runs the entire application
- * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * 
+ * Connor Adams || Grayden Hibbert || Matthew Edwards || Marcus Kubilius
  * ICS4U
+ * Shootout at Sweatypost main application
  * June 2018
+ * Game of Shootout at Sweatypost (client code)
  */
 package main;
 
