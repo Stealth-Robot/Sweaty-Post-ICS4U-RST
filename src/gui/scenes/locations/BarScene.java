@@ -16,6 +16,7 @@ import gui.objects.colliders.SceneChangeColliderNoInteract;
 import gui.objects.colliders.SpeechCollider;
 import gui.objects.colliders.dialog.BankCollider;
 import gui.objects.colliders.dialog.BartenderCollider;
+import gui.objects.colliders.dialog.HotelCollider;
 import gui.objects.colliders.dialog.RailwayCollider;
 import gui.scenes.Scene;
 import images.ImageData;
@@ -125,9 +126,12 @@ public class BarScene extends Scene {
 		if (identifier == 8)
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
-		if (identifier == 10)
+		if (identifier == 10) {
 			addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 					SceneMaster.hotelScene, new Vector2(6, 2.5), Player.Movement.NORTH, Player.Movement.SOUTH));
+			addCollider(new HotelCollider(RectangleCreator.colliderRectangle(4, 4)));
+		}
+		
 	}
 
 	@Override

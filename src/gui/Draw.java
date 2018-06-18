@@ -34,7 +34,7 @@ public class Draw extends JPanel {
 		
 		try {
 			
-			if (Main.game != null && !Main.paused) {
+			if (Main.game != null) {
 				Main.game.run(g);
 			}
 			if (first) {

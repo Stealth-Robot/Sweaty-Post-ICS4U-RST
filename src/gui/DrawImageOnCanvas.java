@@ -24,6 +24,7 @@ import gui.scenes.locations.DesertScene;
 import gui.scenes.locations.LoadingScene;
 import gui.scenes.locations.SceneMaster;
 import images.ImageData;
+import main.Main;
 
 public class DrawImageOnCanvas {
 	private Display display;
@@ -41,7 +42,9 @@ public class DrawImageOnCanvas {
 
 	public void run(Graphics g) {
 		//System.err.println("run..." + running);
-		tick();
+		if(!Main.paused) {
+			tick();
+		}
 		render(g);
 		//stop();
 	}
@@ -53,8 +56,8 @@ public class DrawImageOnCanvas {
 	}
 
 	public void drawPlayer(Graphics g) {
-		Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
-		player.updateCharacter(move.x, move.y);
+		//Vector2 move = MovementFromInputs.getPositionRelativeToInputs();
+		//player.updateCharacter(move.x, move.y);
 		int y = Display.SCREEN_HEIGHT - Display.PIXEL_IMAGE_SIZE - (int)player.getPosition().y;
 		if(currentOrientation == Player.Movement.SOUTH
 				||currentOrientation == Player.Movement.SOUTH_EAST

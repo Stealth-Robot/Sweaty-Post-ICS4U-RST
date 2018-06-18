@@ -33,7 +33,11 @@ public class RPSCollider extends SpeechCollider {
 	public void onCollision(Collider collision, Collisions direction) {
 		int i;
 		do {
-			i = DialogCreator.createDialog("Casino Guy 3","WE ARE PLAYING ROCK PAPER SCISSORS what do u pick",null,"Rock","Paper","Scissors","Exit");
+			if(Main.game.player.damsels == 0) {
+				DialogCreator.createDialog("Casino Guy 3","You have no damsels im not playing with you",null,":(");
+				break;
+			}
+			i = DialogCreator.createDialog("Casino Guy 3","WE ARE PLAYING ROCK PAPER SCISSORS what do u pick (if i win i get a damsel if u win u get a damsel)",null,"Rock","Paper","Scissors","Exit");
 			int otherRoll = ThreadLocalRandom.current().nextInt(1, 3 + 1);
 			i++;
 			if(i == 0 || i == 4) {
@@ -45,9 +49,11 @@ public class RPSCollider extends SpeechCollider {
 			}
 			else if((otherRoll == 1 && i == 3) || (otherRoll == 2 && i == 1) || (otherRoll == 3 && i == 2)) {
 				DialogCreator.createDialog("Casino Guy 3","I played " + played + ", GGEZ I win",null,"Ok");
+				Main.game.player.damsels--;
 			}
 			else {
 				DialogCreator.createDialog("Casino Guy 3","I played " + played + ", RIP I lost",null,"Ok");
+				Main.game.player.damsels++;
 			}
 		} while(i != 4 && i != 0);
 	}
