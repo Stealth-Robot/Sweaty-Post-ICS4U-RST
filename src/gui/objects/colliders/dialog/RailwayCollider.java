@@ -1,5 +1,6 @@
 package gui.objects.colliders.dialog;
 
+import backend.input.MovementFromInputs;
 import dialog.DialogCreator;
 import gui.objects.Rectangle;
 import gui.objects.colliders.Collider;
@@ -20,7 +21,8 @@ public class RailwayCollider extends SpeechCollider {
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
 		
-		if(first) {
+		if(first && MovementFromInputs.RightPressed == false && MovementFromInputs.LeftPressed == false && 
+				MovementFromInputs.UpPressed == false && MovementFromInputs.DownPressed == false) {
 			
 			first = false;
 			DialogCreator.createDialog("Station Master","Took you long enough... For completing your first task heres 10 of my finest damsels ;)",null,"Sweet thanks mate");
