@@ -1,9 +1,11 @@
 /*
  * Main.java
- * client code that runs the entire application
- * Connor Adams || Matthew Edwards || Grayden Hibbert || Marcus Kubilius
+ * 
+ * Connor Adams || Grayden Hibbert || Matthew Edwards || Marcus Kubilius
  * ICS4U
+ * Shootout at Sweatypost main application
  * June 2018
+ * Game of Shootout at Sweatypost (client code)
  */
 package main;
 
@@ -82,14 +84,14 @@ public class Main {
 		return("Welcome to the town of Sweaty Post! The goal of the game is to defeat the 8 main villians and collect as many damsels as "
 				+ "possible \nbefore you do so. Damsels are your score, everytime you defeat a villian you get damsels. You can check "
 				+ "your damsels in the Hotel. \nIf you die, you lose all of your damsels and you respawn at the hotel. Movement is the "
-				+ "WASD keys and to interact you double click \"e\". \nYou can interact on any tile that has a red box. Test this "
+				+ "WASD keys and to interact you click \"e\". \nYou can interact on any tile that has a red box. Test this "
 				+ "newfound knowledge with the Station Master of the train Station. He will \nreward you with damsels! \n\nWhen you "
 				+ "fight an enemy it starts a game of wild west. The rules of the game are simple: shoot your opponent and don't get "
 				+ "shot.\nYou have three choices each turn (Shoot, Reload, or Dodge) \nShoot - if you have bullets, you shoot the enemy"
 				+ " (if he blocks/shoots or you have no bullets, nothing happens) \nReload - you add one bullet to your revolver \nDodge - you block "
 				+ "any bullets shot at you\n\nYour goal is to clear out the Dalton Bros and the Earps. To do this you must battle all "
 				+ "eight of them. Once you have battled all eight \nyou will have won the game and you can be happy. There are "
-				+ "also 4 bonus charictors which give more damsels than the normal \nenemies. Killing them is a great way to boost your "
+				+ "also 4 bonus charactors which give more damsels than the normal \nenemies. Killing them is a great way to boost your "
 				+ "score!\n\nThere are three groups of enemies:\nThe Daltons (Slimy, Sneaky, Shifty, Snitchy): You meet these guys not "
 				+ "long after leaving the railway station, they just pulled a \n          jailbreak and broke the Earps out of jail. They are "
 				+ "mean and insulting but not very bright. You must battle these four if you \n          want to win the game.\nThe Earps: ("
