@@ -69,17 +69,16 @@ public class Main {
 		Surfer_Boi.villainSetup     ("Surfer Boi",      "Surf",   "er",    "Boi",    "Male",   "Surf Board",     "Salt Water",     20);
 		Beach_Girl.villainSetup     ("Beach Girl",      "Bea",    "ch",    "Boi",    "Female", "Surfer Boi",     "Beach Cocktail", 20);
 	}
-	
+
 	public static String intro() {
 		return("Welcome to our game of Wild West! The goal of the game is to defeat the 8 main villians and collect as many damsels "
 				+ "as possible \nbefore you do so. Damsels are your score, everytime you defeat a villian you get damsels. You can "
 				+ "check your damsels in the Hotel. \nIf you die, you lose all of your damsels and you respawn at the hotel. Movement "
-				+ "is the wasd keys and interact is \"e\". You can interact \non any tile that has a red box. Test this newfound "
-				+ "knowledge with the Station Master of the train Station. He will reward you with \ndamsels! \n\nWhen you fight an "
-				+ "enemy it starts a game of wild west. The rules of tha game are simple: shoot your opponent and don't get shot. "
-				+ "\nYou have three choices each turn (Shoot, Reload, or Dodge) \nShoot - if you have bullets, you shoot the enemy ("
-				+ "if he blocks or also shoots nothing hallens) \nReload - you add one bullet to your revolver \nDodge - you block "
+				+ "is the wasd keys and to interact you double click \"e\". \nYou can interact on any tile that has a red box. Test this "
+				+ "newfound knowledge with the Station Master of the train Station. He will \nreward you with damsels! \n\nWhen you "
+				+ "fight an enemy it starts a game of wild west. The rules of tha game are simple: shoot your opponent and don't get "
+				+ "shot.\nYou have three choices each turn (Shoot, Reload, or Dodge) \nShoot - if you have bullets, you shoot the enemy"
+				+ " (if he blocks or also shoots nothing hallens) \nReload - you add one bullet to your revolver \nDodge - you block "
 				+ "any bollets shot at you");
-		
 	}
 }
