@@ -73,12 +73,12 @@ public class JailScene extends Scene {
 		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
 				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
 		
-		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
-				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
-		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
-				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
-		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(4, -0.95),
-				SceneMaster.jailScene, new Vector2(6, 2.5), Player.Movement.SOUTH, Player.Movement.SOUTH));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(1, 5.95),
+				SceneMaster.jailCellScene1, new Vector2(2, 2), Player.Movement.NORTH, Player.Movement.NORTH));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(3, 5.95),
+				SceneMaster.jailCellScene2, new Vector2(2, 2), Player.Movement.NORTH, Player.Movement.NORTH));
+		addCollider(new SceneChangeColliderNoInteract(RectangleCreator.colliderRectangle(5, 5.95),
+				SceneMaster.jailCellScene3, new Vector2(2, 2), Player.Movement.NORTH, Player.Movement.NORTH));
 		addCollider(new HotelCollider(RectangleCreator.colliderRectangle(4, 5)));
 	}
 
