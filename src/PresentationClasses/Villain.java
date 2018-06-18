@@ -25,7 +25,7 @@ public class Villain extends Human {
 		super(name, male);
 		look = "mean";
 		drunkenness = 0;
-		damselNum = 0;
+		//damselNum = 0;
 	}
 
 	/**
@@ -57,12 +57,13 @@ public class Villain extends Human {
  * pre: villain is not set up
  * post: variables are assigned to villain
  */
-	public void villainSetup(String name, String hatColor, String mustacheColor, String look, String sex, String horseName, String whiskyPreference) {
+	public void villainSetup(String name, String hatColor, String mustacheColor, String look, String sex, String horseName, String whiskyPreference, int damsels) {
 		this.hatColor = hatColor; 
 		this.mustacheColor = mustacheColor; 
 		this.sex = sex; 
 		this.horseName = horseName; 
 		this.whiskeyPreference = whiskyPreference; 
 		path = hatColor + mustacheColor + look;
+		this.damselNum = damsels;
 	}
 }

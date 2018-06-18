@@ -21,6 +21,7 @@ import javax.swing.JTextArea;
 import PresentationClasses.Villain;
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
+import dialog.DialogCreator;
 import gui.scenes.locations.SceneMaster;
 import main.Main;
 
@@ -153,13 +154,13 @@ public class WildWest implements ActionListener, Cloneable
 		logText.enqueue(Main.game.player.say(cVil.name + " has arived riding " + cVil.horseName));
 		logText.enqueue(Main.game.player.say(cVil.name + " plans to drink some delicous " + cVil.whiskeyPreference + " after they kill you"));
 		logText.enqueue(Main.game.player.say(""));
-
+		updateLog();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		int action = BattleAI.choice(player,enemy);
-		if (action == 1) logText.enqueue(Main.game.player.say(cVil.name + " has shoot at you"));
+		if (action == 1) logText.enqueue(Main.game.player.say(cVil.name + " has shot at you"));
 		if (action == 2) logText.enqueue(Main.game.player.say(cVil.name + " has reloaded their gun"));
 		if (action == 3) logText.enqueue(Main.game.player.say(cVil.name + " has attempted to dodge"));
 		enemy.actions(action);
@@ -195,7 +196,7 @@ public class WildWest implements ActionListener, Cloneable
 				dodge.setEnabled(false);
 				Main.paused = false;
 				if (win) {
-					logText.enqueue(Main.game.player.say(cVil.name + " has died to your well aimed shot"));
+					logText.enqueue(Main.game.player.say(cVil.name + " has died to your well aimed shot. You have gained his " + cVil.damselNum + " damsels!"));
 					Main.game.player.damsels += cVil.damselNum;
 					cVil.damselNum = 0;
 					shoot.setText(Main.game.player.say("You Win"));
@@ -204,7 +205,7 @@ public class WildWest implements ActionListener, Cloneable
 					reload.setActionCommand("Continue");
 				} 
 				if (loss) {
-					logText.enqueue(Main.game.player.say(cVil.name + " shot you and you have died"));
+					logText.enqueue(Main.game.player.say(cVil.name + " shot you and you have died. He has taken your " + Main.game.player.damsels + " damsels."));
 					shoot.setText(Main.game.player.say("You Lose"));
 					dodge.setText(Main.game.player.say("You Lose"));
 					reload.setText(Main.game.player.say("Continue"));
@@ -212,11 +213,15 @@ public class WildWest implements ActionListener, Cloneable
 					cVil.damselNum += Main.game.player.damsels;
 					Main.game.player.damsels = 0;
 					SceneMaster.hotelIScene.initialize();
+					
 				} 
 			}
 		}
 		if (command.equals("Continue")) {
 			frame.dispose();
+			if(loss) {
+				DialogCreator.createDialog("Hotel Bro","You died dude... We brought u to the hotel so u could live again :)",null,"Wait what I didnt die then");
+			}
 		}
 		updateLog();
 	}
