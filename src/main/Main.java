@@ -53,7 +53,7 @@ public class Main {
 		Bepsi_Boi = new Villain("Bepsi Boi", true);
 		Surfer_Boi = new Villain("Surfer Boi", true);
 		Beach_Girl = new Villain("Beach Girl", false);
-		enemies = new Villain[] {tutorial, Slimy,Sneaky,Shifty,Snitchy,Marshall_Virgil,Wyatt,Morgan,Doc_Holliday,Burrito_Boi,Bepsi_Boi,Surfer_Boi,Beach_Girl};
+		enemies = new Villain[] {Slimy,Sneaky,Shifty,Snitchy,Marshall_Virgil,Wyatt,Morgan,Doc_Holliday,Burrito_Boi,Bepsi_Boi,Surfer_Boi,Beach_Girl};
 		tutorial.villainSetup       ("Bank Robber",     "Yellow", "None",  "Blue",   "Male",   "nothing",        "Jack Daniels",     1, true);
 		Slimy.villainSetup          ("Slimy",           "Yellow", "None",  "Blue",   "Male",   "Beer Gut",       "Jack Daniels",    10, false);
 		Sneaky.villainSetup         ("Sneaky",          "Silver", "Red",   "Navy",   "Male",   "Shadow",         "Beer",            16, false);
