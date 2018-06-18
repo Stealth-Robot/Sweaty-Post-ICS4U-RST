@@ -21,8 +21,8 @@ public class JailCollider extends SpeechCollider {
 	public void onCollision(Collider collision, Collisions direction) {
 		String enemies = "";
 		for(int i = 0; i < Main.enemies.length; i++) {
-			enemies += "\n" + Main.enemies[i].name + ": " + (Main.enemies[i].ready ? "In Town" : "Not in Town");
+			enemies += "\n" + Main.enemies[i].name + ": " + (Main.enemies[i].ready ? "In Town" : "Dead or Ran Away");
 		}
-		DialogCreator.createDialog("Jailer","Sup ma bro, these are the people in this wild west town: " + enemies,null,"ok fam");
+		DialogCreator.createDialog("Jailer","Sup ma bro, these are the people in this wild west town: " + enemies,null,"ok thanks fam");
 	}
 }

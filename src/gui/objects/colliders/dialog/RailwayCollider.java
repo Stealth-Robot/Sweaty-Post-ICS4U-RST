@@ -23,11 +23,11 @@ public class RailwayCollider extends SpeechCollider {
 		if(first) {
 			
 			first = false;
-			DialogCreator.createDialog("Railer","Took you long enough... For completing your first task heres 10 of my finest damsels ;)",null,"Sweet thanks mate");
+			DialogCreator.createDialog("Station Master","Took you long enough... For completing your first task heres 10 of my finest damsels ;)",null,"Sweet thanks mate");
 			Main.game.player.damsels+=10;
 		}
 		else {
-			DialogCreator.createDialog("Railer", "Dont think you can scam me buddy boy I know youve been here already",null, ":P");
+			DialogCreator.createDialog("Station Master", "Dont think you can scam me buddy boy I know youve been here already",null, ":P");
 		}
 	}
 }

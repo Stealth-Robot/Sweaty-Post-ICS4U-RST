@@ -21,6 +21,7 @@ import javax.swing.JTextArea;
 import PresentationClasses.Villain;
 import backend.battle.BattleAI;
 import backend.battle.BattleCharacter;
+import backend.input.MovementFromInputs;
 import dialog.DialogCreator;
 import gui.scenes.locations.SceneMaster;
 import main.Main;
@@ -55,6 +56,8 @@ public class WildWest implements ActionListener, Cloneable
 	public WildWest(Villain villain) 
 	{
 		//Get the villain from the villain class and pause the main game
+		if(MovementFromInputs.RightPressed == false && MovementFromInputs.LeftPressed == false && 
+				MovementFromInputs.UpPressed == false && MovementFromInputs.DownPressed == false) {
 		villain.ready = false;
 		Main.paused = true;
 		setCVil(villain);
@@ -180,6 +183,7 @@ public class WildWest implements ActionListener, Cloneable
 		logText.enqueue(Main.game.player.say(cVil.name + " plans to drink some delicous " + cVil.whiskeyPreference + " after they kill you"));
 		logText.enqueue(Main.game.player.say(""));
 		updateLog();
+		}
 	}
 
 	/*

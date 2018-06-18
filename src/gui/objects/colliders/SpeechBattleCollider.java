@@ -1,6 +1,7 @@
 package gui.objects.colliders;
 
 import PresentationClasses.Villain;
+import backend.input.MovementFromInputs;
 import dialog.DialogCreator;
 import gui.objects.Rectangle;
 import wildWest.WildWest;
@@ -19,7 +20,8 @@ public class SpeechBattleCollider extends InteractableColliderNoConstraint {
 boolean first = true;
 	@Override
 	public void onCollision(Collider collision, Collisions direction) {
-		if(first) {
+		if(first && MovementFromInputs.RightPressed == false && MovementFromInputs.LeftPressed == false && 
+				MovementFromInputs.UpPressed == false && MovementFromInputs.DownPressed == false) {
 			first = false;
 			DialogCreator.createDialog(villain.name,text,null,okMessage);
 			new WildWest(villain);
