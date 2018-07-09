@@ -57,20 +57,7 @@ public class Player extends Collider {
 	 * @return
 	 */
 	public String[] say(String string[]) {
-		for(int q = 0; q < string.length; q++) {
-			char[] newSentence = new char[string[q].toCharArray().length];
-			for(int i = 0; i < string[q].toCharArray().length; i++) {
-				if(Math.random() * 50 < drunkness) {
-					newSentence[i] = (char)(new Random().nextInt(26) + 'a');
-				}
-				else {
-					newSentence[i] = string[q].toCharArray()[i];
-				}
-			}
-			String s = new String(newSentence);
-			string[q] = s;
-			//System.out.println(s);
-		}
+		for (int i = 0; i < string.length; i++) string[i] = say(string[i]);
 		return string;
 	}
 	/* Constructor for the player object
